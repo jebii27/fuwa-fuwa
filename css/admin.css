@@ -522,7 +522,7 @@ table td {
   gap: 10px;
 }
 
-.email {
+.email p {
   text-decoration: underline;
 }
 
