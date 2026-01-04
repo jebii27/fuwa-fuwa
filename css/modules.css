@@ -1,9 +1,12 @@
 :root {
+  /* General Color */
+  --white: #ffffff;
+  --beige: #fff8e7;
+  --orange: #f26c58;
+  --peach: #fdb38e;
+  --black: #000000;
 
-    /* General Color */
-    --white: #FFFFFF;
-    --beige: #FFF8E7;
-    --orange: #F26C58;
-    --peach: #FDB38E;
-
+  /*  */
+  --body: #f7f7f8;
+  --button: #f0ab4b;
 }
