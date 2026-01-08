@@ -135,6 +135,10 @@ body {
   font-weight: 700;
 }
 
+.logo {
+  width: 100%;
+}
+
 .menu {
   flex: 1;
   padding-top: 10px;
@@ -371,12 +375,10 @@ table td {
 } */
 
 .card h1 {
-  font-size: 45px;
   margin: 0;
 }
 
 .card h5 {
-  font-size: 20px;
   margin: 0;
 }
 
@@ -406,6 +408,7 @@ table td {
   color: #000;
   pointer-events: none;
 }
+
 /* ============================ DASHBOARD ================================ */
 
 /* ============================ ASSETS ================================ */
@@ -442,6 +445,7 @@ table td {
 .pagination span {
   cursor: default;
 }
+
 /* ============================ ASSETS ================================ */
 
 /* ============================ USER MANAGEMENT ================================ */
@@ -473,19 +477,19 @@ table td {
 }
 
 .inactive-users {
-  background-color: #f7b3b3;
+  background-color: #ffd3d3;
   border-radius: 5px;
   padding: 15px;
-  color: #ba2626;
+  color: #e63131;
 }
 
-.user-count h5 {
+.user-count h6 {
   color: #7e7e7e;
 }
 
 /* profiles */
 .profile-card {
-  min-height: 40vh;
+  min-height: 37vh;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -553,6 +557,10 @@ table td {
   opacity: 0.8;
 }
 
+.edit-btn:active {
+  transform: scale(0.98);
+}
+
 .delete-btn {
   display: flex;
   align-items: center;
@@ -566,3 +574,139 @@ table td {
 }
 
 /* ============================ USER MANAGEMENT ================================ */
+
+
+
+
+
+/* ============================ MAINTENANCE & REPAIR ================================ */
+#maintenance .card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 30px;
+}
+
+#maintenance i {
+  font-size: 20px;
+}
+
+.total-maintenance {
+  background-color: #fef9ec;
+  border-radius: 5px;
+  padding: 15px;
+  color: #f5ca47;
+}
+
+.in-progress {
+  background-color: #ffebda;
+  border-radius: 5px;
+  padding: 15px;
+  color: #ff9100;
+}
+
+.completed {
+  background-color: #e7f5ec;
+  border-radius: 5px;
+  padding: 15px;
+  color: #27a857;
+}
+
+.high-priority {
+  background-color: #ffd3d3;
+  border-radius: 5px;
+  padding: 15px;
+  color: #e63131;
+}
+
+.maintenance-count h6 {
+  color: #7e7e7e;
+}
+
+/* maintenance table */
+/* #maintenance .card {
+  border-radius: 14px;
+  border: 1px solid #f1e7db;
+  box-shadow: none;
+}
+
+#maintenance .card-title {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+#maintenance table {
+  margin-bottom: 0;
+}
+
+#maintenance thead th {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9c8f83;
+  border-bottom: 1px solid #f1e7db;
+}
+
+#maintenance tbody td {
+  font-size: 14px;
+  padding: 18px 8px;
+  border-bottom: 1px solid #f1e7db;
+  vertical-align: middle;
+}
+
+#maintenance tbody tr:last-child td {
+  border-bottom: none;
+} */
+
+/* colored pills */
+.pill {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* priority */
+.priority-high {
+  background: #ffe3e3;
+  color: #ff4d4f;
+}
+
+.priority-medium {
+  background: #fff0d6;
+  color: #ff9800;
+}
+
+.priority-low {
+  background: #f1ede5;
+  color: #8a7a5e;
+}
+
+/* Status */
+.status-progress {
+  background: #ffe8c2;
+  color: #ff9800;
+}
+
+.status-scheduled {
+  background: #fff3cd;
+  color: #ffc107;
+}
+
+.status-completed {
+  background: #d9f5e2;
+  color: #28a745;
+}
+
+.view-link {
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================ MAINTENANCE & REPAIR ================================ */
