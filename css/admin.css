@@ -224,6 +224,11 @@ body {
 
 .logout-btn {
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: scale(1.1);
 }
 
 /* ============================ SIDEBAR ================================ */
@@ -303,6 +308,15 @@ body {
 
 .add-btn:active {
   transform: scale(0.98);
+}
+
+.notif-bell {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notif-bell:hover {
+  transform: scale(1.1);
 }
 
 /* ============================ NAVBAR ================================ */
@@ -577,6 +591,10 @@ table td {
   transition: all 0.3s ease;
 }
 
+.delete-btn:hover {
+  transform: scale(1.1);
+}
+
 /* ============================ USER MANAGEMENT ================================ */
 
 
@@ -783,6 +801,11 @@ table td {
 .report-card i {
   font-size: 20px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-card i:hover {
+  transform: scale(1.1);
 }
 
 /* ============================ REPORTS & ANALYTICS ================================ */
