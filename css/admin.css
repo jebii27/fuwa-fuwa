@@ -134,9 +134,8 @@ body {
 }
 
 .sidebar-header {
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-header h4 {
@@ -156,20 +155,24 @@ body {
 .menu a {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
   padding: 12px 20px;
-  color: #000;
+  color: var(--black);
   text-decoration: none;
-  transition: 0.2s;
+  transition: all 0.3s ease;
 }
 
 .menu a:hover {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--beige);
 }
 
 .menu a.active {
-  background-color: #fff4ec;
+  background-color: var(--beige);
   font-weight: 600;
+}
+
+.menu-link i {
+  font-size: 16px;
 }
 
 .sidebar-footer {
@@ -602,6 +605,10 @@ table td {
 
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
+#maintenance span {
+  font-weight: 600;
+}
+
 #maintenance .card {
   display: flex;
   justify-content: flex-start;
