@@ -8,6 +8,15 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 body {
   background-color: var(--body);
 }
@@ -232,7 +241,6 @@ body {
 
 .navbar h3 {
   flex: 1;
-  margin: 0;
 }
 
 .navbar .group-box {
@@ -373,14 +381,6 @@ table td {
 /* .contents-box {
   padding: 0 30px;
 } */
-
-.card h1 {
-  margin: 0;
-}
-
-.card h5 {
-  margin: 0;
-}
 
 /* chart */
 .chart-card {
@@ -545,7 +545,7 @@ table td {
   color: var(--black);
   border: none;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
 
   cursor: pointer;
@@ -710,3 +710,268 @@ table td {
 }
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
+
+/* ============================ REPORTS & ANALYTICS ================================ */
+#reports .card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 20px 25px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#reports h6 {
+  color: #7e7e7e;
+}
+
+.report-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.create-report-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--button);
+  color: var(--black);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-report-btn:hover {
+  opacity: 0.8;
+}
+
+.create-report-btn:active {
+  transform: scale(0.98);
+}
+
+.report-container {
+  min-height: 40vh;
+  padding: 0 20px 10px 20px;
+  border-radius: 5px;
+}
+
+.report-card {
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.report-card i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ============================ REPORTS & ANALYTICS ================================ */
+
+
+/* ============================ SYSTEM CONFIGURATION ================================ */
+.company-info {
+  min-height: 35vh;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #7e7e7e;
+  margin-bottom: 20px;
+}
+
+.company-info label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  background-color: #f1f1f1;
+  border: 1px solid #e6e2da;
+  padding: 10px 12px;
+  transition: all 0.5s ease;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: var(--button);
+}
+
+.save-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--button);
+  color: var(--black);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  opacity: 0.8;
+}
+
+.save-btn:active {
+  transform: scale(0.98);
+}
+
+/* settings */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-text h4 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.setting-text p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* toggle switch */
+.switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #e5e5e5;
+  transition: background-color 0.2s ease;
+  border-radius: 30px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+  border-radius: 50%;
+}
+
+/* on */
+.switch input:checked+.slider {
+  background-color: #f2c94c;
+}
+
+.switch input:checked+.slider::before {
+  transform: translateX(20px);
+}
+
+.switch input:focus+.slider,
+.switch input:active+.slider {
+  box-shadow: none;
+}
+
+/* user access settings */
+.role-header {
+  background: #f1f3f5;
+  padding: 10px 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.permission-table th {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.permission-table td {
+  vertical-align: middle;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* permission buttons */
+.perm-btn {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  background: #fff;
+  transition: all 0.15s ease;
+}
+
+.perm-btn:hover {
+  background: #f8f9fa;
+}
+
+.perm-btn.active.none {
+  background: #dee2e6;
+  border-color: #ced4da;
+}
+
+.perm-btn.active.read {
+  background: #e7f1ff;
+  border-color: #6ea8fe;
+  color: #084298;
+}
+
+.perm-btn.active.write {
+  background: #d1fae5;
+  border-color: #34d399;
+  color: #065f46;
+}
+
+.perm-btn.active.custom {
+  background: #fde68a;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.perm-btn:focus {
+  box-shadow: none;
+}
+
+/* ============================ SYSTEM CONFIGURATION ================================ */
