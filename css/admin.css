@@ -470,6 +470,55 @@ table td {
 /* ============================ ASSETS ================================ */
 
 /* ============================ USER MANAGEMENT ================================ */
+
+/* modal */
+.add-user-modal {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.add-user-modal .form-control,
+.add-user-modal .form-select {
+  transition: all 0.3s ease-in-out;
+}
+
+.add-user-modal .form-control:focus,
+.add-user-modal .form-select:focus {
+  border-color: var(--button);
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.add-user-modal select option {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.add-user-modal .form-check-input:hover {
+  border-color: var(--button);
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--button);
+  border-color: #facc15;
+}
+
+.modal-footer .btn {
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* number of users */
 #users .card {
   display: flex;
   justify-content: flex-start;
