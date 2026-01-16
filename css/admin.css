@@ -574,6 +574,14 @@ table td {
   transform: scale(1.01);
 }
 
+.required-text {
+  color: #dc3545;
+  font-size: var(--text-12px);
+  margin-left: 6px;
+  display: none;
+}
+
+
 /* ============================ ASSETS ================================ */
 
 
