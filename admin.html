@@ -84,10 +84,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Search..." />
               </div>
-              <button class="add-btn">
+              <!-- <button class="add-btn">
                 <i class="fa-solid fa-plus"></i>
                 Add
-              </button>
+              </button> -->
               <i class="fa-regular fa-bell notif-bell"></i>
             </div>
           </div>
@@ -287,11 +287,298 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Search..." />
               </div>
-              <button class="add-btn">
+              <button
+                class="add-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#assetModal"
+              >
                 <i class="fa-solid fa-plus"></i>
-                Add
+                Add New Asset
               </button>
               <i class="fa-regular fa-bell notif-bell"></i>
+            </div>
+          </div>
+
+          <!-- modal -->
+          <div class="modal fade" id="assetModal" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <!-- modal header -->
+                <div class="modal-header">
+                  <h3 class="modal-title w-100 text-center fw-semibold">
+                    ADD NEW ASSET
+                  </h3>
+                  <button
+                    class="btn-close shadow-none"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+
+                <!-- modal body -->
+                <div class="modal-body px-4">
+                  <!-- ===== asset category and type ===== -->
+                  <div id="slide1">
+                    <p class="form-label">Select Asset Category</p>
+
+                    <div class="row mb-4">
+                      <div class="col-md-6">
+                        <div
+                          class="asset-option"
+                          onclick="selectCategory('Physical Asset', this)"
+                        >
+                          <i class="fa-solid fa-box"></i>
+                          <h6>Physical Asset</h6>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div
+                          class="asset-option"
+                          onclick="selectCategory('Digital Asset', this)"
+                        >
+                          <i class="fa-solid fa-laptop-code"></i>
+                          <h6>Digital Asset</h6>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="form-label">Asset Type</label>
+                      <select
+                        class="form-select shadow-none"
+                        id="assetType"
+                        disabled
+                      >
+                        <option value="">Select asset category first</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- ===== basic information ===== -->
+                  <div id="slide2" style="display: none">
+                    <h4 class="mb-3">Basic Information</h4>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Tag</label>
+                      <input type="text" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Name</label>
+                      <input type="text" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Category</label>
+                      <input
+                        type="text"
+                        id="summaryCategory"
+                        class="form-control"
+                        readonly
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Type</label>
+                      <input
+                        type="text"
+                        id="summaryType"
+                        class="form-control"
+                        readonly
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Operational Status</label>
+                      <select id="operationalStatus" class="form-select">
+                        <option value="">Select status</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- ===== technical specifications ===== -->
+                  <div id="slide3" style="display: none">
+                    <h4 class="mb-3">Technical Specifications</h4>
+
+                    <!-- PC / Laptop -->
+                    <div class="tech-group" data-type="PC Laptop">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Processor</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">RAM</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Storage</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Operating System</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">MAC Address</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Router -->
+                    <div class="tech-group" data-type="Router">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Network Role</label>
+                        <select class="form-select">
+                          <option>Core</option>
+                          <option>Edge (Gateway)</option>
+                          <option>Branch / Remote Office</option>
+                          <option>Distribution</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Firmware Version</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Routing Protocols</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">WAN / LAN Ports</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Throughput Capacity</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Firewall -->
+                    <div class="tech-group" data-type="Firewall">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Firewall Type</label>
+                        <select class="form-select">
+                          <option>Hardware (Traditional)</option>
+                          <option>UTM</option>
+                          <option>Next-Gen Firewall (NGFW)</option>
+                          <option>Virtual / Cloud Firewall</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Firmware Version</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">VPN Support</label>
+                        <select class="form-select">
+                          <option>Yes</option>
+                          <option>No</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">IDS / IPS Support</label>
+                        <select class="form-select">
+                          <option>Enabled</option>
+                          <option>Disabled</option>
+                          <option>Not Supported</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Throughput Capacity</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Switch -->
+                    <div class="tech-group" data-type="Switch">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Number of Ports</label
+                        ><input type="number" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">VLAN Configuration</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Switch Role</label>
+                        <select class="form-select">
+                          <option>Access (End Device)</option>
+                          <option>Distribution</option>
+                          <option>Core</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Port Speed</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">PoE Support</label>
+                        <select class="form-select">
+                          <option>No PoE</option>
+                          <option>PoE (802.3af)</option>
+                          <option>PoE+ (802.3at)</option>
+                          <option>UPOE / PoE++ (802.3bt)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Software -->
+                    <div class="tech-group" data-type="Software">
+                      <div class="mb-3">
+                        <label class="form-label">Software Version</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Hosting Location</label>
+                        <select class="form-select">
+                          <option>On-premise</option>
+                          <option>Cloud (SaaS)</option>
+                          <option>Hybrid</option>
+                          <option>Private Cloud</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- License -->
+                    <div class="tech-group" data-type="License">
+                      <div class="mb-3">
+                        <label class="form-label">License SKU</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">License Key</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Number of Seats</label
+                        ><input type="number" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer modal-footer-custom">
+                  <button class="btn btn-secondary" onclick="prevSlide()">
+                    Back
+                  </button>
+                  <button class="next-btn" onclick="nextSlide()">Next</button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -532,7 +819,7 @@
                 data-bs-target="#addUserModal"
               >
                 <i class="fa-solid fa-plus"></i>
-                Add User
+                Add New User
               </button>
               <i class="fa-regular fa-bell notif-bell"></i>
             </div>
@@ -559,7 +846,7 @@
                 </div>
 
                 <div class="modal-body px-4">
-                  <p class="section-title">User Information</p>
+                  <h4 class="mb-3">User Information</h4>
 
                   <!-- employee id -->
                   <div class="mb-3">
@@ -582,7 +869,7 @@
                     </div>
 
                     <!-- role -->
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6 mb-4">
                       <label class="form-label">Select User Role</label>
                       <select class="form-select">
                         <option selected disabled>Choose role</option>
@@ -594,7 +881,7 @@
                   </div>
 
                   <!-- login credentials -->
-                  <p class="section-title mt-3">Login Credentials</p>
+                  <h4 class="mb-3">Login Credentials</h4>
 
                   <div class="mb-3">
                     <label class="form-label">
@@ -1111,10 +1398,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Search..." />
               </div>
-              <button class="add-btn">
+              <!-- <button class="add-btn">
                 <i class="fa-solid fa-plus"></i>
                 Add
-              </button>
+              </button> -->
               <i class="fa-regular fa-bell notif-bell"></i>
             </div>
           </div>
@@ -1183,10 +1470,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Search..." />
               </div>
-              <button class="add-btn">
+              <!-- <button class="add-btn">
                 <i class="fa-solid fa-plus"></i>
                 Add
-              </button>
+              </button> -->
               <i class="fa-regular fa-bell notif-bell"></i>
             </div>
           </div>
@@ -1887,6 +2174,88 @@
           });
         });
       });
+    </script>
+
+    <!-- ASSET MODAL -->
+    <script>
+      let selectedCategory = "";
+
+      const assetTypes = {
+        "Physical Asset": [
+          "PC",
+          "Laptop",
+          "Router",
+          "Firewall",
+          "Switch",
+          "Communication Cabinet",
+          "Server Cabinet",
+        ],
+        "Digital Asset": ["License", "Software"],
+      };
+
+      const operationalStatusOptions = {
+        "Physical Asset": [
+          "Active",
+          "In Stock",
+          "Under Maintenance",
+          "Retired",
+        ],
+        "Digital Asset": ["Active", "Inactive", "Expired"],
+      };
+
+      function selectCategory(category, element) {
+        selectedCategory = category;
+
+        document
+          .querySelectorAll(".asset-option")
+          .forEach((opt) => opt.classList.remove("active"));
+        element.classList.add("active");
+
+        const assetTypeSelect = document.getElementById("assetType");
+        assetTypeSelect.disabled = false;
+        assetTypeSelect.innerHTML = '<option value="">Select type</option>';
+
+        assetTypes[category].forEach((type) => {
+          const option = document.createElement("option");
+          option.value = type;
+          option.textContent = type;
+          assetTypeSelect.appendChild(option);
+        });
+      }
+
+      function populateOperationalStatus() {
+        const statusSelect = document.getElementById("operationalStatus");
+        statusSelect.innerHTML = '<option value="">Select status</option>';
+
+        operationalStatusOptions[selectedCategory].forEach((status) => {
+          const option = document.createElement("option");
+          option.value = status;
+          option.textContent = status;
+          statusSelect.appendChild(option);
+        });
+      }
+
+      function nextSlide() {
+        const type = document.getElementById("assetType").value;
+
+        if (!selectedCategory || !type) {
+          alert("Please select asset category and asset type.");
+          return;
+        }
+
+        document.getElementById("summaryCategory").value = selectedCategory;
+        document.getElementById("summaryType").value = type;
+
+        populateOperationalStatus(); // 👈 HERE
+
+        document.getElementById("slide1").style.display = "none";
+        document.getElementById("slide2").style.display = "block";
+      }
+
+      function prevSlide() {
+        document.getElementById("slide2").style.display = "none";
+        document.getElementById("slide1").style.display = "block";
+      }
     </script>
   </body>
 </html>

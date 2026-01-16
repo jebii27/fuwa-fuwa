@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <title>Asset Name</title>
+  </head>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <img src="assets/bwlogo.png" alt="Fuwa Fuwa" class="logo" />
+        </div>
+
+        <div class="menu">
+          <a href="#" class="menu-link" data-target="dashboard">
+            <i class="fa-solid fa-house"></i> Dashboard
+          </a>
+          <a href="#" class="menu-link active" data-target="assets">
+            <i class="fa-solid fa-boxes-stacked"></i> Assets
+          </a>
+          <a href="#" class="menu-link" data-target="users">
+            <i class="fa-solid fa-users"></i> User Management
+          </a>
+          <a href="#" class="menu-link" data-target="maintenance">
+            <i class="fa-solid fa-screwdriver-wrench"></i> Maintenance & Repair
+          </a>
+          <a href="#" class="menu-link" data-target="reports">
+            <i class="fa-solid fa-chart-column"></i> Reports & Analytics
+          </a>
+          <a href="#" class="menu-link" data-target="settings">
+            <i class="fa-solid fa-gear"></i> System Configuration
+          </a>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="user-info">
+            <div class="user-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <div>
+              <strong>Kiara Aquino</strong><br />
+              <small>Admin</small>
+            </div>
+          </div>
+          <i
+            class="fa-solid fa-right-from-bracket logout-btn"
+            id="logoutBtn"
+          ></i>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <!-- Assets -->
+        <div id="asset-detail" class="asset-detail-section">
+          <!-- navbar -->
+          <div class="navbar">
+            <h2>Asset Management</h2>
+            <div class="group-box">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search..." />
+              </div>
+              <button
+                class="add-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#assetModal"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add New Asset
+              </button>
+              <i class="fa-regular fa-bell notif-bell"></i>
+            </div>
+          </div>
+
+          <!-- asset name -->
+          <div class="asset-header my-4">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex align-items-center gap-3">
+                <!-- Asset Icon -->
+                <div class="asset-icon">
+                  <i class="fa-solid fa-laptop"></i>
+                </div>
+
+                <!-- Asset Info -->
+                <div>
+                  <div class="d-flex align-items-center gap-3">
+                    <h4 class="mb-1 fw-semibold">AssetB0C7</h4>
+                    <span class="badge bg-success">Active</span>
+                  </div>
+
+                  <div class="asset-meta text-muted">
+                    <span>HP Spectre x360</span>
+                    <span class="divider">|</span>
+                    <span> <i class="fa-regular fa-user"></i> Jane Brown </span>
+                    <span class="divider">|</span>
+                    <span>Q7M4-92AX-1F</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delete Icon -->
+              <button class="delete-btn">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
+
+            <div class="date-details text-muted">
+              <p><strong> Created Date: </strong> Feb 08, 2024 - 11:00 AM</p>
+              <p><strong> Last Update: </strong> Sep 08, 2025 - 8:00 PM</p>
+            </div>
+          </div>
+
+          <!-- asset tabs -->
+          <div class="tabs-wrapper mb-4">
+            <div class="tabs">
+              <button class="tab active" data-tab="overview">Overview</button>
+              <button class="tab" data-tab="history">History</button>
+              <span class="tab-indicator"></span>
+            </div>
+          </div>
+
+          <!-- overview tab -->
+          <div id="overview" class="tab-content active">
+            <div class="row g-4">
+              <!-- LEFT -->
+              <div class="col-lg-8">
+                <!-- Asset Details -->
+                <div class="card section-card mb-4">
+                  <div class="section-toggle" onclick="toggleSection(this)">
+                    <h6 class="mb-0 fw-semibold">Asset Details</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+
+                  <div class="section-body">
+                    <div class="row detail-row">
+                      <div class="col-4 label">Asset Type</div>
+                      <div class="col-8 value">Physical</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Asset Category</div>
+                      <div class="col-8 value">Laptop</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Asset Tag</div>
+                      <div class="col-8 value">—</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Asset Name</div>
+                      <div class="col-8 value">HP Spectre</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Operational Status</div>
+                      <div class="col-8 value">
+                        <span class="badge bg-success">Active</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Technical Specification -->
+                <div class="card section-card">
+                  <div class="section-toggle" onclick="toggleSection(this)">
+                    <h6 class="mb-0 fw-semibold">Technical Specification</h6>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+
+                  <div class="section-body">
+                    <div class="row detail-row">
+                      <div class="col-4 label">Processor</div>
+                      <div class="col-8 value">Intel Core i7-1165G7</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">RAM</div>
+                      <div class="col-8 value">16 GB LPDDR4X</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Storage</div>
+                      <div class="col-8 value">512 GB NVMe SSD</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Operating System</div>
+                      <div class="col-8 value">Windows 11 Pro (64-bit)</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">MAC Address</div>
+                      <div class="col-8 value">A4:5E:60:B9:3D:7A</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT -->
+              <div class="col-lg-4">
+                <div class="card section-card">
+                  <div
+                    class="card-header bg-white d-flex justify-content-between"
+                  >
+                    <h6 class="mb-0 fw-semibold">Recent History</h6>
+                    <a href="#" class="small text-primary">See All</a>
+                  </div>
+
+                  <div class="card-body history-list">
+                    <div class="history-item">
+                      <strong>Ryan Bacon</strong> changed fields
+                      <small>Warranty: 12 → 24 months</small>
+                      <span class="date">2025-01-10</span>
+                    </div>
+
+                    <div class="history-item">
+                      <strong>Ryan Bacon</strong> changed status
+                      <small>Available → Assigned</small>
+                      <span class="date">2025-01-02</span>
+                    </div>
+
+                    <div class="history-item">
+                      <strong>John Miller</strong> changed location
+                      <small>Denver → Ankara</small>
+                      <span class="date">2025-01-01</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- history tab -->
+          <div id="history" class="tab-content">
+            <div class="card section-card">
+              <div class="card-body">
+                <h6 class="fw-semibold mb-3">Full Asset History</h6>
+                <p class="text-muted">
+                  This is where the full history table or timeline will go.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- modal -->
+          <div class="modal fade" id="assetModal" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <!-- modal header -->
+                <div class="modal-header">
+                  <h3 class="modal-title w-100 text-center fw-semibold">
+                    ADD NEW ASSET
+                  </h3>
+                  <button
+                    class="btn-close shadow-none"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+
+                <!-- modal body -->
+                <div class="modal-body px-4">
+                  <!-- ===== asset category and type ===== -->
+                  <div id="slide1">
+                    <p class="form-label">Select Asset Category</p>
+
+                    <div class="row mb-4">
+                      <div class="col-md-6">
+                        <div
+                          class="asset-option"
+                          onclick="selectCategory('Physical Asset', this)"
+                        >
+                          <i class="fa-solid fa-box"></i>
+                          <h6>Physical Asset</h6>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div
+                          class="asset-option"
+                          onclick="selectCategory('Digital Asset', this)"
+                        >
+                          <i class="fa-solid fa-laptop-code"></i>
+                          <h6>Digital Asset</h6>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="form-label">Asset Type</label>
+                      <select
+                        class="form-select shadow-none"
+                        id="assetType"
+                        disabled
+                      >
+                        <option value="">Select asset category first</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- ===== basic information ===== -->
+                  <div id="slide2" style="display: none">
+                    <h4 class="mb-3">Basic Information</h4>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Tag</label>
+                      <input type="text" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Name</label>
+                      <input type="text" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Category</label>
+                      <input
+                        type="text"
+                        id="summaryCategory"
+                        class="form-control"
+                        readonly
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Asset Type</label>
+                      <input
+                        type="text"
+                        id="summaryType"
+                        class="form-control"
+                        readonly
+                      />
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Operational Status</label>
+                      <select id="operationalStatus" class="form-select">
+                        <option value="">Select status</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- ===== technical specifications ===== -->
+                  <div id="slide3" style="display: none">
+                    <h4 class="mb-3">Technical Specifications</h4>
+
+                    <!-- PC / Laptop -->
+                    <div class="tech-group" data-type="PC Laptop">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label>
+                        <input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Processor</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">RAM</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Storage</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Operating System</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">MAC Address</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Router -->
+                    <div class="tech-group" data-type="Router">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Network Role</label>
+                        <select class="form-select">
+                          <option>Core</option>
+                          <option>Edge (Gateway)</option>
+                          <option>Branch / Remote Office</option>
+                          <option>Distribution</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Firmware Version</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Routing Protocols</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">WAN / LAN Ports</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Throughput Capacity</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Firewall -->
+                    <div class="tech-group" data-type="Firewall">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Firewall Type</label>
+                        <select class="form-select">
+                          <option>Hardware (Traditional)</option>
+                          <option>UTM</option>
+                          <option>Next-Gen Firewall (NGFW)</option>
+                          <option>Virtual / Cloud Firewall</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Firmware Version</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">VPN Support</label>
+                        <select class="form-select">
+                          <option>Yes</option>
+                          <option>No</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">IDS / IPS Support</label>
+                        <select class="form-select">
+                          <option>Enabled</option>
+                          <option>Disabled</option>
+                          <option>Not Supported</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Throughput Capacity</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Switch -->
+                    <div class="tech-group" data-type="Switch">
+                      <div class="mb-3">
+                        <label class="form-label">Asset Model</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Number of Ports</label
+                        ><input type="number" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">VLAN Configuration</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Switch Role</label>
+                        <select class="form-select">
+                          <option>Access (End Device)</option>
+                          <option>Distribution</option>
+                          <option>Core</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Port Speed</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">PoE Support</label>
+                        <select class="form-select">
+                          <option>No PoE</option>
+                          <option>PoE (802.3af)</option>
+                          <option>PoE+ (802.3at)</option>
+                          <option>UPOE / PoE++ (802.3bt)</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Software -->
+                    <div class="tech-group" data-type="Software">
+                      <div class="mb-3">
+                        <label class="form-label">Software Version</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Hosting Location</label>
+                        <select class="form-select">
+                          <option>On-premise</option>
+                          <option>Cloud (SaaS)</option>
+                          <option>Hybrid</option>
+                          <option>Private Cloud</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- License -->
+                    <div class="tech-group" data-type="License">
+                      <div class="mb-3">
+                        <label class="form-label">License SKU</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">License Key</label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Number of Seats</label
+                        ><input type="number" class="form-control" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal-footer modal-footer-custom">
+                  <button class="btn btn-secondary" onclick="prevSlide()">
+                    Back
+                  </button>
+                  <button class="next-btn" onclick="nextSlide()">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ASSET TABS -->
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
+      const indicator = document.querySelector(".tab-indicator");
+
+      /* Set default indicator */
+      window.onload = () => {
+        moveIndicator(document.querySelector(".tab.active"));
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          contents.forEach((c) => c.classList.remove("active"));
+          document.getElementById(tab.dataset.tab).classList.add("active");
+
+          moveIndicator(tab);
+        });
+      });
+
+      function moveIndicator(tab) {
+        const tabRect = tab.getBoundingClientRect();
+        const parentRect = tab.parentElement.getBoundingClientRect();
+
+        indicator.style.width = `${tabRect.width}px`;
+        indicator.style.transform = `translateX(${
+          tabRect.left - parentRect.left
+        }px)`;
+      }
+
+      /* Collapsible sections */
+      function toggleSection(header) {
+        const card = header.closest(".section-card");
+        card.classList.toggle("collapsed");
+      }
+    </script>
+  </body>
+</html>
