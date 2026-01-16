@@ -140,13 +140,20 @@
           <!-- overview tab -->
           <div id="overview" class="tab-content active">
             <div class="row g-4">
-              <!-- LEFT -->
+              <!-- left side -->
               <div class="col-lg-8">
-                <!-- Asset Details -->
+                <!-- asset details -->
                 <div class="card section-card mb-4">
                   <div class="section-toggle" onclick="toggleSection(this)">
-                    <h6 class="mb-0 fw-semibold">Asset Details</h6>
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <!-- asset title header -->
+                    <div class="asset-title">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <h6 class="mb-0 fw-semibold">Asset Details</h6>
+                    </div>
+                    <!-- edi asset btn -->
+                    <div class="edit-asset-btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div>
                   </div>
 
                   <div class="section-body">
@@ -160,7 +167,7 @@
                     </div>
                     <div class="row detail-row">
                       <div class="col-4 label">Asset Tag</div>
-                      <div class="col-8 value">—</div>
+                      <div class="col-8 value">10293810293</div>
                     </div>
                     <div class="row detail-row">
                       <div class="col-4 label">Asset Name</div>
@@ -175,11 +182,18 @@
                   </div>
                 </div>
 
-                <!-- Technical Specification -->
-                <div class="card section-card">
+                <!-- technical specification -->
+                <div class="card section-card mb-4">
                   <div class="section-toggle" onclick="toggleSection(this)">
-                    <h6 class="mb-0 fw-semibold">Technical Specification</h6>
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <!-- asset title header -->
+                    <div class="asset-title">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <h6 class="mb-0 fw-semibold">Technical Specification</h6>
+                    </div>
+                    <!-- edi asset btn -->
+                    <div class="edit-asset-btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div>
                   </div>
 
                   <div class="section-body">
@@ -205,16 +219,150 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- assignment and location -->
+                <div class="card section-card mb-4">
+                  <div class="section-toggle" onclick="toggleSection(this)">
+                    <!-- asset title header -->
+                    <div class="asset-title">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <h6 class="mb-0 fw-semibold">Assignment & Location</h6>
+                    </div>
+                    <!-- edi asset btn -->
+                    <div class="edit-asset-btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div>
+                  </div>
+
+                  <div class="section-body">
+                    <div class="row detail-row">
+                      <div class="col-4 label">Assigned To</div>
+                      <div class="col-8 value">Jane Brown</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Department</div>
+                      <div class="col-8 value">IT Department</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Location</div>
+                      <div class="col-8 value">Santo Tomas, Batangas</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- purchase information -->
+                <div class="card section-card mb-4">
+                  <div class="section-toggle" onclick="toggleSection(this)">
+                    <!-- asset title header -->
+                    <div class="asset-title">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <h6 class="mb-0 fw-semibold">Purchase Information</h6>
+                    </div>
+                    <!-- edi asset btn -->
+                    <div class="edit-asset-btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div>
+                  </div>
+
+                  <div class="section-body">
+                    <div class="row detail-row">
+                      <div class="col-4 label">Vendor</div>
+                      <div class="col-8 value">
+                        HP Authorized Reseller - Technologies PH
+                      </div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Purchase Date</div>
+                      <div class="col-8 value">February 05, 2025</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Purchase Cost</div>
+                      <div class="col-8 value">Php 10,000.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- pmaintenance & audit -->
+                <div class="card section-card mb-4">
+                  <div class="section-toggle" onclick="toggleSection(this)">
+                    <!-- asset title header -->
+                    <div class="asset-title">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <h6 class="mb-0 fw-semibold">Maintenance & Audit</h6>
+                    </div>
+                    <!-- edi asset btn -->
+                    <div class="edit-asset-btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div>
+                  </div>
+
+                  <div class="section-body">
+                    <div class="row detail-row">
+                      <div class="col-4 label">Compliance Status</div>
+                      <div class="col-8 value">In Warranty</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Warranty Start Date</div>
+                      <div class="col-8 value">February 05, 2025</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Warranty End Date</div>
+                      <div class="col-8 value">February 05, 2026</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Next Schedule Maintenance</div>
+                      <div class="col-8 value">January 20, 2026</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Useful Life (years)</div>
+                      <div class="col-8 value">5 years</div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Salvage Value</div>
+                      <div class="col-8 value">Php 2,000.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- documents -->
+                <div class="card section-card mb-4">
+                  <div class="section-toggle" onclick="toggleSection(this)">
+                    <!-- asset title header -->
+                    <div class="asset-title">
+                      <i class="fa-solid fa-chevron-down"></i>
+                      <h6 class="mb-0 fw-semibold">Documents</h6>
+                    </div>
+                    <!-- edi asset btn -->
+                    <div class="edit-asset-btn">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div>
+                  </div>
+
+                  <div class="section-body">
+                    <div class="row detail-row">
+                      <div class="col-4 label">Contract</div>
+                      <div class="col-8 value">
+                        <a href="contract.pdf" download>contract.pdf</a>
+                      </div>
+                    </div>
+                    <div class="row detail-row">
+                      <div class="col-4 label">Warranty Start Date</div>
+                      <div class="col-8 value">
+                        <a href="purchase_order.pdf" download
+                          >purchase_order.pdf</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <!-- RIGHT -->
+              <!-- right side -->
               <div class="col-lg-4">
                 <div class="card section-card">
-                  <div
-                    class="card-header bg-white d-flex justify-content-between"
-                  >
+                  <div class="history-header d-flex justify-content-between">
                     <h6 class="mb-0 fw-semibold">Recent History</h6>
-                    <a href="#" class="small text-primary">See All</a>
+                    <a href="#" class="see-all">See All</a>
                   </div>
 
                   <div class="card-body history-list">
@@ -569,9 +717,11 @@
         const tabRect = tab.getBoundingClientRect();
         const parentRect = tab.parentElement.getBoundingClientRect();
 
-        indicator.style.width = `${tabRect.width}px`;
+        const extraWidth = 20; // pixels (8px on each side)
+
+        indicator.style.width = `${tabRect.width + extraWidth}px`;
         indicator.style.transform = `translateX(${
-          tabRect.left - parentRect.left
+          tabRect.left - parentRect.left - extraWidth / 2
         }px)`;
       }
 

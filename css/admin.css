@@ -1,26 +1,17 @@
 @import url(modules.css);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+#admin-sidebar {
+  background-color: var(--admin);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
+#encoder-sidebar {
+  background-color: var(--encoder);
 }
 
-body {
-  background-color: var(--body);
+#viewer-sidebar {
+  background-color: var(--viewer);
 }
+
 
 /* ============================ LOGIN ================================ */
 .login {
@@ -128,7 +119,6 @@ body {
 .sidebar {
   width: 260px;
   height: 100vh;
-  background-color: var(--peach);
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -1009,16 +999,16 @@ select option {
 }
 
 /* on */
-.switch input:checked + .slider {
+.switch input:checked+.slider {
   background-color: #f2c94c;
 }
 
-.switch input:checked + .slider::before {
+.switch input:checked+.slider::before {
   transform: translateX(20px);
 }
 
-.switch input:focus + .slider,
-.switch input:active + .slider {
+.switch input:focus+.slider,
+.switch input:active+.slider {
   box-shadow: none;
 }
 
@@ -1088,7 +1078,7 @@ select option {
 /* ============================ SYSTEM CONFIGURATION ================================ */
 
 .asset-detail-section {
-  padding: 20px 50px;
+  padding: 20px 30px;
 }
 
 .asset-header {
@@ -1138,7 +1128,7 @@ select option {
   display: inline-flex;
   gap: 32px;
   width: 100%;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   padding: 0 10px;
 }
 
@@ -1180,6 +1170,12 @@ select option {
   transition: box-shadow 0.2s ease;
 }
 
+.asset-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .section-toggle {
   cursor: pointer;
   padding: 16px 20px;
@@ -1192,13 +1188,22 @@ select option {
 
 .section-toggle i {
   transition: transform 0.3s ease;
-  color: #6c757d;
+}
+
+.edit-asset-btn i {
+  cursor: pointer;
+  color: var(--black);
+  font-size: 16px;
+}
+
+.edit-asset-btn i:hover {
+  transform: scale(1.1)
 }
 
 .section-body {
   overflow: hidden;
   max-height: 1000px;
-  transition: max-height 0.35s ease, padding 0.25s ease;
+  transition: max-height 0.3s ease, padding 0.25s ease;
   padding: 20px;
 }
 
@@ -1208,25 +1213,35 @@ select option {
   padding-bottom: 0;
 }
 
-.section-card.collapsed .section-toggle i {
+.section-card.collapsed .asset-title i {
   transform: rotate(-90deg);
 }
 
-/* ===== Details ===== */
+
 .detail-row {
   margin-bottom: 14px;
 }
 
-.label {
+.section-card .label {
   font-size: 16px;
   color: #6c757d;
 }
 
-.value {
+.section-card .value {
   font-weight: 500;
+  font-size: 16px;
 }
 
-/* ===== History ===== */
+.history-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.see-all {
+  text-decoration: none;
+  font-size: 12px;
+}
+
 .history-list {
   display: flex;
   flex-direction: column;
@@ -1234,7 +1249,7 @@ select option {
 }
 
 .history-item {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .history-item small {
