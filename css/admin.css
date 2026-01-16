@@ -1,6 +1,15 @@
 @import url(modules.css);
 
+body {
+  background-color: var(--body-bg);
+}
+
+/* SIDEBARD COLORS */
 #admin-sidebar {
+  background-color: var(--admin);
+}
+
+#asset-detail-sidebar {
   background-color: var(--admin);
 }
 
@@ -96,7 +105,7 @@
   border-radius: 30px;
   border: none;
   background: var(--orange);
-  color: #fff;
+  color: var(--white);
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -109,6 +118,19 @@
 }
 
 /* ============================ LOGIN ================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ============================ SIDEBAR ================================ */
 .layout {
@@ -148,22 +170,24 @@
   align-items: center;
   gap: 15px;
   padding: 12px 20px;
-  color: var(--black);
+  color: var(--text-black);
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .menu a:hover {
-  background-color: var(--beige);
+  background-color: var(--admin-hover);
+  transition: all 0.3s ease;
 }
 
 .menu a.active {
-  background-color: var(--beige);
-  font-weight: 600;
+  background-color: var(--admin-hover);
+  font-weight: var(--text-600);
+  transition: all 0.3s ease;
 }
 
 .menu-link i {
-  font-size: 16px;
+  font-size: var(--text-16px);
 }
 
 .sidebar-footer {
@@ -183,7 +207,7 @@
 .user-icon {
   width: 36px;
   height: 36px;
-  background: #fff;
+  background: #FCFCFC;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -216,15 +240,22 @@
 
 /* ============================ SIDEBAR ================================ */
 
+
+
+
+
+
+
+
 /* ============================ NAVBAR ================================ */
 .navbar {
-  background-color: var(--white);
+  background-color: var(--card-bg);
   padding: 10px 30px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 .navbar h3 {
@@ -240,15 +271,15 @@
 .search-box {
   display: flex;
   align-items: center;
-  background: #f1f1f1;
+  background-color: var(--search-bg);
+  border: 1px solid var(--search-border);
   padding: 10px 15px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   width: 300px;
-  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .search-box i {
-  color: #999;
+  color: var(--search-icon);
   font-size: 16px;
 }
 
@@ -257,13 +288,13 @@
   outline: none;
   margin-left: 10px;
   width: 100%;
-  font-size: 14px;
+  font-size: var(--text-14px);
   background: transparent;
 }
 
 .search-box input::placeholder {
-  color: #999;
-  font-size: 16px;
+  color: var(--search-placeholder);
+  font-size: var(--text-14px);
 }
 
 .add-btn {
@@ -271,12 +302,12 @@
   align-items: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--button);
-  color: var(--black);
+  background-color: var(--button);
+  color: var(--text-black);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--text-600);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -286,11 +317,8 @@
 }
 
 .add-btn:hover {
-  opacity: 0.8;
-}
-
-.add-btn:active {
-  transform: scale(0.98);
+  opacity: 0.9;
+  transform: scale(1.01);
 }
 
 .notif-bell {
@@ -304,12 +332,20 @@
 
 /* ============================ NAVBAR ================================ */
 
+
+
+
+
+
+
+
+
 /* ============================ TABLE ================================ */
 .table-container {
-  background: #fff;
-  border-radius: 5px;
+  background-color: var(--table-bg);
+  border-radius: var(--radius);
   padding: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 .controls {
@@ -359,9 +395,9 @@ table td {
 }
 
 .asset-link {
-  color: #0d6efd;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--text-600);
+  cursor: pointer;
 }
 
 .asset-link:hover {
@@ -374,13 +410,21 @@ table td {
 
 /* ============================ TABLE ================================ */
 
+
+
+
+
+
+
+
+
 /* ============================ DASHBOARD ================================ */
 /* .contents-box {
   padding: 0 30px;
 } */
 
 #dashboard h5 {
-  color: #7e7e7e;
+  color: var(--text-gray);
 }
 
 #dashboard .card {
@@ -391,15 +435,15 @@ table td {
   align-items: center;
   padding: 20px 30px;
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 /* chart */
 .chart-card {
-  background: #ffffff;
-  border-radius: 5px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   text-align: center;
 }
 
@@ -417,11 +461,17 @@ table td {
   transform: translate(-50%, -50%);
   font-size: 20px;
   font-weight: 600;
-  color: #000;
+  color: var(--text-black);
   pointer-events: none;
 }
 
 /* ============================ DASHBOARD ================================ */
+
+
+
+
+
+
 
 /* ============================ ASSETS ================================ */
 .pagination {
@@ -435,9 +485,9 @@ table td {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--text-14px);
   padding: 4px 8px;
-  color: #000;
+  color: var(--text-black);
 }
 
 .pagination button:hover {
@@ -460,22 +510,22 @@ table td {
 
 /* modal */
 .asset-option {
-  border: 1px solid #ddd;
-  border-radius: 12px;
+  border: 1px solid var(--option-border);
+  border-radius: var(--radius);
   padding: 25px;
   text-align: center;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 .asset-option i {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 10px;
 }
 
 .asset-option.active {
-  border-color: #f4b04f;
-  background: #fff7ea;
+  border-color: var(--button);
+  background: var(--option-bg);
 }
 
 .modal-footer-custom {
@@ -487,21 +537,39 @@ table td {
   background: var(--button);
   border: none;
   padding: 8px 28px;
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 
 .next-btn:hover {
-  background: #eaa63f;
+  opacity: 0.9;
+  transform: scale(1.01);
 }
 
 /* ============================ ASSETS ================================ */
 
+
+
+
+
+
+
+
+
 /* ============================ USER MANAGEMENT ================================ */
+#users .card {
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
 
 /* modal */
 .add-user-modal {
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border-radius: var(--radius);
 }
 
 .form-control,
@@ -512,13 +580,13 @@ table td {
 .form-control:focus,
 .form-select:focus {
   border-color: var(--button);
-  background-color: #ffffff;
+  background-color: var(--input-bg);
   box-shadow: none;
 }
 
 select option {
   padding: 10px;
-  font-size: 14px;
+  font-size: var(--text-14px);
 }
 
 .add-user-modal .form-check-input:hover {
@@ -528,17 +596,17 @@ select option {
 
 .form-check-input:checked {
   background-color: var(--button);
-  border-color: #facc15;
+  border-color: var(--button);
 }
 
 .modal-footer .btn {
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: var(--radius);
+  font-size: var(--text-16px);
+  font-weight: var(--text-600);
 }
 
 .form-label {
-  font-size: 16px;
+  font-size: var(--text-16px);
 }
 
 /* number of users */
@@ -557,36 +625,36 @@ select option {
 /* users */
 .all-users {
   background-color: #fef9ec;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #f5ca47;
 }
 
 .active-users {
   background-color: #e7f5ec;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #27a857;
 }
 
 .inactive-users {
   background-color: #ffd3d3;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #e63131;
 }
 
 .user-count h6 {
-  color: #7e7e7e;
+  color: var(--text-gray);
 }
 
 /* profiles */
 .profile-card {
-  min-height: 37vh;
+  min-height: 35vh;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius);
+  background-color: var(--card-bg);
 }
 
 .profile-info {
@@ -603,12 +671,12 @@ select option {
 }
 
 .profile-name {
-  font-size: 20px;
+  font-size: var(--text-16px);
 }
 
 .profile-contacts p {
   margin: 0;
-  font-size: 20px;
+  font-size: var(--text-16px);
 }
 
 .email,
@@ -616,11 +684,7 @@ select option {
 .user-type {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.email p {
-  text-decoration: underline;
+  gap: 12px;
 }
 
 .control-buttons {
@@ -635,11 +699,11 @@ select option {
   gap: 8px;
   padding: 10px 20px;
   background: var(--button);
-  color: var(--black);
+  color: var(--text-black);
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: var(--radius);
+  font-size: var(--text-16px);
+  font-weight: var(--text-600);
 
   cursor: pointer;
   transition: all 0.3s ease;
@@ -647,11 +711,8 @@ select option {
 }
 
 .edit-btn:hover {
-  opacity: 0.8;
-}
-
-.edit-btn:active {
-  transform: scale(0.98);
+  opacity: 0.9;
+  transform: scale(1.01);
 }
 
 .delete-btn {
@@ -660,7 +721,7 @@ select option {
   justify-content: center;
   padding: 0px 10px;
   background: none;
-  color: red;
+  color: var(--delete-btn);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -672,17 +733,25 @@ select option {
 
 /* ============================ USER MANAGEMENT ================================ */
 
+
+
+
+
 /* ============================ MAINTENANCE & REPAIR ================================ */
 #maintenance span {
-  font-weight: 600;
+  font-weight: var(--text-600);
 }
 
 #maintenance .card {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
   padding: 20px 30px;
+  border-radius: var(--radius);
+  border: none;
+  box-shadow: var(--box-shadow);
 }
 
 #maintenance i {
@@ -691,34 +760,34 @@ select option {
 
 .total-maintenance {
   background-color: #fef9ec;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #f5ca47;
 }
 
 .in-progress {
   background-color: #ffebda;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #ff9100;
 }
 
 .completed {
   background-color: #e7f5ec;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #27a857;
 }
 
 .high-priority {
   background-color: #ffd3d3;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 15px;
   color: #e63131;
 }
 
 .maintenance-count h6 {
-  color: #7e7e7e;
+  color: var(--text-gray);
 }
 
 /* maintenance table */
@@ -759,8 +828,8 @@ select option {
 .pill {
   padding: 5px 14px;
   border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: var(--text-12px);
+  font-weight: var(--text-600);
   display: inline-block;
 }
 
@@ -797,8 +866,8 @@ select option {
 }
 
 .view-link {
-  font-weight: 600;
-  color: #000;
+  font-weight: var(--text-600);
+  color: var(--text-black);
   text-decoration: none;
 }
 
@@ -808,20 +877,28 @@ select option {
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
 
+
+
+
+
+
+
+
+
 /* ============================ REPORTS & ANALYTICS ================================ */
 #reports .card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 20px 25px;
   border: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }
 
 #reports h6 {
-  color: #7e7e7e;
+  color: var(--text-gray);
 }
 
 .report-control {
@@ -832,51 +909,44 @@ select option {
 }
 
 .create-report-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 20px;
-  background: var(--button);
-  color: var(--black);
+  background-color: var(--button);
+  color: var(--text-black);
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: var(--radius);
+  font-size: var(--text-16px);
+  font-weight: var(--text-600);
 
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .create-report-btn:hover {
-  opacity: 0.8;
-}
-
-.create-report-btn:active {
-  transform: scale(0.98);
+  opacity: 0.9;
+  transform: scale(1.01);
 }
 
 .report-container {
   min-height: 40vh;
   padding: 0 20px 10px 20px;
-  border-radius: 5px;
 }
 
 .report-card {
-  background-color: var(--white);
+  background-color: var(--card-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
   margin-bottom: 20px;
 }
 
 .report-card i {
-  font-size: 20px;
+  font-size: var(--text-20px);
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: var(--text-16px);
 }
 
 .report-card i:hover {
@@ -885,36 +955,44 @@ select option {
 
 /* ============================ REPORTS & ANALYTICS ================================ */
 
+
+
+
+
+
+
+
+
+
 /* ============================ SYSTEM CONFIGURATION ================================ */
 .company-info {
   min-height: 35vh;
   padding: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--radius);
+  background-color: var(--card-bg);
 }
 
 .subtitle {
-  font-size: 16px;
-  color: #7e7e7e;
+  font-size: var(--text-16px);
+  color: var(--text-gray);
   margin-bottom: 20px;
 }
 
 .company-info label {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--text-14px);
+  font-weight: var(--text-600);
   margin-bottom: 6px;
 }
 
 .form-control {
-  background-color: #f1f1f1;
-  border: 1px solid #e6e2da;
+  background-color: var(--search-bg);
+  border: 1px solid var(--search-border);
   padding: 10px 12px;
   transition: all 0.5s ease;
 }
 
 .form-control:focus {
-  box-shadow: none;
   border-color: var(--button);
 }
 
@@ -924,23 +1002,19 @@ select option {
   justify-content: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--button);
-  color: var(--black);
+  background-color: var(--button);
+  color: var(--text-black);
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 600;
-
+  border-radius: var(--radius);
+  font-size: var(--text-16px);
+  font-weight: var(--text-600);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .save-btn:hover {
-  opacity: 0.8;
-}
-
-.save-btn:active {
-  transform: scale(0.98);
+  opacity: 0.9;
+  transform: scale(1.01);
 }
 
 /* settings */
@@ -949,19 +1023,19 @@ select option {
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--search-border);
 }
 
 .setting-text h4 {
-  font-size: 14px;
+  font-size: var(--text-14px);
   margin: 0;
-  font-weight: 600;
+  font-weight: var(--text-600);
 }
 
 .setting-text p {
   margin: 4px 0 0;
-  font-size: 13px;
-  color: #777;
+  font-size: var(--text-12px);
+  color: var(--text-gray);
 }
 
 /* toggle switch */
@@ -981,7 +1055,7 @@ select option {
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background-color: #e5e5e5;
+  background-color: var(--search-border);
   transition: background-color 0.2s ease;
   border-radius: 30px;
 }
@@ -993,14 +1067,14 @@ select option {
   width: 18px;
   left: 3px;
   top: 3px;
-  background-color: #fff;
+  background-color: var(--white);
   transition: transform 0.2s ease;
   border-radius: 50%;
 }
 
 /* on */
 .switch input:checked+.slider {
-  background-color: #f2c94c;
+  background-color: var(--button);
 }
 
 .switch input:checked+.slider::before {
@@ -1014,38 +1088,37 @@ select option {
 
 /* user access settings */
 .role-header {
-  background: #f1f3f5;
+  background: var(--search-border);
   padding: 10px 16px;
-  font-weight: 600;
-  border-radius: 6px;
+  font-weight: var(--text-600);
+  border-radius: var(--radius);
   margin-bottom: 16px;
 }
 
 .permission-table th {
-  font-size: 14px;
-  font-weight: 600;
-  color: #555;
-  border-bottom: 1px solid #e9ecef;
+  font-size: var(--text-14px);
+  font-weight: var(--text-600);
+  color: var(--text-gray);
+  border-bottom: 1px solid var(--search-border);
 }
 
 .permission-table td {
   vertical-align: middle;
-  font-size: 14px;
-  border-bottom: 1px solid #f0f0f0;
+  font-size: var(--text-14px);
+  border-bottom: 1px solid var(--search-border);
 }
 
 /* permission buttons */
 .perm-btn {
-  font-size: 13px;
+  font-size: var(--text-12px);
   padding: 6px 14px;
-  border-radius: 6px;
-  border: 1px solid #ced4da;
-  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid var(--search-border);
   transition: all 0.15s ease;
 }
 
 .perm-btn:hover {
-  background: #f8f9fa;
+  background: var(--white);
 }
 
 .perm-btn.active.none {
@@ -1077,15 +1150,19 @@ select option {
 
 /* ============================ SYSTEM CONFIGURATION ================================ */
 
+
+
+
+/* ============================ ASSET DETAIL ================================ */
 .asset-detail-section {
   padding: 20px 30px;
 }
 
 .asset-header {
-  background: #ffffff;
+  background: var(--card-bg);
   padding: 20px 30px 4px 30px;
-  border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -1095,7 +1172,7 @@ select option {
 .asset-icon {
   width: 80px;
   height: 80px;
-  border: 2px solid #111;
+  border: 1px solid var(--black);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -1104,7 +1181,7 @@ select option {
 }
 
 .asset-meta {
-  font-size: 16px;
+  font-size: var(--text-16px);
 }
 
 .asset-meta .divider {
@@ -1112,14 +1189,14 @@ select option {
 }
 
 .delete-btn i {
-  font-size: 16px;
+  font-size: var(--text-16px);
 }
 
 .date-details {
   display: flex;
   gap: 50px;
   justify-content: end;
-  font-size: 12px;
+  font-size: var(--text-12px);
 }
 
 /* asset tab */
@@ -1128,7 +1205,7 @@ select option {
   display: inline-flex;
   gap: 32px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--search-border);
   padding: 0 10px;
 }
 
@@ -1136,9 +1213,9 @@ select option {
   background: none;
   border: none;
   padding: 8px 0;
-  font-weight: 500;
-  color: var(--black);
-  font-size: 20px;
+  font-weight: var(--text-600);
+  color: var(--text-black);
+  font-size: var(--text-20px);
   cursor: pointer;
 }
 
@@ -1166,7 +1243,7 @@ select option {
 .section-card {
   border: none;
   border-radius: 5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   transition: box-shadow 0.2s ease;
 }
 
@@ -1182,7 +1259,7 @@ select option {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--search-border);
   border-radius: 5px;
 }
 
@@ -1193,7 +1270,7 @@ select option {
 .edit-asset-btn i {
   cursor: pointer;
   color: var(--black);
-  font-size: 16px;
+  font-size: var(--text-16px);
 }
 
 .edit-asset-btn i:hover {
@@ -1217,29 +1294,28 @@ select option {
   transform: rotate(-90deg);
 }
 
-
 .detail-row {
   margin-bottom: 14px;
 }
 
 .section-card .label {
-  font-size: 16px;
-  color: #6c757d;
+  font-size: var(--text-16px);
+  color: var(--text-gray);
 }
 
 .section-card .value {
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: var(--text-600);
+  font-size: var(--text-16px);
 }
 
 .history-header {
   padding: 16px 20px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--search-border);
 }
 
 .see-all {
   text-decoration: none;
-  font-size: 12px;
+  font-size: var(--text-12px);
 }
 
 .history-list {
@@ -1249,16 +1325,18 @@ select option {
 }
 
 .history-item {
-  font-size: 16px;
+  font-size: var(--text-16px);
 }
 
 .history-item small {
   display: block;
-  color: #6c757d;
+  color: var(--text-gray);
 }
 
 .history-item .date {
   display: block;
-  font-size: 12px;
-  color: #999;
+  font-size: var(--text-12px);
+  color: var(--text-gray);
 }
+
+/* ============================ ASSET DETAIL ================================ */

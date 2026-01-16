@@ -1,20 +1,56 @@
 :root {
   /* General Color */
-  --white: #ffffff;
+
   --beige: #fff8e7;
   --orange: #f26c58;
   --peach: #fdb38e;
-  --black: #000000;
+  --black: #1C1C1E;
+  --white: #FAFAFA;
 
-  /*  */
-  --body: #f7f7f8;
-  --button: #f0ab4b;
-  --reports: #F5F5F5;
+
+  /* Elements */
+  --body-bg: #F5F5F5;
+  --button: #F0AB4B;
+  --delete-btn: #ee2121;
+  --reports: #FAFAFA;
+  --card-bg: #FCFCFC;
+  --table-bg: #FCFCFC;
+
+  --search-bg: #EFEFEF;
+  --search-border: #D1D1D1;
+  --search-focus: #C8BBAA;
+  --search-icon: #999999;
+  --search-placeholder: #999999;
+
+  --input-bg: #FCFCFC;
+
+  --option-border: #D1D1D1;
+  --option-bg: #fff7ea;
+
+  --text-white: #FAFAFA;
+  --text-black: #1C1C1E;
+  --text-gray: #6c757d;
+  --text-20px: 20px;
+  --text-16px: 16px;
+  --text-14px: 14px;
+  --text-12px: 12px;
+  --text-600: 600;
+  --text-link: #0d6efd;
+
+  --radius: 10px;
+
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
 
   /* Sidebar */
   --admin: #FDB38E;
   --encoder: #F5E1B9;
   --viewer: #F5E1B9;
+
+  /* Hover and Active Tabs */
+  --admin-hover: #F59E7A;
+  --encoder-hover: #F0DCA5;
+  --viewer-hover: #F0DCA5;
 }
 
 * {
@@ -33,8 +69,4 @@ h5,
 h6,
 p {
   margin: 0;
-}
-
-body {
-  background-color: var(--body);
 }
