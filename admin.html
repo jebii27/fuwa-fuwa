@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -496,30 +496,31 @@
                       </div>
                       <div class="mb-3">
                         <label class="form-label"
-                          >Firewall Type
+                          >Cabinet Type
                           <span class="required-text">* Required</span>
                         </label>
                         <select class="form-select">
-                          <option>Hardware (Traditional)</option>
-                          <option>UTM</option>
-                          <option>Next-Gen Firewall (NGFW)</option>
-                          <option>Virtual / Cloud Firewall</option>
+                          <option>Wall Mount</option>
+                          <option>Free Standing</option>
+                          <option>Outdoor / Rugged</option>
+                          <option>Acoustic (Soundproof)</option>
                         </select>
                       </div>
                       <div class="mb-3">
                         <label class="form-label"
-                          >Firmware Version
+                          >Rack Units
                           <span class="required-text">* Required</span></label
                         ><input type="text" class="form-control" />
                       </div>
                       <div class="mb-3">
                         <label class="form-label"
-                          >VPN Support
+                          >Cooling Type
                           <span class="required-text">* Required</span>
                         </label>
                         <select class="form-select">
-                          <option>Yes</option>
-                          <option>No</option>
+                          <option>Passive (Vented)</option>
+                          <option>Active (Fan Kits)</option>
+                          <option>Precision AC</option>
                         </select>
                       </div>
                       <div class="mb-3">
@@ -589,6 +590,132 @@
                           <option>PoE+ (802.3at)</option>
                           <option>UPOE / PoE++ (802.3bt)</option>
                         </select>
+                      </div>
+                    </div>
+
+                    <!-- Modem -->
+                    <div class="tech-group" data-type="Modem">
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Asset Model
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >ISP Name
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Connection Type
+                          <span class="required-text">* Required</span>
+                        </label>
+                        <select class="form-select">
+                          <option>Fiber Optic (GPON)</option>
+                          <option>DSL (ADSL / VDSL)</option>
+                          <option>Cable (DOCSIS)</option>
+                          <option>Satellite</option>
+                          <option>LTE / 5G Wireless</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Speed Rating
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >MAC Address
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Communication Cabinet -->
+                    <div class="tech-group" data-type="Communication Cabinet">
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Asset Model
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Cabinet Type
+                          <span class="required-text">* Required</span>
+                        </label>
+                        <select class="form-select">
+                          <option>Wall Mount</option>
+                          <option>Free Standing</option>
+                          <option>Outdoor / Rugged</option>
+                          <option>Acoustic (Soundproof)</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Rack Units
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Cooling Type
+                          <span class="required-text">* Required</span>
+                        </label>
+                        <select class="form-select">
+                          <option>Passive (Vented)</option>
+                          <option>Active (Fan Kits)</option>
+                          <option>Precision AC</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Power Capacity (Amps / Watts)
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                    </div>
+
+                    <!-- Server Cabinet -->
+                    <div class="tech-group" data-type="Server Cabinet">
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Asset Model
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Rack Units
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Cooling System
+                          <span class="required-text">* Required</span>
+                        </label>
+                        <select class="form-select">
+                          <option>Perforated Doors (Airflow)</option>
+                          <option>In-Row Cooling</option>
+                          <option>Rear Door Heat Exchanger</option>
+                          <option>Liquid Cooled</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >PDU Details
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label"
+                          >Weight Capacity
+                          <span class="required-text">* Required</span></label
+                        ><input type="text" class="form-control" />
                       </div>
                     </div>
 
@@ -2305,6 +2432,9 @@
         "Digital Asset": ["Active", "Inactive", "Expired"],
       };
 
+      /* ===============================
+     CATEGORY & TYPE SELECTION
+  =============================== */
       function selectCategory(category, element) {
         selectedCategory = category;
 
@@ -2337,6 +2467,9 @@
         });
       }
 
+      /* ===============================
+     SLIDE NAVIGATION
+  =============================== */
       function nextSlide() {
         if (currentSlide === 1) {
           const type = document.getElementById("assetType").value;
@@ -2347,115 +2480,139 @@
           }
 
           selectedType = type;
-
           document.getElementById("summaryCategory").value = selectedCategory;
           document.getElementById("summaryType").value = selectedType;
-
           populateOperationalStatus();
 
-          document.getElementById("slide1").style.display = "none";
-          document.getElementById("slide2").style.display = "block";
-          currentSlide = 2;
+          showSlide(2);
           return;
         }
 
         if (currentSlide === 2) {
-          document.getElementById("slide2").style.display = "none";
-          document.getElementById("slide3").style.display = "block";
+          showSlide(3);
           showTechnicalFields();
-          currentSlide = 3;
           return;
         }
 
         if (currentSlide === 3) {
-          document.getElementById("slide3").style.display = "none";
-          document.getElementById("slide4").style.display = "block";
-          currentSlide = 4;
+          showSlide(4);
           return;
         }
 
         if (currentSlide === 4) {
-          document.getElementById("slide4").style.display = "none";
-          document.getElementById("slide5").style.display = "block";
-          currentSlide = 5;
+          showSlide(5);
           return;
         }
 
         if (currentSlide === 5) {
-          document.getElementById("slide5").style.display = "none";
-          document.getElementById("slide6").style.display = "block";
-          currentSlide = 6;
+          showSlide(6);
           return;
         }
 
         if (currentSlide === 6) {
           alert("Asset ready for submission.");
-          // backend submission can be added here later
         }
       }
 
       function prevSlide() {
-        if (currentSlide === 6) {
-          document.getElementById("slide6").style.display = "none";
-          document.getElementById("slide5").style.display = "block";
-          currentSlide = 5;
-          return;
-        }
-
-        if (currentSlide === 5) {
-          document.getElementById("slide5").style.display = "none";
-          document.getElementById("slide4").style.display = "block";
-          currentSlide = 4;
-          return;
-        }
-
-        if (currentSlide === 4) {
-          document.getElementById("slide4").style.display = "none";
-          document.getElementById("slide3").style.display = "block";
-          currentSlide = 3;
-          return;
-        }
-
-        if (currentSlide === 3) {
-          document.getElementById("slide3").style.display = "none";
-          document.getElementById("slide2").style.display = "block";
-          currentSlide = 2;
-          return;
-        }
-
-        if (currentSlide === 2) {
-          document.getElementById("slide2").style.display = "none";
-          document.getElementById("slide1").style.display = "block";
-          currentSlide = 1;
+        if (currentSlide > 1) {
+          showSlide(currentSlide - 1);
+          if (currentSlide === 3) showTechnicalFields();
         }
       }
 
+      function showSlide(slideNumber) {
+        document
+          .querySelectorAll('[id^="slide"]')
+          .forEach((slide) => (slide.style.display = "none"));
+
+        document.getElementById(`slide${slideNumber}`).style.display = "block";
+        currentSlide = slideNumber;
+      }
+
+      /* ===============================
+     TECHNICAL SPECIFICATIONS
+  =============================== */
       function showTechnicalFields() {
         document.querySelectorAll(".tech-group").forEach((group) => {
           group.style.display = "none";
         });
 
-        // PC & Laptop share the same technical fields
         if (selectedType === "PC" || selectedType === "Laptop") {
-          document.querySelector(
-            '.tech-group[data-type="PC Laptop"]'
-          ).style.display = "block";
+          const pcGroup = document.querySelector(
+            '.tech-group[data-type="PC Laptop"]',
+          );
+          if (pcGroup) pcGroup.style.display = "block";
           return;
         }
 
-        // Other physical asset types
         const techGroup = document.querySelector(
-          `.tech-group[data-type="${selectedType}"]`
+          `.tech-group[data-type="${selectedType}"]`,
         );
 
         if (techGroup) {
           techGroup.style.display = "block";
         }
       }
+
+      /* ===============================
+     FULL MODAL RESET
+  =============================== */
+      function resetAssetModal() {
+        // Reset variables
+        selectedCategory = "";
+        selectedType = "";
+        currentSlide = 1;
+
+        // Hide all slides except slide 1
+        document
+          .querySelectorAll('[id^="slide"]')
+          .forEach((slide) => (slide.style.display = "none"));
+        document.getElementById("slide1").style.display = "block";
+
+        // Reset asset option UI
+        document
+          .querySelectorAll(".asset-option")
+          .forEach((opt) => opt.classList.remove("active"));
+
+        // Reset selects
+        const assetTypeSelect = document.getElementById("assetType");
+        assetTypeSelect.disabled = true;
+        assetTypeSelect.innerHTML =
+          '<option value="">Select asset category first</option>';
+
+        const operationalStatus = document.getElementById("operationalStatus");
+        if (operationalStatus) {
+          operationalStatus.innerHTML =
+            '<option value="">Select status</option>';
+        }
+
+        // Reset all inputs & selects inside modal
+        document
+          .querySelectorAll("#assetModal input, #assetModal select")
+          .forEach((el) => {
+            if (el.type === "checkbox" || el.type === "radio") {
+              el.checked = false;
+            } else {
+              el.value = "";
+            }
+          });
+
+        // Hide technical specs
+        document.querySelectorAll(".tech-group").forEach((group) => {
+          group.style.display = "none";
+        });
+      }
+
+      /* ===============================
+     BOOTSTRAP MODAL EVENT
+  =============================== */
+      const assetModal = document.getElementById("assetModal");
+      assetModal.addEventListener("hidden.bs.modal", resetAssetModal);
     </script>
 
     <!-- RESET -->
-    <script>
+    <!-- <script>
       const assetModal = document.getElementById("assetModal");
 
       assetModal.addEventListener("hidden.bs.modal", () => {
@@ -2495,6 +2652,6 @@
           group.style.display = "none";
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>
