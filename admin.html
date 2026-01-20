@@ -41,8 +41,14 @@
           <a href="#" class="menu-link" data-target="assets">
             <i class="fa-solid fa-boxes-stacked"></i> Assets
           </a>
+          <a href="#" class="menu-link" data-target="asset-request">
+            <i class="fa-solid fa-dolly"></i> Asset Request
+          </a>
           <a href="#" class="menu-link" data-target="users">
             <i class="fa-solid fa-users"></i> User Management
+          </a>
+          <a href="#" class="menu-link" data-target="vendors">
+            <i class="fa-solid fa-shop"></i> Vendor Management
           </a>
           <a href="#" class="menu-link" data-target="maintenance">
             <i class="fa-solid fa-screwdriver-wrench"></i> Maintenance & Repair
@@ -305,9 +311,8 @@
               <div class="modal-content">
                 <!-- modal header -->
                 <div class="modal-header">
-                  <h3 class="modal-title w-100 text-center fw-semibold">
-                    ADD NEW ASSET
-                  </h3>
+                  <h5 class="modal-title fw-semibold">ADD NEW ASSET</h5>
+
                   <button
                     class="btn-close shadow-none"
                     data-bs-dismiss="modal"
@@ -1127,6 +1132,330 @@
           </div>
         </div>
 
+        <!-- Asset Request -->
+        <div id="asset-request" class="content-section">
+          <!-- navbar -->
+          <div class="navbar">
+            <h2>Asset Request</h2>
+            <div class="group-box">
+              <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search..." />
+              </div>
+              <button
+                class="add-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#assetModal"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add New Asset
+              </button>
+              <i class="fa-regular fa-bell notif-bell"></i>
+            </div>
+          </div>
+
+          <!-- numbers -->
+          <div class="row my-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="card">
+                <h5>Total Request</h5>
+                <h1>12</h1>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card">
+                <h5>Total Procured</h5>
+                <h1>18</h1>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card">
+                <h5>Emergency Priority</h5>
+                <h1>5</h1>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="card">
+                <h5>On-hand Stocks</h5>
+                <h1>5</h1>
+              </div>
+            </div>
+          </div>
+
+          <!-- overview -->
+          <div class="request-container">
+            <!-- controls -->
+            <div class="request-control">
+              <h3>Requests Overview</h3>
+              <i class="fa-solid fa-filter"></i>
+            </div>
+
+            <!-- filters -->
+            <div class="d-flex gap-2 mb-4">
+              <span class="filter-pill active">All</span>
+              <span class="filter-pill">For Review</span>
+              <span class="filter-pill">Pending Approval</span>
+              <span class="filter-pill">In Procurement</span>
+              <span class="filter-pill">Procured</span>
+            </div>
+
+            <!-- requests card -->
+            <div class="row">
+              <!-- asset card -->
+              <div class="col-lg-4">
+                <div class="request-card low">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <!-- asset-info -->
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="asset-icon">
+                        <i class="fa-solid fa-laptop"></i>
+                      </div>
+                      <div>
+                        <h6 class="mb-1 fw-semibold">Laptop - Dell Latitude</h6>
+                        <small class="text-muted">REQ-2026-001</small>
+                        <div class="mt-1">
+                          <span class="request-status for-review"
+                            >For Review</span
+                          >
+                          <span class="priority-badge low">Low Priority</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- time and buttons -->
+                    <div class="d-flex flex-column align-items-end gap-3">
+                      <small class="text-muted">2 hrs ago</small>
+
+                      <!-- action buttons -->
+                      <div class="d-flex gap-2">
+                        <button
+                          class="btn btn-outline-primary action-btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#requestDetailsModal"
+                        >
+                          <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <button class="btn btn-outline-success action-btn">
+                          <i class="fa-solid fa-check"></i>
+                        </button>
+                        <button class="btn btn-outline-danger action-btn">
+                          <i class="fa-solid fa-xmark"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- modal -->
+            <div
+              class="modal fade"
+              id="requestDetailsModal"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable"
+              >
+                <div class="modal-content rounded-3">
+                  <!-- modal header -->
+                  <div class="modal-header">
+                    <h5 class="modal-title fw-semibold">
+                      ASSET REQUEST DETAILS
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close shadow-none"
+                      data-bs-dismiss="modal"
+                    ></button>
+                  </div>
+
+                  <!-- modal body -->
+                  <div class="modal-body px-4">
+                    <!-- ===== requester information ===== -->
+                    <section class="mb-4">
+                      <h6 class="fw-semibold mb-3">
+                        <i class="fa-solid fa-user me-2 text-secondary"></i>
+                        Requester Information
+                      </h6>
+
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label class="form-label text-muted"
+                            >Requested By</label
+                          >
+                          <div class="fw-semibold">Juan Dela Cruz</div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label text-muted"
+                            >Department</label
+                          >
+                          <div class="fw-semibold">IT Department</div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <hr />
+
+                    <!-- ===== asset sepcification ===== -->
+                    <section class="mb-4">
+                      <h6 class="fw-semibold mb-3">
+                        <i class="fa-solid fa-box me-2 text-secondary"></i>
+                        Asset Specification
+                      </h6>
+
+                      <div class="row g-3">
+                        <div class="col-lg-6">
+                          <label class="form-label text-muted"
+                            >Asset Type</label
+                          >
+                          <div class="fw-semibold">Hardware</div>
+                        </div>
+                        <div class="col-lg-6">
+                          <label class="form-label text-muted"
+                            >Asset Category</label
+                          >
+                          <div class="fw-semibold">Laptop</div>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <label class="form-label text-muted">Quantity</label>
+                          <div class="fw-semibold">2 Units</div>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <label class="form-label text-muted">
+                            Preferred Model / Specifications
+                          </label>
+                          <div class="fw-semibold">
+                            Dell Latitude 5440, i7, 16GB RAM, 512GB SSD
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    <hr />
+
+                    <!-- ===== justification ===== -->
+                    <section class="mb-4">
+                      <h6 class="fw-semibold mb-3">
+                        <i
+                          class="fa-solid fa-clipboard-list me-2 text-secondary"
+                        ></i>
+                        Justification
+                      </h6>
+
+                      <div class="mb-3">
+                        <label class="form-label text-muted"
+                          >Reason for Request</label
+                        >
+                        <div>Replacement of outdated workstations</div>
+                      </div>
+
+                      <div>
+                        <label class="form-label text-muted"
+                          >Detailed Purpose</label
+                        >
+                        <p>
+                          The requested laptops will be used by developers
+                          assigned to the new internal system upgrade project to
+                          ensure optimal performance and productivity.
+                        </p>
+                      </div>
+                    </section>
+
+                    <hr />
+
+                    <!-- ===== budget ===== -->
+                    <section class="mb-4">
+                      <h6 class="fw-semibold mb-3">
+                        <i
+                          class="fa-solid fa-money-bill me-2 text-secondary"
+                        ></i>
+                        Budget
+                      </h6>
+
+                      <div>
+                        <label class="form-label text-muted"
+                          >Estimated Cost</label
+                        >
+                        <div class="fw-semibold">₱180,000</div>
+                      </div>
+                    </section>
+
+                    <hr />
+
+                    <!-- ===== priority ===== -->
+                    <section class="mb-4">
+                      <h6 class="fw-semibold mb-3">
+                        <i class="fa-solid fa-flag me-2 text-secondary"></i>
+                        Priority Level
+                      </h6>
+
+                      <span class="badge bg-warning text-dark px-3 py-2">
+                        Medium Priority
+                      </span>
+                    </section>
+
+                    <hr />
+
+                    <!-- ===== activity feed ===== -->
+                    <section>
+                      <h6 class="fw-semibold mb-3">
+                        <i
+                          class="fa-solid fa-clock-rotate-left me-2 text-secondary"
+                        ></i>
+                        Activity & Review
+                      </h6>
+
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label class="form-label">Status</label>
+                          <select class="form-select">
+                            <option selected disabled>Select status</option>
+                            <option>For Review</option>
+                            <option>Pending Approval</option>
+                            <option>Approved</option>
+                            <option>Rejected</option>
+                          </select>
+                        </div>
+
+                        <div class="col-md-12">
+                          <label class="form-label">Remarks</label>
+                          <textarea
+                            class="form-control"
+                            rows="3"
+                            placeholder="Add remarks or comments..."
+                          ></textarea>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+
+                  <!-- modal footer -->
+                  <div class="modal-footer">
+                    <button
+                      class="btn btn-outline-secondary shadow-none"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button class="btn btn-danger shadow-none">
+                      <i class="fa-solid fa-xmark me-1"></i> Reject
+                    </button>
+                    <button class="btn btn-success shadow-none">
+                      <i class="fa-solid fa-check me-1"></i> Approve
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Users -->
         <div id="users" class="content-section">
           <!-- navbar -->
@@ -1159,9 +1488,7 @@
             <div class="modal-dialog modal-lg modal-dialog-centered">
               <div class="modal-content add-user-modal">
                 <div class="modal-header">
-                  <h3 class="modal-title w-100 text-center fw-semibold">
-                    ADD NEW USER
-                  </h3>
+                  <h5 class="modal-title fw-semibold">ADD NEW USER</h5>
                   <button
                     type="button"
                     class="btn-close shadow-none"
@@ -2610,48 +2937,5 @@
       const assetModal = document.getElementById("assetModal");
       assetModal.addEventListener("hidden.bs.modal", resetAssetModal);
     </script>
-
-    <!-- RESET -->
-    <!-- <script>
-      const assetModal = document.getElementById("assetModal");
-
-      assetModal.addEventListener("hidden.bs.modal", () => {
-        // variables
-        selectedCategory = "";
-        selectedType = "";
-        currentSlide = 1;
-
-        // reset slides
-        document.getElementById("slide1").style.display = "block";
-        document.getElementById("slide2").style.display = "none";
-        document.getElementById("slide3").style.display = "none";
-
-        // reset active category selection
-        document
-          .querySelectorAll(".asset-option")
-          .forEach((opt) => opt.classList.remove("active"));
-
-        // reset asset type dropdown
-        const assetTypeSelect = document.getElementById("assetType");
-        assetTypeSelect.disabled = true;
-        assetTypeSelect.innerHTML =
-          '<option value="">Select asset category first</option>';
-
-        // clear inputs
-        assetModal
-          .querySelectorAll("input")
-          .forEach((input) => (input.value = ""));
-
-        // reset all selects
-        assetModal.querySelectorAll("select").forEach((select) => {
-          select.selectedIndex = 0;
-        });
-
-        // hide all technical groups
-        document.querySelectorAll(".tech-group").forEach((group) => {
-          group.style.display = "none";
-        });
-      });
-    </script> -->
   </body>
 </html>
