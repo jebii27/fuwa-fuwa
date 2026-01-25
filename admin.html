@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -30,30 +30,55 @@
       </div>
 
       <div class="menu">
+
+        <!-- OPERATIONS -->
+        <div class="menu-section">OPERATIONS</div>
+
         <a href="#" class="menu-link active" data-target="dashboard">
           <i class="fa-solid fa-house"></i> Dashboard
         </a>
+
+        <a href="#" class="menu-link" data-target="notifications">
+          <i class="fa-solid fa-bell"></i> Notifications
+        </a>
+
         <a href="#" class="menu-link" data-target="assets">
           <i class="fa-solid fa-boxes-stacked"></i> Assets
         </a>
+
         <a href="#" class="menu-link" data-target="asset-request">
           <i class="fa-solid fa-dolly"></i> Asset Request
         </a>
-        <a href="#" class="menu-link" data-target="users">
-          <i class="fa-solid fa-users"></i> User Management
-        </a>
-        <a href="#" class="menu-link" data-target="vendors">
-          <i class="fa-solid fa-shop"></i> Vendor Management
-        </a>
+
         <a href="#" class="menu-link" data-target="maintenance">
           <i class="fa-solid fa-screwdriver-wrench"></i> Maintenance & Repair
         </a>
+
+        <!-- ADMINISTRATION -->
+        <div class="menu-section">ADMINISTRATION</div>
+
+        <a href="#" class="menu-link" data-target="users">
+          <i class="fa-solid fa-users"></i> User Management
+        </a>
+
+        <a href="#" class="menu-link" data-target="vendors">
+          <i class="fa-solid fa-shop"></i> Vendor Management
+        </a>
+
+        <!-- INSIGHTS -->
+        <div class="menu-section">INSIGHTS</div>
+
         <a href="#" class="menu-link" data-target="reports">
           <i class="fa-solid fa-chart-column"></i> Reports & Analytics
         </a>
+
+        <!-- SYSTEM -->
+        <div class="menu-section">SYSTEM</div>
+
         <a href="#" class="menu-link" data-target="settings">
           <i class="fa-solid fa-gear"></i> System Configuration
         </a>
+
       </div>
 
       <div class="sidebar-footer">
@@ -69,6 +94,7 @@
         <i class="fa-solid fa-right-from-bracket logout-btn" id="logoutBtn"></i>
       </div>
     </div>
+
 
     <!-- CONTENT -->
     <div class="content">
@@ -290,6 +316,207 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Notification Contents -->
+      <div id="notifications" class="content-section">
+        <!-- navbar -->
+        <div class="navbar">
+          <h2>Notifications</h2>
+          <div class="group-box">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search..." />
+            </div>
+
+            <div class="notif-icon" id="notifToggle">
+              <i class="fa-regular fa-bell notif-bell"></i>
+              <span class="notif-badge">3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- notification panel -->
+        <div class="notif-panel" id="notifPanel">
+
+          <div class="notif-header">
+            <span>Notifications</span>
+            <small class="text-muted">3 new</small>
+          </div>
+
+          <div class="notif-list">
+
+            <div class="notif-item unread">
+              <i class="fa-solid fa-circle-info"></i>
+              <div>
+                <p>New asset request submitted</p>
+                <small>2 minutes ago</small>
+              </div>
+            </div>
+
+            <div class="notif-item unread">
+              <i class="fa-solid fa-check"></i>
+              <div>
+                <p>Request approved</p>
+                <small>10 minutes ago</small>
+              </div>
+            </div>
+
+            <div class="notif-item">
+              <i class="fa-solid fa-box"></i>
+              <div>
+                <p>Inventory updated</p>
+                <small>Yesterday</small>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="notif-footer">
+            <a href="#">View all notifications</a>
+          </div>
+
+        </div>
+
+        <!-- notifications -->
+        <div class="notif-container my-4">
+          <!-- filters -->
+          <div class="controls">
+            <div class="d-flex gap-2">
+              <span class="filter-pill active">All</span>
+              <span class="filter-pill">Read</span>
+              <span class="filter-pill">Unread</span>
+            </div>
+
+            <div class="filters">
+              <select class="form-select form-select-sm w-auto shadow-none" id="timeRangeFilter">
+                <option value="today">Today</option>
+                <option value="7days">Last 7 Days</option>
+                <option value="30days">Last 30 Days</option>
+              </select>
+
+              <select class="form-select form-select-sm w-auto shadow-none" id="notificationType">
+                <option value="Notification type">Notification Type</option>
+                <option value="Asset notifs">Asset</option>
+                <option value="Asset req notifs">Asset Request</option>
+                <option value="Maintenance notifs">
+                  Maintenance
+                </option>
+                <option value="User notif">Users</option>
+                <option value="Vendor notif">Vendors</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="notifs mt-3">
+            <!-- notif 1 -->
+            <div class="notif-row unread" role="button" tabindex="0">
+              <div class="notif-left">
+                <div class="notif-box">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+
+                <div class="notif-text">
+                  <div class="notif-title">
+                    New User Added
+                  </div>
+                  <div class="notif-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum voluptate architecto aut non esse
+                    excepturi deserunt voluptates nobis, fugit incidunt velit. Laboriosam, dolorem tempore reprehenderit
+                    quo inventore aut eveniet repudiandae.
+                  </div>
+                </div>
+              </div>
+
+              <div class="notif-right">
+                <span class="notif-time">24m ago</span>
+                <span class="notif-dot"></span>
+              </div>
+            </div>
+
+            <!-- notif 2 -->
+            <div class="notif-row read" role="button" tabindex="0">
+              <div class="notif-left">
+                <div class="notif-box">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+
+                <div class="notif-text">
+                  <div class="notif-title">
+                    New User Added
+                  </div>
+                  <div class="notif-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum voluptate architecto aut non esse
+                    excepturi deserunt voluptates nobis, fugit incidunt velit. Laboriosam, dolorem tempore reprehenderit
+                    quo inventore aut eveniet repudiandae.
+                  </div>
+                </div>
+              </div>
+
+              <div class="notif-right">
+                <span class="notif-time">24m ago</span>
+                <span class="notif-dot"></span>
+              </div>
+            </div>
+
+            <!-- notif 3 -->
+            <div class="notif-row read" role="button" tabindex="0">
+              <div class="notif-left">
+                <div class="notif-box">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+
+                <div class="notif-text">
+                  <div class="notif-title">
+                    New User Added
+                  </div>
+                  <div class="notif-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum voluptate architecto aut non esse
+                    excepturi deserunt voluptates nobis, fugit incidunt velit. Laboriosam, dolorem tempore reprehenderit
+                    quo inventore aut eveniet repudiandae.
+                  </div>
+                </div>
+              </div>
+
+              <div class="notif-right">
+                <span class="notif-time">24m ago</span>
+                <span class="notif-dot"></span>
+              </div>
+            </div>
+
+            <!-- notif 4 -->
+            <div class="notif-row read" role="button" tabindex="0">
+              <div class="notif-left">
+                <div class="notif-box">
+                  <i class="fa-solid fa-coins"></i>
+                </div>
+
+                <div class="notif-text">
+                  <div class="notif-title">
+                    New User Added
+                  </div>
+                  <div class="notif-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum voluptate architecto aut non esse
+                    excepturi deserunt voluptates nobis, fugit incidunt velit. Laboriosam, dolorem tempore reprehenderit
+                    quo inventore aut eveniet repudiandae.
+                  </div>
+                </div>
+              </div>
+
+              <div class="notif-right">
+                <span class="notif-time">24m ago</span>
+                <span class="notif-dot"></span>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
         </div>
       </div>
 
@@ -1787,6 +2014,264 @@
 
       </div>
 
+      <!-- Users -->
+      <div id="vendors" class="content-section">
+        <!-- navbar -->
+        <div class="navbar">
+          <h2>Vendor Management</h2>
+          <div class="group-box">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search..." />
+            </div>
+            <button class="add-btn" data-bs-toggle="modal" data-bs-target="#addVendorModal">
+              <i class="fa-solid fa-plus"></i>
+              Add Vendor
+            </button>
+            <i class="fa-regular fa-bell notif-bell"></i>
+          </div>
+        </div>
+
+        <!-- add user modal -->
+        <div class="modal fade" id="addVendorModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content add-user-modal">
+              <div class="modal-header">
+                <h5 class="modal-title fw-semibold">ADD NEW USER</h5>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
+              </div>
+
+              <div class="modal-body px-4">
+                <h4 class="mb-3">User Information</h4>
+
+                <!-- employee id -->
+                <div class="mb-3">
+                  <label class="form-label">
+                    Employee ID <span class="text-danger">*</span>
+                  </label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <div class="row">
+                  <!-- department -->
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Select Department</label>
+                    <select class="form-select">
+                      <option selected disabled>Choose department</option>
+                      <option>IT</option>
+                      <option>HR</option>
+                      <option>Finance</option>
+                    </select>
+                  </div>
+
+                  <!-- role -->
+                  <div class="col-md-6 mb-4">
+                    <label class="form-label">Select User Role</label>
+                    <select class="form-select">
+                      <option selected disabled>Choose role</option>
+                      <option>Admin</option>
+                      <option>Staff</option>
+                      <option>Viewer</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- login credentials -->
+                <h4 class="mb-3">Login Credentials</h4>
+
+                <div class="mb-3">
+                  <label class="form-label">
+                    Full Name <span class="text-danger">*</span>
+                  </label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">
+                    Email <span class="text-danger">*</span>
+                  </label>
+                  <input type="email" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">
+                    Username <span class="text-danger">*</span>
+                  </label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <!-- account status -->
+                <div class="mb-3">
+                  <label class="form-label d-block">Account Status</label>
+                  <div class="d-flex gap-4">
+                    <div class="form-check">
+                      <input class="form-check-input shadow-none" type="radio" name="status" id="active" checked />
+                      <label class="form-check-label" for="active">
+                        Active
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input shadow-none" type="radio" name="status" id="inactive" />
+                      <label class="form-check-label" for="inactive">
+                        Inactive
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- modal footer -->
+              <div class="modal-footer border-0 px-4 pb-4">
+                <button type="button" class="btn btn-danger px-4" data-bs-dismiss="modal">
+                  Cancel
+                </button>
+                <button type="button" class="btn btn-success px-4">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- users -->
+        <div class="users-container">
+          <div class="controls mb-3">
+            <h3>User Profiles</h3>
+
+            <!-- filters -->
+            <div class="filters">
+              <!-- department -->
+              <select class="form-select form-select-sm w-auto shadow-none" id="departmentFilter">
+                <option value="all">All Departments</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+              </select>
+
+              <!-- role -->
+              <select class="form-select form-select-sm w-auto shadow-none" id="roleFilter" style="border-radius: 10px">
+                <option value="all">All Roles</option>
+                <option value="Admin">Admin</option>
+                <option value="Manager">Encoder</option>
+                <option value="Staff">Viewer</option>
+              </select>
+
+              <!-- account status -->
+              <select class="form-select form-select-sm w-auto shadow-none" id="accountStatusFilter"
+                style="border-radius: 10px">
+                <option value="all">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- profiles -->
+          <div class="row">
+            <!-- 1 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="profile-card">
+                <!-- profile picture and name -->
+                <div class="profile-info">
+                  <!-- image -->
+                  <img src="assets/user.png" alt="User" />
+                  <!-- name -->
+                  <div class="profile-name">
+                    <strong>Kiara Aquino</strong><br />
+                    <small>@kiara.aquino</small> <br />
+                    <span class="user-status active-user">Active</span>
+                  </div>
+                </div>
+
+                <!-- profile contacts and button -->
+                <div class="profile-contacts mt-4">
+                  <!-- email -->
+                  <div class="email mb-2">
+                    <i class="fa-regular fa-envelope"></i>
+                    <p>kiara.aquino@npb.com.ph</p>
+                  </div>
+                  <!-- department -->
+                  <div class="department mb-2">
+                    <i class="fa-regular fa-folder"></i>
+                    <p>IT Department</p>
+                  </div>
+                  <!-- user type -->
+                  <div class="user-type mb-2">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Viewer</p>
+                  </div>
+
+                  <!-- buttons -->
+                  <div class="control-buttons mt-4">
+                    <!-- edit -->
+                    <button class="edit-btn">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                      Edit
+                    </button>
+                    <!-- delete -->
+                    <button class="delete-btn">
+                      <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="profile-card">
+                <!-- profile picture and name -->
+                <div class="profile-info">
+                  <!-- image -->
+                  <img src="assets/user.png" alt="User" />
+                  <!-- name -->
+                  <div class="profile-name">
+                    <strong>Kiara Aquino</strong><br />
+                    <small>@kiara.aquino</small> <br />
+                    <span class="user-status inactive-user">Inactive</span>
+                  </div>
+                </div>
+
+                <!-- profile contacts and button -->
+                <div class="profile-contacts mt-4">
+                  <!-- email -->
+                  <div class="email mb-2">
+                    <i class="fa-regular fa-envelope"></i>
+                    <p>kiara.aquino@npb.com.ph</p>
+                  </div>
+                  <!-- department -->
+                  <div class="department mb-2">
+                    <i class="fa-regular fa-folder"></i>
+                    <p>IT Department</p>
+                  </div>
+                  <!-- user type -->
+                  <div class="user-type mb-2">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Viewer</p>
+                  </div>
+
+                  <!-- buttons -->
+                  <div class="control-buttons mt-4">
+                    <!-- edit -->
+                    <button class="edit-btn">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                      Edit
+                    </button>
+                    <!-- delete -->
+                    <button class="delete-btn">
+                      <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
       <!-- Maintenance -->
       <div id="maintenance" class="content-section">
         <!-- navbar -->
@@ -2972,7 +3457,6 @@
     timeRangeFilter.addEventListener("change", applyFilters);
     statusFilter.addEventListener("change", applyFilters);
   </script>
-
 
 </body>
 

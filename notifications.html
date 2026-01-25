@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Fuwa Fuwa Dashboard</title>
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- FONT AWESOME -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/admin.css" />
+
+  <!-- SWEETALERT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="admin-sidebar">
+      <div class="sidebar-header">
+        <img src="assets/bwlogo.png" alt="Fuwa Fuwa" class="logo" />
+      </div>
+
+      <div class="menu">
+
+        <!-- OPERATIONS -->
+        <div class="menu-section">OPERATIONS</div>
+
+        <a href="#" class="menu-link active" data-target="dashboard">
+          <i class="fa-solid fa-house"></i> Dashboard
+        </a>
+
+        <a href="#" class="menu-link" data-target="notifications">
+          <i class="fa-solid fa-bell"></i> Notifications
+        </a>
+
+        <a href="#" class="menu-link" data-target="assets">
+          <i class="fa-solid fa-boxes-stacked"></i> Assets
+        </a>
+
+        <a href="#" class="menu-link" data-target="asset-request">
+          <i class="fa-solid fa-dolly"></i> Asset Request
+        </a>
+
+        <a href="#" class="menu-link" data-target="maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Maintenance & Repair
+        </a>
+
+        <!-- ADMINISTRATION -->
+        <div class="menu-section">ADMINISTRATION</div>
+
+        <a href="#" class="menu-link" data-target="users">
+          <i class="fa-solid fa-users"></i> User Management
+        </a>
+
+        <a href="#" class="menu-link" data-target="vendors">
+          <i class="fa-solid fa-shop"></i> Vendor Management
+        </a>
+
+        <!-- INSIGHTS -->
+        <div class="menu-section">INSIGHTS</div>
+
+        <a href="#" class="menu-link" data-target="reports">
+          <i class="fa-solid fa-chart-column"></i> Reports & Analytics
+        </a>
+
+        <!-- SYSTEM -->
+        <div class="menu-section">SYSTEM</div>
+
+        <a href="#" class="menu-link" data-target="settings">
+          <i class="fa-solid fa-gear"></i> System Configuration
+        </a>
+
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <strong>Kiara Aquino</strong><br />
+            <small>Admin</small>
+          </div>
+        </div>
+        <i class="fa-solid fa-right-from-bracket logout-btn" id="logoutBtn"></i>
+      </div>
+    </div>
+
+
+    <!-- CONTENT -->
+    <div class="content">
+      <div id="notification">
+        <!-- navbar -->
+        <div class="navbar">
+          <h2>Notifications</h2>
+          <div class="group-box">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search..." />
+            </div>
+
+            <div class="notif-icon" id="notifToggle">
+              <i class="fa-regular fa-bell notif-bell"></i>
+              <span class="notif-badge">3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- SIDEBAR -->
+  <script>
+    const links = document.querySelectorAll(".menu-link");
+    const sections = document.querySelectorAll(".content-section");
+
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // remove active states
+        links.forEach((l) => l.classList.remove("active"));
+        sections.forEach((s) => s.classList.remove("active"));
+
+        // activate selected
+        link.classList.add("active");
+        document.getElementById(link.dataset.target).classList.add("active");
+      });
+    });
+  </script>
+
+  <!-- NOTIFICATION PANEL -->
+  <script>
+    const notifToggle = document.getElementById("notifToggle");
+    const notifPanel = document.getElementById("notifPanel");
+
+    notifToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      notifPanel.classList.toggle("show");
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", () => {
+      notifPanel.classList.remove("show");
+    });
+
+    // Prevent closing when clicking inside panel
+    notifPanel.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  </script>
+
+  <!-- LOGOUT MODAL -->
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      Swal.fire({
+        title: "Log out?",
+        text: "You will be signed out of your account.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, log out",
+        cancelButtonText: "Cancel",
+        reverseButtons: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#6c757d",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          localStorage.clear();
+          sessionStorage.clear();
+
+          Swal.fire({
+            title: "Logged out",
+            text: "You have been successfully logged out.",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false,
+          }).then(() => {
+            window.location.href = "admin-login.html";
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- PAGINATION -->
+  <script>
+    const totalPages = 10;
+    let currentPage = 1;
+    const maxVisible = 3; // visible page buttons
+
+    function renderPagination() {
+      const container = document.getElementById("pagination");
+      container.innerHTML = "";
+
+      // previous button
+      const prev = document.createElement("button");
+      prev.innerHTML = "&lt;";
+      prev.className = currentPage === 1 ? "disabled" : "";
+      prev.onclick = () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPagination();
+        }
+      };
+      container.appendChild(prev);
+
+      let start = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+      let end = Math.min(totalPages, start + maxVisible - 1);
+
+      if (start > 1) {
+        container.appendChild(createPageButton(1));
+        if (start > 2) container.appendChild(createDots());
+      }
+
+      for (let i = start; i <= end; i++) {
+        container.appendChild(createPageButton(i));
+      }
+
+      if (end < totalPages) {
+        if (end < totalPages - 1) container.appendChild(createDots());
+        container.appendChild(createPageButton(totalPages));
+      }
+
+      // next button
+      const next = document.createElement("button");
+      next.innerHTML = "&gt;";
+      next.className = currentPage === totalPages ? "disabled" : "";
+      next.onclick = () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPagination();
+        }
+      };
+      container.appendChild(next);
+    }
+
+    function createPageButton(page) {
+      const btn = document.createElement("button");
+      btn.textContent = page;
+      if (page === currentPage) btn.classList.add("active");
+
+      btn.onclick = () => {
+        currentPage = page;
+        renderPagination();
+      };
+      return btn;
+    }
+
+    function createDots() {
+      const dots = document.createElement("span");
+      dots.textContent = "...";
+      return dots;
+    }
+
+    renderPagination();
+  </script>
+
+
+
+
+
+</body>
+
+</html>
