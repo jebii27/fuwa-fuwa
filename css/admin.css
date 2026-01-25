@@ -408,7 +408,7 @@ body {
 
 .notif-header {
   padding: 14px 16px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--search-border);
   display: flex;
   justify-content: space-between;
   font-weight: 600;
@@ -449,11 +449,11 @@ body {
 }
 
 .notif-item.unread {
-  background: #f0f6ff;
+  background: #fff9f1;
 }
 
 .notif-item.unread i {
-  color: #0d6efd;
+  color: var(--button);
 }
 
 .notif-footer {
