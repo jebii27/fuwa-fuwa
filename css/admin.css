@@ -4,8 +4,6 @@ body {
   background-color: var(--body-bg);
 }
 
-
-
 /* ============================ LOGIN ================================ */
 .login {
   width: 100%;
@@ -110,19 +108,6 @@ body {
 
 /* ============================ LOGIN ================================ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ============================ SIDEBAR ================================ */
 .layout {
   display: flex;
@@ -220,9 +205,6 @@ body {
   transition: all 0.3s ease;
 }
 
-
-
-
 .menu-link i {
   font-size: var(--text-16px);
 }
@@ -244,7 +226,7 @@ body {
 .user-icon {
   width: 36px;
   height: 36px;
-  background: #FCFCFC;
+  background: #fcfcfc;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -285,13 +267,6 @@ body {
 }
 
 /* ============================ SIDEBAR ================================ */
-
-
-
-
-
-
-
 
 /* ============================ NAVBAR ================================ */
 .navbar {
@@ -477,13 +452,6 @@ body {
 
 /* ============================ NAVBAR ================================ */
 
-
-
-
-
-
-
-
 /* ============================ NOTIFICATION ================================ */
 .notif-container {
   padding: 0 15px;
@@ -511,12 +479,10 @@ body {
   margin-bottom: 10px;
 }
 
-/* Hover — BOX SHADOW ONLY */
 .notif-row:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Left section */
 .notif-left {
   display: flex;
   align-items: center;
@@ -527,7 +493,7 @@ body {
 .notif-box {
   width: 36px;
   height: 36px;
-  background: #F0AB4B;
+  background: #f0ab4b;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -557,7 +523,6 @@ body {
   color: var(--text-gray);
 }
 
-/* Right section */
 .notif-right {
   display: flex;
   align-items: center;
@@ -570,14 +535,13 @@ body {
   white-space: nowrap;
 }
 
-
 /* unread */
 .notif-row.unread {
-  border-left-color: #F0AB4B;
+  border-left-color: #f0ab4b;
 }
 
 .notif-row.unread .notif-dot {
-  background: #F0AB4B;
+  background: #f0ab4b;
 }
 
 /* read */
@@ -589,15 +553,6 @@ body {
 }
 
 /* ============================ NOTIFICATION ================================ */
-
-
-
-
-
-
-
-
-
 
 /* ============================ TABLE ================================ */
 .table-container {
@@ -650,14 +605,6 @@ table td {
 
 /* ============================ TABLE ================================ */
 
-
-
-
-
-
-
-
-
 /* ============================ DASHBOARD ================================ */
 /* .contents-box {
   padding: 0 30px;
@@ -706,12 +653,6 @@ table td {
 }
 
 /* ============================ DASHBOARD ================================ */
-
-
-
-
-
-
 
 /* ============================ ASSETS ================================ */
 .pagination {
@@ -793,15 +734,7 @@ table td {
   display: none;
 }
 
-
 /* ============================ ASSETS ================================ */
-
-
-
-
-
-
-
 
 /* ============================ ASSET REQUEST ================================ */
 #asset-request .card h5 {
@@ -832,7 +765,6 @@ table td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .request-control i {
@@ -949,24 +881,16 @@ table td {
   justify-content: center;
 }
 
-
 /* ============================ ASSET REQUEST ================================ */
-
-
-
-
-
-
-
-
 
 /* ============================ USER MANAGEMENT ================================ */
 #users .card {
   border-radius: var(--radius);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 20px;
   padding: 20px 30px;
   border: none;
   box-shadow: var(--box-shadow);
@@ -1016,19 +940,6 @@ select option {
 
 .form-label {
   font-size: var(--text-16px);
-}
-
-/* number of users */
-#users .card {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 30px;
-}
-
-#users i {
-  font-size: 20px;
 }
 
 /* users */
@@ -1160,27 +1071,152 @@ select option {
 
 /* ============================ USER MANAGEMENT ================================ */
 
+/* ============================ VENDOR MANAGEMENT ================================ */
+#vendors .card {
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 30px;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
 
+.vendor-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  max-width: 420px;
+  font-family: Inter, sans-serif;
+}
 
+.vendor-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
 
+.vendor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  font-size: 18px;
+}
 
+.vendor-main {
+  flex: 1;
+}
 
+.vendor-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
 
+.vendor-status {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
 
+.vendor-status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.vendor-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #475569;
+}
+
+.icon-btn:hover {
+  background: #f1f5f9;
+}
+
+.icon-btn.danger {
+  color: #b91c1c;
+}
+
+.vendor-body {
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.info-row .label {
+  color: #64748b;
+}
+
+.info-row .value {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.vendor-footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.btn-primary {
+  flex: 1;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  flex: 1;
+  background: transparent;
+  border: 1px solid #cbd5f5;
+  color: #1e3a8a;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-outline:hover {
+  background: #eff6ff;
+}
 
 /* ============================ VENDOR MANAGEMENT ================================ */
-
-
-/* ============================ VENDOR MANAGEMENT ================================ */
-
-
-
-
-
-
-
-
-
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
 #maintenance span {
@@ -1322,14 +1358,6 @@ select option {
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
 
-
-
-
-
-
-
-
-
 /* ============================ REPORTS & ANALYTICS ================================ */
 #reports .card {
   display: flex;
@@ -1399,15 +1427,6 @@ select option {
 }
 
 /* ============================ REPORTS & ANALYTICS ================================ */
-
-
-
-
-
-
-
-
-
 
 /* ============================ SYSTEM CONFIGURATION ================================ */
 .company-info {
@@ -1518,16 +1537,16 @@ select option {
 }
 
 /* on */
-.switch input:checked+.slider {
+.switch input:checked + .slider {
   background-color: var(--button);
 }
 
-.switch input:checked+.slider::before {
+.switch input:checked + .slider::before {
   transform: translateX(20px);
 }
 
-.switch input:focus+.slider,
-.switch input:active+.slider {
+.switch input:focus + .slider,
+.switch input:active + .slider {
   box-shadow: none;
 }
 
@@ -1594,9 +1613,6 @@ select option {
 }
 
 /* ============================ SYSTEM CONFIGURATION ================================ */
-
-
-
 
 /* ============================ ASSET DETAIL ================================ */
 .asset-detail-section {
@@ -1674,7 +1690,9 @@ select option {
   left: 0;
   height: 3px;
   background: var(--button);
-  transition: transform 0.3s ease, width 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
 }
 
 .tab-content {
@@ -1719,13 +1737,15 @@ select option {
 }
 
 .edit-asset-btn i:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .section-body {
   overflow: hidden;
   max-height: 1000px;
-  transition: max-height 0.3s ease, padding 0.25s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.25s ease;
   padding: 20px;
 }
 
