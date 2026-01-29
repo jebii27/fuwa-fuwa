@@ -897,7 +897,7 @@ table td {
 }
 
 .users-container {
-  padding: 0 20px;
+  margin: 0 20px;
 }
 
 /* modal */
@@ -943,28 +943,28 @@ select option {
 }
 
 /* users */
-.all-users {
+.all-entity {
   background-color: #fef9ec;
   border-radius: var(--radius);
   padding: 15px;
   color: #f5ca47;
 }
 
-.active-users {
+.active-entity {
   background-color: #e7f5ec;
   border-radius: var(--radius);
   padding: 15px;
   color: #27a857;
 }
 
-.inactive-users {
+.inactive-entity {
   background-color: #ffd3d3;
   border-radius: var(--radius);
   padding: 15px;
   color: #e63131;
 }
 
-.user-count h6 {
+.entity-count h6 {
   color: var(--text-gray);
 }
 
@@ -979,25 +979,21 @@ select option {
 
 .profile-info {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 12px;
 }
 
 .profile-info img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
-.profile-name {
-  font-size: var(--text-16px);
+.profile-name strong {
+  font-size: var(--text-20px);
 }
 
-.profile-contacts p {
-  margin: 0;
-  font-size: var(--text-16px);
-}
 
 .profile-name .user-status {
   font-size: var(--text-12px);
@@ -1017,12 +1013,9 @@ select option {
   color: var(--text-white);
 }
 
-.email,
-.department,
-.user-type {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.profile-contacts {
+  border-top: 1px solid var(--search-border);
+  padding: 12px 0;
 }
 
 .control-buttons {
@@ -1084,13 +1077,25 @@ select option {
   box-shadow: var(--box-shadow);
 }
 
+.entity-container {
+  margin: 0 20px;
+}
+
+.vendor-container {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
 .vendor-card {
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  padding: 16px;
-  max-width: 420px;
-  font-family: Inter, sans-serif;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  padding: 25px;
+  width: calc(33.333% - 10px); /* 3 per row */
+  min-width: 320px;  
 }
 
 .vendor-header {
@@ -1101,15 +1106,15 @@ select option {
 }
 
 .vendor-avatar {
-  width: 44px;
-  height: 44px;
+  width: 45px;
+  height: 45px;
   border-radius: 10px;
-  background: #f1f5f9;
+  background: var(--button);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #334155;
-  font-size: 18px;
+  color: var(--text-black);
+  font-size: 20px;
 }
 
 .vendor-main {
@@ -1117,23 +1122,17 @@ select option {
 }
 
 .vendor-name {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0f172a;
+  font-size: var(--text-20px);
+  font-weight: var(--text-600);
+  color: var(--text-black);
 }
 
 .vendor-status {
   display: inline-block;
-  margin-top: 2px;
-  font-size: 12px;
+  margin-top: 5px;
+  font-size: var(--text-12px);
   padding: 2px 8px;
   border-radius: 20px;
-}
-
-.vendor-status.active {
-  background: #dcfce7;
-  color: #166534;
 }
 
 .vendor-actions {
@@ -1147,73 +1146,46 @@ select option {
   padding: 6px;
   border-radius: 8px;
   cursor: pointer;
-  color: #475569;
+  transition: 0.3s ease-in-out;
 }
 
 .icon-btn:hover {
-  background: #f1f5f9;
-}
-
-.icon-btn.danger {
-  color: #b91c1c;
+  transform: scale(1.1);
 }
 
 .vendor-body {
   border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
   padding: 12px 0;
 }
 
 .info-row {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: var(--text-14px);
   margin-bottom: 8px;
 }
 
 .info-row .label {
-  color: #64748b;
+  color: var(--text-gray);
 }
 
 .info-row .value {
-  color: #0f172a;
+  color: var(--text-black);
   font-weight: 500;
 }
 
-.vendor-footer {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
+.vendor-status.active-vendor {
+  background-color: #27a857;
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: var(--text-white);
 }
 
-.btn-primary {
-  flex: 1;
-  background: #2563eb;
-  color: #ffffff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.btn-outline {
-  flex: 1;
-  background: transparent;
-  border: 1px solid #cbd5f5;
-  color: #1e3a8a;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background: #1d4ed8;
-}
-
-.btn-outline:hover {
-  background: #eff6ff;
+.vendor-status.inactive-vendor {
+  background-color: #e63131;
+  border-radius: 5px;
+  padding: 1px 5px;
+  color: var(--text-white);
 }
 
 /* ============================ VENDOR MANAGEMENT ================================ */

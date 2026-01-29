@@ -103,7 +103,7 @@
 
       <!-- CONTENT -->
       <div class="content">
-        <!-- Dashboard Contents-->
+        <!-- Dashboard-->
         <div id="dashboard" class="content-section active">
           <!-- navbar -->
           <div class="navbar">
@@ -332,7 +332,7 @@
           </div>
         </div>
 
-        <!-- Notification Contents -->
+        <!-- Notification -->
         <div id="notifications" class="content-section">
           <!-- navbar -->
           <div class="navbar">
@@ -2081,11 +2081,11 @@
             <div class="col-lg-4 col-md-6">
               <div class="card">
                 <!-- icon -->
-                <div class="all-users">
+                <div class="all-entity">
                   <i class="fa-solid fa-users"></i>
                 </div>
                 <!-- number and label -->
-                <div class="user-count">
+                <div class="entity-count">
                   <h2>12</h2>
                   <h6>Total User</h6>
                 </div>
@@ -2096,25 +2096,26 @@
             <div class="col-lg-4 col-md-6">
               <div class="card">
                 <!-- icon -->
-                <div class="active-users">
+                <div class="active-entity">
                   <i class="fa-solid fa-user-check"></i>
                 </div>
                 <!-- number and label -->
-                <div class="user-count">
+                <div class="entity-count">
                   <h2>18</h2>
                   <h6>Active User</h6>
                 </div>
               </div>
             </div>
+
             <!-- inactive users -->
             <div class="col-lg-4 col-md-6">
               <div class="card">
                 <!-- icon -->
-                <div class="inactive-users">
+                <div class="inactive-entity">
                   <i class="fa-solid fa-user-xmark"></i>
                 </div>
                 <!-- number and label -->
-                <div class="user-count">
+                <div class="entity-count">
                   <h2>5</h2>
                   <h6>Inactive User</h6>
                 </div>
@@ -2123,7 +2124,7 @@
           </div>
 
           <!-- users -->
-          <div class="users-container">
+          <div class="entity-container">
             <div class="controls mb-3">
               <h3>User Profiles</h3>
 
@@ -2165,104 +2166,123 @@
               </div>
             </div>
 
-            <!-- profiles -->
-            <div class="row">
-              <!-- 1 -->
-              <div class="col-lg-3 col-md-6">
-                <div class="profile-card">
-                  <!-- profile picture and name -->
-                  <div class="profile-info">
-                    <!-- image -->
-                    <img src="assets/user.png" alt="User" />
-                    <!-- name -->
-                    <div class="profile-name">
-                      <strong>Kiara Aquino</strong><br />
-                      <small>@kiara.aquino</small> <br />
-                      <span class="user-status active-user">Active</span>
+            <div class="users-container">
+              <!-- profiles -->
+              <div class="row">
+                <!-- 1 -->
+                <div class="col-lg-3 col-md-6">
+                  <div class="profile-card">
+                    <!-- profile picture and name -->
+                    <div class="profile-info">
+                      <!-- image -->
+                      <img src="assets/user.png" alt="User" />
+                      <!-- name -->
+                      <div class="profile-name">
+                        <strong>Kiara Aquino</strong><br />
+                        <small>@kiara.aquino</small> <br />
+                        <span class="user-status active-user">Active</span>
+                      </div>
                     </div>
-                  </div>
-
-                  <!-- profile contacts and button -->
-                  <div class="profile-contacts mt-4">
-                    <!-- email -->
-                    <div class="email mb-2">
-                      <i class="fa-regular fa-envelope"></i>
-                      <p>kiara.aquino@npb.com.ph</p>
-                    </div>
-                    <!-- department -->
-                    <div class="department mb-2">
-                      <i class="fa-regular fa-folder"></i>
-                      <p>IT Department</p>
-                    </div>
-                    <!-- user type -->
-                    <div class="user-type mb-2">
-                      <i class="fa-regular fa-user"></i>
-                      <p>Viewer</p>
-                    </div>
-
-                    <!-- buttons -->
-                    <div class="control-buttons mt-4">
-                      <!-- edit -->
-                      <button class="edit-btn">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        Edit
-                      </button>
-                      <!-- delete -->
-                      <button class="delete-btn">
-                        <i class="fa-regular fa-trash-can"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2 -->
-              <div class="col-lg-3 col-md-6">
-                <div class="profile-card">
-                  <!-- profile picture and name -->
-                  <div class="profile-info">
-                    <!-- image -->
-                    <img src="assets/user.png" alt="User" />
-                    <!-- name -->
-                    <div class="profile-name">
-                      <strong>Kiara Aquino</strong><br />
-                      <small>@kiara.aquino</small> <br />
-                      <span class="user-status inactive-user">Inactive</span>
-                    </div>
-                  </div>
-
-                  <!-- profile contacts and button -->
-                  <div class="profile-contacts mt-4">
-                    <!-- email -->
-                    <div class="email mb-2">
-                      <i class="fa-regular fa-envelope"></i>
-                      <p>kiara.aquino@npb.com.ph</p>
-                    </div>
-                    <!-- department -->
-                    <div class="department mb-2">
-                      <i class="fa-regular fa-folder"></i>
-                      <p>IT Department</p>
-                    </div>
-                    <!-- user type -->
-                    <div class="user-type mb-2">
-                      <i class="fa-regular fa-user"></i>
-                      <p>Viewer</p>
-                    </div>
-
-                    <!-- buttons -->
-                    <div class="control-buttons mt-4">
-                      <!-- edit -->
-                      <button class="edit-btn">
-                        <i class="fa-regular fa-pen-to-square"></i>
-                        Edit
-                      </button>
-                      <!-- delete -->
-                      <button class="delete-btn">
-                        <i class="fa-regular fa-trash-can"></i>
-                      </button>
+              
+                    <!-- profile contacts and button -->
+                    <div class="profile-contacts mt-4">
+                      <!-- user id -->
+                      <div class="info-row">
+                        <span class="label">User ID</span>
+                        <span class="value">USER1124</span>
+                      </div>
+                      
+                      <!-- email -->
+                      <div class="info-row">
+                        <span class="label">Email</span>
+                        <span class="value">kiara.aquino@npb.com.ph</span>
+                      </div>
+                    
+                      <!-- department -->
+                      <div class="info-row">
+                        <span class="label">Department</span>
+                        <span class="value">IT Department</span>
+                      </div>
+                      
+                      <!-- user type -->
+                      <div class="info-row">
+                        <span class="label">User Role</span>
+                        <span class="value">Viewer</span>
+                      </div>
+              
+                      <!-- buttons -->
+                      <div class="control-buttons mt-4">
+                        <!-- edit -->
+                        <button class="edit-btn">
+                          <i class="fa-regular fa-pen-to-square"></i>
+                          Edit
+                        </button>
+                        <!-- delete -->
+                        <button class="delete-btn">
+                          <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- 2 -->
+                <div class="col-lg-3 col-md-6">
+                  <div class="profile-card">
+                    <!-- profile picture and name -->
+                    <div class="profile-info">
+                      <!-- image -->
+                      <img src="assets/user.png" alt="User" />
+                      <!-- name -->
+                      <div class="profile-name">
+                        <strong>Kiara Aquino</strong><br />
+                        <small>@kiara.aquino</small> <br />
+                        <span class="user-status active-user">Active</span>
+                      </div>
+                    </div>
+                
+                    <!-- profile contacts and button -->
+                    <div class="profile-contacts mt-4">
+                      <!-- user id -->
+                      <div class="info-row">
+                        <span class="label">User ID</span>
+                        <span class="value">USER1124</span>
+                      </div>
+                
+                      <!-- email -->
+                      <div class="info-row">
+                        <span class="label">Email</span>
+                        <span class="value">kiara.aquino@npb.com.ph</span>
+                      </div>
+                
+                      <!-- department -->
+                      <div class="info-row">
+                        <span class="label">Department</span>
+                        <span class="value">IT Department</span>
+                      </div>
+                
+                      <!-- user type -->
+                      <div class="info-row">
+                        <span class="label">User Role</span>
+                        <span class="value">Viewer</span>
+                      </div>
+                
+                      <!-- buttons -->
+                      <div class="control-buttons mt-4">
+                        <!-- edit -->
+                        <button class="edit-btn">
+                          <i class="fa-regular fa-pen-to-square"></i>
+                          Edit
+                        </button>
+                        <!-- delete -->
+                        <button class="delete-btn">
+                          <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
@@ -2421,40 +2441,41 @@
             <div class="col-lg-4 col-md-6">
               <div class="card">
                 <!-- icon -->
-                <div class="all-users">
+                <div class="all-entity">
                   <i class="fa-solid fa-plus"></i>
                 </div>
                 <!-- number and label -->
-                <div class="user-count">
+                <div class="entity-count">
                   <h2>12</h2>
                   <h6>Total Vendors</h6>
                 </div>
               </div>
             </div>
 
-            <!-- active users -->
+            <!-- active vendor -->
             <div class="col-lg-4 col-md-6">
               <div class="card">
                 <!-- icon -->
-                <div class="active-users">
+                <div class="active-entity">
                   <i class="fa-solid fa-store"></i>
                 </div>
                 <!-- number and label -->
-                <div class="user-count">
+                <div class="entity-count">
                   <h2>18</h2>
                   <h6>Active Vendor</h6>
                 </div>
               </div>
             </div>
-            <!-- inactive users -->
+
+            <!-- inactive vendor -->
             <div class="col-lg-4 col-md-6">
               <div class="card">
                 <!-- icon -->
-                <div class="inactive-users">
+                <div class="inactive-entity">
                   <i class="fa-solid fa-store-slash"></i>
                 </div>
                 <!-- number and label -->
-                <div class="user-count">
+                <div class="entity-count">
                   <h2>5</h2>
                   <h6>Inactive Vendor</h6>
                 </div>
@@ -2463,7 +2484,7 @@
           </div>
 
           <!-- vendors -->
-          <div class="users-container">
+          <div class="entity-container">
             <div class="controls mb-3">
               <h3>Vendor Profiles</h3>
 
@@ -2491,58 +2512,110 @@
               </div>
             </div>
 
-            <!-- profiles -->
-            <div class="vendor-card">
-              <div class="vendor-header">
-                <div class="vendor-avatar">
-                  <i class="fa-solid fa-building"></i>
+            <div class="vendor-container">
+              <!-- profiles -->
+              <div class="vendor-card">
+            
+                <!-- header -->
+                <div class="vendor-header">
+                  <div class="vendor-avatar">
+                    <i class="fa-solid fa-store"></i>
+                  </div>
+                  <div class="vendor-main">
+                    <h5 class="vendor-name">Fuwa Fuwa</h5>
+                    <span class="vendor-status active-vendor">Active</span>
+                  </div>
+                  <div class="vendor-actions">
+                    <button class="icon-btn" title="Edit Vendor">
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="icon-btn" title="Vendor Details">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="vendor-main">
-                  <h5 class="vendor-name">ABC Supplies Co.</h5>
-                  <span class="vendor-status active">Active</span>
-                </div>
-                <div class="vendor-actions">
-                  <button class="icon-btn" title="Edit Vendor">
-                    <i class="fa-solid fa-pen"></i>
-                  </button>
-                  <button class="icon-btn danger" title="Disable Vendor">
-                    <i class="fa-solid fa-ban"></i>
-                  </button>
+            
+                <!-- body -->
+                <div class="vendor-body">
+                  <div class="info-row">
+                    <span class="label">Vendor ID</span>
+                    <span class="value">VND-00123</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Contact Person</span>
+                    <span class="value">Juan Dela Cruz</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Email</span>
+                    <span class="value">vendor@email.com</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Phone</span>
+                    <span class="value">+63 912 345 6789</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Category</span>
+                    <span class="value">Office Equipment</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Last Transaction</span>
+                    <span class="value">Jan 20, 2026</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="vendor-body">
-                <div class="info-row">
-                  <span class="label">Vendor ID</span>
-                  <span class="value">VND-00123</span>
+              <div class="vendor-card">
+              
+                <!-- header -->
+                <div class="vendor-header">
+                  <div class="vendor-avatar">
+                    <i class="fa-solid fa-store"></i>
+                  </div>
+                  <div class="vendor-main">
+                    <h5 class="vendor-name">Fuwa Fuwa</h5>
+                    <span class="vendor-status inactive-vendor">Inactive</span>
+                  </div>
+                  <div class="vendor-actions">
+                    <button class="icon-btn" title="Edit Vendor">
+                      <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="icon-btn" title="Vendor Details">
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
                 </div>
-                <div class="info-row">
-                  <span class="label">Contact Person</span>
-                  <span class="value">Juan Dela Cruz</span>
-                </div>
-                <div class="info-row">
-                  <span class="label">Email</span>
-                  <span class="value">vendor@email.com</span>
-                </div>
-                <div class="info-row">
-                  <span class="label">Phone</span>
-                  <span class="value">+63 912 345 6789</span>
-                </div>
-                <div class="info-row">
-                  <span class="label">Category</span>
-                  <span class="value">Office Equipment</span>
-                </div>
-                <div class="info-row">
-                  <span class="label">Last Transaction</span>
-                  <span class="value">Jan 20, 2026</span>
+              
+                <!-- body -->
+                <div class="vendor-body">
+                  <div class="info-row">
+                    <span class="label">Vendor ID</span>
+                    <span class="value">VND-00123</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Contact Person</span>
+                    <span class="value">Juan Dela Cruz</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Email</span>
+                    <span class="value">vendor@email.com</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Phone</span>
+                    <span class="value">+63 912 345 6789</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Category</span>
+                    <span class="value">Office Equipment</span>
+                  </div>
+                  <div class="info-row">
+                    <span class="label">Last Transaction</span>
+                    <span class="value">Jan 20, 2026</span>
+                  </div>
                 </div>
               </div>
-
-              <div class="vendor-footer">
-                <button class="btn-primary">View Details</button>
-                <button class="btn-outline">Transaction History</button>
-              </div>
+            
             </div>
+            
           </div>
         </div>
 
