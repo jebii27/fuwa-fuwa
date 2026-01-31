@@ -614,7 +614,7 @@ table td {
   border-radius: var(--radius);
 }
 
-.card h5 {
+.card h6 {
   color: var(--text-gray);
 }
 
@@ -1260,22 +1260,6 @@ select option {
   font-weight: var(--text-600);
 }
 
-#maintenance .card {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 30px;
-  border-radius: var(--radius);
-  border: none;
-  box-shadow: var(--box-shadow);
-}
-
-#maintenance i {
-  font-size: 20px;
-}
-
 .total-maintenance {
   background-color: #fef9ec;
   border-radius: var(--radius);
@@ -1745,9 +1729,12 @@ select option {
 
 .section-card {
   border: none;
+  background-color: var(--card-bg);
   border-radius: 5px;
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.3s ease;
+  border: none;
+  border-radius: var(--radius);
 }
 
 .asset-title {
@@ -1827,6 +1814,7 @@ select option {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 10px 20px;
 }
 
 .history-item {
@@ -1845,3 +1833,153 @@ select option {
 }
 
 /* ============================ ASSET DETAIL ================================ */
+
+
+
+/* ============================ CALENDAR ================================ */
+.calendar-card {
+  width: 420px;
+  height: 520px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.date-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffebd0;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.month-control button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.month-control button:hover {
+  transform: scale(1.1);
+}
+
+#monthLabel {
+  min-width: 80px;
+  text-align: center;
+  font-size: var(--text-14px);
+  font-weight: 500;
+}
+
+#yearSelect {
+  appearance: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #ffebd0;
+  font-size: var(--text-14px);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 16px 0 6px;
+  font-size: var(--text-12px);
+  color: var(--text-gray);
+  text-align: center;
+}
+
+.calendar-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.day {
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-14px);
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.85);
+  animation: pop 0.3s ease forwards;
+}
+
+@keyframes pop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.day:hover {
+  background: #ffebd0;
+
+}
+
+.empty {
+  pointer-events: none;
+}
+
+/* maintenance colors */
+.corrective {
+  background: #166534;
+  color: #fff;
+}
+
+.preventive {
+  background: #F0AB4B;
+  color: #fff;
+}
+
+.inspection {
+  background: #1E40AF;
+  color: #fff;
+}
+
+.legend {
+  margin-top: 12px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.legend .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* ============================ CALENDAR ================================ */
