@@ -4,6 +4,14 @@ body {
   background-color: var(--body-bg);
 }
 
+.modal-header {
+  padding: 20px;
+}
+
+.modal-body {
+  padding: 15px 20px;
+}
+
 /* ============================ LOGIN ================================ */
 .login {
   width: 100%;
@@ -107,6 +115,14 @@ body {
 }
 
 /* ============================ LOGIN ================================ */
+
+
+
+
+
+
+
+
 
 /* ============================ SIDEBAR ================================ */
 .layout {
@@ -267,6 +283,21 @@ body {
 }
 
 /* ============================ SIDEBAR ================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ============================ NAVBAR ================================ */
 .navbar {
@@ -451,6 +482,16 @@ body {
 }
 
 /* ============================ NAVBAR ================================ */
+
+
+
+
+
+
+
+
+
+
 
 /* ============================ NOTIFICATION ================================ */
 .notif-container {
@@ -717,7 +758,7 @@ table td {
 
 /* modal */
 .asset-option {
-  border: 1px solid var(--option-border);
+  border: 2px solid var(--option-border);
   border-radius: var(--radius);
   padding: 25px;
   text-align: center;
@@ -730,24 +771,26 @@ table td {
   margin-bottom: 10px;
 }
 
+.asset-option:hover {
+  border-color: var(--button);
+  background: #fffdfb;
+}
+
 .asset-option.active {
   border-color: var(--button);
   background: var(--option-bg);
 }
 
-.modal-footer-custom {
-  display: flex;
-  justify-content: space-between;
-}
-
-.next-btn {
+.next-btn, .back-btn {
   background: var(--button);
   border: none;
+  font-weight: var(--text-600);
   padding: 8px 28px;
   border-radius: var(--radius);
+  color: var(--text-black);
 }
 
-.next-btn:hover {
+.next-btn:hover, .back-btn:hover {
   opacity: 0.9;
   transform: scale(1.01);
 }
@@ -950,12 +993,6 @@ select option {
 .form-check-input:checked {
   background-color: var(--button);
   border-color: var(--button);
-}
-
-.modal-footer .btn {
-  border-radius: var(--radius);
-  font-size: var(--text-16px);
-  font-weight: var(--text-600);
 }
 
 .form-label {
@@ -1256,92 +1293,138 @@ select option {
 /* ============================ VENDOR MANAGEMENT ================================ */
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
-#maintenance span {
+.maintenance-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.repair-wrapper {
+  width: 72%;
+  max-height: 520px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: var(--box-shadow);
+}
+
+.repair-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.repair-header span {
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.repair-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-top: 1px solid var(--search-border);
+}
+
+.repair-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.repair-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.repair-id {
+  font-size: 18px;
   font-weight: var(--text-600);
 }
 
-.total-maintenance {
-  background-color: #fef9ec;
-  border-radius: var(--radius);
-  padding: 15px;
-  color: #f5ca47;
-}
-
-.in-progress {
-  background-color: #ffebda;
-  border-radius: var(--radius);
-  padding: 15px;
-  color: #ff9100;
-}
-
-.completed {
-  background-color: #e7f5ec;
-  border-radius: var(--radius);
-  padding: 15px;
-  color: #27a857;
-}
-
-.high-priority {
-  background-color: #ffd3d3;
-  border-radius: var(--radius);
-  padding: 15px;
-  color: #e63131;
-}
-
-.maintenance-count h6 {
+.issue-reason {
+  font-size: var(--text-14px);
   color: var(--text-gray);
 }
 
-/* colored pills */
-.pill {
-  padding: 5px 14px;
+.repair-meta {
+  margin-top: 6px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: var(--text-14px);
+  color: var(--text-gray);
+}
+
+.status-badge {
+  padding: 4px 10px;
   border-radius: 999px;
-  font-size: var(--text-12px);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.info {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.schedule-btn {
+  background: var(--button);
+  border: none;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-size: var(--text-16px);
+  cursor: pointer;
   font-weight: var(--text-600);
-  display: inline-block;
+  transition: all 0.3s ease;
 }
 
-/* priority */
-.priority-high {
-  background: #ffe3e3;
-  color: #ff4d4f;
+.schedule-btn:hover {
+  transform: scale(1.01);
 }
 
-.priority-medium {
-  background: #fff0d6;
-  color: #ff9800;
-}
+/* modal */
+ .option-card {
+   border: 2px solid #ddd;
+   border-radius: 12px;
+   padding: 25px;
+   text-align: center;
+   cursor: pointer;
+   transition: 0.25s;
+   height: 100%;
+ }
 
-.priority-low {
-  background: #f1ede5;
-  color: #8a7a5e;
-}
+ .option-card:hover {
+   border-color: var(--button);
+   background: #fffdfb;
+ }
 
-/* Status */
-.status-progress {
-  background: #ffe8c2;
-  color: #ff9800;
-}
+ .option-card.active {
+   border-color: var(--button);
+   background: var(--option-bg);
+ }
 
-.status-scheduled {
-  background: #fff3cd;
-  color: #ffc107;
-}
+ .step {
+   display: none;
+ }
 
-.status-completed {
-  background: #d9f5e2;
-  color: #28a745;
-}
+ .step.active {
+   display: block;
+ }
 
-.view-link {
-  font-weight: var(--text-600);
-  color: var(--text-black);
-  text-decoration: none;
-}
 
-.view-link:hover {
-  text-decoration: underline;
-}
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
 
