@@ -2822,7 +2822,7 @@
                     <!-- action buttons -->
                     <div class="d-flex gap-2">
                       <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal"
-                        data-bs-target="#requestDetailsModal">
+                        data-bs-target="#viewMaintenance">
                         <i class="fa-solid fa-eye"></i>
                       </button>
                       <button class="btn btn-outline-success action-btn">
@@ -2839,112 +2839,141 @@
           </div>
         
           <!-- modal -->
-          <div class="modal fade" id="requestDetailsModal" tabindex="-1" aria-hidden="true">
+          <div class="modal fade" id="viewMaintenance" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content rounded-3">
                 <!-- modal header -->
                 <div class="modal-header">
                   <h5 class="modal-title fw-semibold">
-                    ASSET REQUEST DETAILS
+                    In Progress
                   </h5>
                   <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
                 </div>
         
                 <!-- modal body -->
                 <div class="modal-body px-4">
-                  <!-- ===== requester information ===== -->
+                  <!-- ===== report information ===== -->
                   <section class="mb-4">
                     <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-user me-2 text-secondary"></i>
-                      Requester Information
+                      <i class="fa-solid fa-file-lines me-2"></i>
+                      Report Information
                     </h6>
         
                     <div class="row g-3">
                       <div class="col-md-6">
-                        <label class="form-label text-muted">Requested By</label>
+                        <label class="form-label text-muted">Reported By</label>
                         <div class="fw-semibold">Juan Dela Cruz</div>
                       </div>
                       <div class="col-md-6">
                         <label class="form-label text-muted">Department</label>
                         <div class="fw-semibold">IT Department</div>
                       </div>
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Report Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
                     </div>
                   </section>
         
                   <hr />
         
-                  <!-- ===== asset sepcification ===== -->
+                  <!-- ===== maintenance information ===== -->
                   <section class="mb-4">
                     <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-box me-2 text-secondary"></i>
-                      Asset Specification
+                      <i class="fa-solid fa-tools me-2"></i>
+                      Maintenance Information
                     </h6>
         
                     <div class="row g-3">
                       <div class="col-lg-6">
-                        <label class="form-label text-muted">Asset Type</label>
-                        <div class="fw-semibold">Hardware</div>
+                        <label class="form-label text-muted">Maintenance ID</label>
+                        <div class="fw-semibold">COR-2025-01</div>
                       </div>
                       <div class="col-lg-6">
-                        <label class="form-label text-muted">Asset Category</label>
-                        <div class="fw-semibold">Laptop</div>
-                      </div>
-        
-                      <div class="col-lg-6">
-                        <label class="form-label text-muted">Quantity</label>
-                        <div class="fw-semibold">2 Units</div>
-                      </div>
-        
-                      <div class="col-lg-6">
-                        <label class="form-label text-muted">
-                          Preferred Model / Specifications
-                        </label>
-                        <div class="fw-semibold">
-                          Dell Latitude 5440, i7, 16GB RAM, 512GB SSD
-                        </div>
+                        <label class="form-label text-muted">Maintenance Type</label>
+                        <div class="fw-semibold">Corrective Maintenance</div>
                       </div>
                     </div>
                   </section>
         
                   <hr />
         
-                  <!-- ===== justification ===== -->
+                  <!-- ===== asset information ===== -->
                   <section class="mb-4">
                     <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-clipboard-list me-2 text-secondary"></i>
-                      Justification
+                      <i class="fa-solid fa-box me-2"></i>
+                      Asset Information
+                    </h6>
+        
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Asset Tag</label>
+                        <div class="fw-semibold">AST-2025-01</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Asset Name</label>
+                        <div class="fw-semibold">Macbook Pro M3</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Last Maintenance Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                    </div>
+                  </section>
+        
+                  <hr />
+        
+                  <!-- ===== issue/task description ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-clipboard-list me-2"></i>
+                      Issue/Task Description
                     </h6>
         
                     <div class="mb-3">
-                      <label class="form-label text-muted">Reason for Request</label>
-                      <div>Replacement of outdated workstations</div>
+                      <label class="form-label text-muted">Detailed Description</label>
+                      <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit inventore dolorum. Debitis rerum iste dicta?</div>
                     </div>
-        
-                    <div>
-                      <label class="form-label text-muted">Detailed Purpose</label>
-                      <p>
-                        The requested laptops will be used by developers
-                        assigned to the new internal system upgrade project to
-                        ensure optimal performance and productivity.
-                      </p>
+
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Attached Files</label>
+                      <div class="d-flex flex-column gap-2">
+                        <a href="files/quotation.pdf" target="_blank" class="file-link">
+                          Quotation.pdf
+                        </a>
+                        
+                        <a href="files/specs.docx" target="_blank" class="file-link">
+                          Asset_Specifications.docx
+                        </a>
+                        
+                        <a href="files/image.png" target="_blank" class="file-link">
+                          Site_Image.png
+                        </a>
+                      </div>
                     </div>
                   </section>
         
                   <hr />
-        
-                  <!-- ===== budget ===== -->
+
+                  <!-- ===== maintenance information ===== -->
                   <section class="mb-4">
                     <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-money-bill me-2 text-secondary"></i>
-                      Budget
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Maintenance Schedule
                     </h6>
-        
-                    <div>
-                      <label class="form-label text-muted">Estimated Cost</label>
-                      <div class="fw-semibold">₱180,000</div>
+                  
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Scheduled Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Assigned Technician</label>
+                        <div class="fw-semibold">John Doe</div>
+                      </div>
                     </div>
                   </section>
-        
+
                   <hr />
         
                   <!-- ===== priority ===== -->
@@ -4009,9 +4038,9 @@
     timeRangeFilter.addEventListener("change", applyFilters);
     statusFilter.addEventListener("change", applyFilters);
   </script>
-
+  
   <!-- DELETE VENDOR -->
-   <script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".delete-vendor").forEach(button => {
         button.addEventListener("click", () => {
@@ -4044,9 +4073,9 @@
       });
     });
   </script>
-
+  
   <!-- DELETE USER -->
-   <script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".delete-user").forEach(button => {
         button.addEventListener("click", () => {
@@ -4080,179 +4109,179 @@
       });
     });
   </script>
-
+  
   <!-- CALENDAR -->
-   <script>
+  <script>
     const calendarEl = document.getElementById("calendar");
-      const monthLabel = document.getElementById("monthLabel");
-      const yearSelect = document.getElementById("yearSelect");
+    const monthLabel = document.getElementById("monthLabel");
+    const yearSelect = document.getElementById("yearSelect");
 
-      const prevMonth = document.getElementById("prevMonth");
-      const nextMonth = document.getElementById("nextMonth");
+    const prevMonth = document.getElementById("prevMonth");
+    const nextMonth = document.getElementById("nextMonth");
 
-      let month = 0;
-      let year = 2026;
+    let month = 0;
+    let year = 2026;
 
-      const maintenanceEvents = {
-        "2026-01-08": "preventive",
-        "2026-01-12": "inspection",
-        "2026-01-14": "corrective",
-        "2026-01-25": "inspection",
-      };
+    const maintenanceEvents = {
+      "2026-01-08": "preventive",
+      "2026-01-12": "inspection",
+      "2026-01-14": "corrective",
+      "2026-01-25": "inspection",
+    };
 
-      // Populate year dropdown
-      for (let y = 2020; y <= 2035; y++) {
-        const option = document.createElement("option");
-        option.value = y;
-        option.textContent = y;
-        if (y === year) option.selected = true;
-        yearSelect.appendChild(option);
-      }
+    // Populate year dropdown
+    for (let y = 2020; y <= 2035; y++) {
+      const option = document.createElement("option");
+      option.value = y;
+      option.textContent = y;
+      if (y === year) option.selected = true;
+      yearSelect.appendChild(option);
+    }
 
-      function renderCalendar() {
-        calendarEl.innerHTML = "";
+    function renderCalendar() {
+      calendarEl.innerHTML = "";
 
-        const firstDay = new Date(year, month, 1).getDay();
-        const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        monthLabel.textContent = new Date(year, month).toLocaleString("en-US", {
-          month: "long"
-        });
-
-        // Always 42 cells
-        for (let i = 0; i < 42; i++) {
-          const cell = document.createElement("div");
-          cell.className = "day";
-
-          const dateNum = i - firstDay + 1;
-          if (dateNum > 0 && dateNum <= daysInMonth) {
-            cell.textContent = dateNum;
-
-            const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(dateNum).padStart(2, "0")}`;
-            if (maintenanceEvents[key]) {
-              cell.classList.add(maintenanceEvents[key]);
-            }
-          } else {
-            cell.classList.add("empty");
-          }
-
-          calendarEl.appendChild(cell);
-        }
-      }
-
-      prevMonth.onclick = () => {
-        month--;
-        if (month < 0) {
-          month = 11;
-          year--;
-          yearSelect.value = year;
-        }
-        renderCalendar();
-      };
-
-      nextMonth.onclick = () => {
-        month++;
-        if (month > 11) {
-          month = 0;
-          year++;
-          yearSelect.value = year;
-        }
-        renderCalendar();
-      };
-
-      yearSelect.onchange = (e) => {
-        year = parseInt(e.target.value, 10);
-        renderCalendar();
-      };
-
-      renderCalendar();
-
-   </script>
-
-   <!-- MAINTENANCE MODAL -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-
-        const optionCards = document.querySelectorAll('.option-card');
-        const step1 = document.getElementById('step1');
-        const step2 = document.getElementById('step2');
-        const backBtn = document.getElementById('backBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const correctiveFields = document.getElementById('correctiveFields');
-        const scheduleFields = document.getElementById('scheduleFields');
-        const frequency = document.getElementById('frequency');
-        const modal = document.getElementById('assetIssueModal');
-
-        let selectedType = null;
-
-        // INITIAL STATE
-        nextBtn.disabled = true;
-
-        optionCards.forEach(card => {
-          card.addEventListener('click', () => {
-            optionCards.forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-            selectedType = card.dataset.type;
-            nextBtn.disabled = false;
-          });
-        });
-
-        nextBtn.addEventListener('click', (e) => {
-          e.preventDefault(); // 🚨 VERY IMPORTANT
-
-          if (!selectedType) return;
-
-          step1.classList.remove('active');
-          step2.classList.add('active');
-          backBtn.disabled = false;
-          nextBtn.textContent = 'Submit';
-
-          document.getElementById('maintenanceType').value = selectedType;
-          document.getElementById('maintenanceId').value =
-            'MT-' + Date.now().toString().slice(-6);
-
-          if (selectedType === 'Corrective') {
-            correctiveFields.style.display = 'block';
-            scheduleFields.style.display = 'none';
-          } else {
-            correctiveFields.style.display = 'none';
-            scheduleFields.style.display = 'block';
-
-            frequency.innerHTML = '';
-            const options = selectedType === 'Preventive'
-              ? ['Semi-Annual', 'Quarterly', 'Monthly']
-              : ['Weekly', 'Monthly'];
-
-            options.forEach(o => {
-              frequency.insertAdjacentHTML('beforeend', `<option>${o}</option>`);
-            });
-          }
-        });
-
-        backBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-
-          step2.classList.remove('active');
-          step1.classList.add('active');
-          backBtn.disabled = true;
-          nextBtn.textContent = 'Next';
-        });
-
-        modal.addEventListener('hidden.bs.modal', () => {
-          // FULL RESET
-          step1.classList.add('active');
-          step2.classList.remove('active');
-          backBtn.disabled = true;
-          nextBtn.disabled = true;
-          nextBtn.textContent = 'Next';
-          selectedType = null;
-
-          optionCards.forEach(c => c.classList.remove('active'));
-          modal.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
-        });
-
+      monthLabel.textContent = new Date(year, month).toLocaleString("en-US", {
+        month: "long"
       });
-    </script>
+
+      // Always 42 cells
+      for (let i = 0; i < 42; i++) {
+        const cell = document.createElement("div");
+        cell.className = "day";
+
+        const dateNum = i - firstDay + 1;
+        if (dateNum > 0 && dateNum <= daysInMonth) {
+          cell.textContent = dateNum;
+
+          const key = `${year}-${String(month + 1).padStart(2, "0")}-${String(dateNum).padStart(2, "0")}`;
+          if (maintenanceEvents[key]) {
+            cell.classList.add(maintenanceEvents[key]);
+          }
+        } else {
+          cell.classList.add("empty");
+        }
+
+        calendarEl.appendChild(cell);
+      }
+    }
+
+    prevMonth.onclick = () => {
+      month--;
+      if (month < 0) {
+        month = 11;
+        year--;
+        yearSelect.value = year;
+      }
+      renderCalendar();
+    };
+
+    nextMonth.onclick = () => {
+      month++;
+      if (month > 11) {
+        month = 0;
+        year++;
+        yearSelect.value = year;
+      }
+      renderCalendar();
+    };
+
+    yearSelect.onchange = (e) => {
+      year = parseInt(e.target.value, 10);
+      renderCalendar();
+    };
+
+    renderCalendar();
+
+  </script>
+  
+  <!-- MAINTENANCE MODAL -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const optionCards = document.querySelectorAll('.option-card');
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const backBtn = document.getElementById('backBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const correctiveFields = document.getElementById('correctiveFields');
+      const scheduleFields = document.getElementById('scheduleFields');
+      const frequency = document.getElementById('frequency');
+      const modal = document.getElementById('assetIssueModal');
+
+      let selectedType = null;
+
+      // INITIAL STATE
+      nextBtn.disabled = true;
+
+      optionCards.forEach(card => {
+        card.addEventListener('click', () => {
+          optionCards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          selectedType = card.dataset.type;
+          nextBtn.disabled = false;
+        });
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // 🚨 VERY IMPORTANT
+
+        if (!selectedType) return;
+
+        step1.classList.remove('active');
+        step2.classList.add('active');
+        backBtn.disabled = false;
+        nextBtn.textContent = 'Submit';
+
+        document.getElementById('maintenanceType').value = selectedType;
+        document.getElementById('maintenanceId').value =
+          'MT-' + Date.now().toString().slice(-6);
+
+        if (selectedType === 'Corrective') {
+          correctiveFields.style.display = 'block';
+          scheduleFields.style.display = 'none';
+        } else {
+          correctiveFields.style.display = 'none';
+          scheduleFields.style.display = 'block';
+
+          frequency.innerHTML = '';
+          const options = selectedType === 'Preventive'
+            ? ['Semi-Annual', 'Quarterly', 'Monthly']
+            : ['Weekly', 'Monthly'];
+
+          options.forEach(o => {
+            frequency.insertAdjacentHTML('beforeend', `<option>${o}</option>`);
+          });
+        }
+      });
+
+      backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        step2.classList.remove('active');
+        step1.classList.add('active');
+        backBtn.disabled = true;
+        nextBtn.textContent = 'Next';
+      });
+
+      modal.addEventListener('hidden.bs.modal', () => {
+        // FULL RESET
+        step1.classList.add('active');
+        step2.classList.remove('active');
+        backBtn.disabled = true;
+        nextBtn.disabled = true;
+        nextBtn.textContent = 'Next';
+        selectedType = null;
+
+        optionCards.forEach(c => c.classList.remove('active'));
+        modal.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+      });
+
+    });
+  </script>
 
 </body>
 
