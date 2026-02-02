@@ -877,15 +877,15 @@ table td {
   border: 1px solid var(--search-border);
 }
 
-.filter-pill.for-review {
+.filter-pill.for-review, .filter-pill.inspection {
   background-color: #92400E;
 }
 
-.filter-pill.inspection-findings, .filter-pill.pending-approval {
+.filter-pill.preventive, .filter-pill.pending-approval {
   background-color: #6D28D9;
 }
 
-.filter-pill.in-progress, .filter-pill.in-procurement {
+.filter-pill.corrective, .filter-pill.in-procurement {
   background-color: #1E40AF;
 }
 
@@ -901,6 +901,7 @@ table td {
   border-left: 6px solid transparent;
   transition: all 0.3s ease;
   margin-bottom: 20px;
+  color: var(--text-black);
 }
 
 .request-card:hover {
@@ -908,15 +909,15 @@ table td {
 }
 
 /* for asset request and maintenance */
-.request-card.for-review {
+.request-card.for-review, .request-card.inspection  {
   border-color: #92400E;
 }
 
-.request-card.pending-approval {
+.request-card.pending-approval, .request-card.preventive {
   border-color: #6D28D9;
 }
 
-.request-card.in-progress, .request-card.in-procurement {
+.request-card.corrective, .request-card.in-procurement {
   border-color: #1E40AF;
 }
 

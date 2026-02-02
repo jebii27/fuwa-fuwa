@@ -3058,16 +3058,18 @@
           <!-- filters -->
           <div class="d-flex gap-2 mb-4">
             <span class="filter-pill all active">All</span>
-            <span class="filter-pill in-progress">In Progress</span>
+            <span class="filter-pill inspection">Inspection</span>
+            <span class="filter-pill preventive">Preventive</span>
+            <span class="filter-pill corrective">Corrective</span>
             <span class="filter-pill completed">Completed</span>
           </div>
         
           <!-- maintenance card -->
           <div class="row">
 
-            <!-- corrective in-progress-->
+            <!-- corrective -->
             <div class="col-lg-4">
-              <div class="request-card in-progress">
+              <div class="request-card corrective">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
                   <div class="d-flex align-items-center gap-3">
@@ -3106,9 +3108,9 @@
               </div>
             </div>
 
-            <!-- inspection and preventive in-progress-->
+            <!-- inspection-->
             <div class="col-lg-4">
-              <div class="request-card in-progress">
+              <div class="request-card inspection">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
                   <div class="d-flex align-items-center gap-3">
@@ -3148,9 +3150,9 @@
               </div>
             </div>
 
-            <!-- corrective completed-->
+            <!-- corrective-->
             <div class="col-lg-4">
-              <div class="request-card completed">
+              <div class="request-card corrective">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
                   <div class="d-flex align-items-center gap-3">
@@ -3190,7 +3192,7 @@
               </div>
             </div>
 
-            <!-- inspection and preventive completed-->
+            <!-- completed-->
             <div class="col-lg-4">
               <div class="request-card completed">
                 <div class="d-flex justify-content-between align-items-center">
@@ -3435,7 +3437,7 @@
             </div>
           </div>
 
-          <!-- view inspection and preventive in-progress modal -->
+          <!-- view inspection and preventive modal -->
           <div class="modal fade" id="viewInsPreMaintenance" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content rounded-3">
@@ -3497,43 +3499,6 @@
                         <div class="description-text fw-semibold">01/01/2026</div>
                       </div>
                     </div>
-                  </section>
-          
-                  <hr />
-          
-                  <!-- ===== issue/task description ===== -->
-                  <section class="mb-4">
-                    <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-clipboard-list me-2"></i>
-                      Issue/Task Description
-                    </h6>
-          
-                    <div class="mb-3">
-                      <label class="form-label text-muted">Detailed Description</label>
-                      <div class="description-text fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
-                        necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
-                        inventore dolorum. Debitis rerum iste dicta?
-                      </div>
-                    </div>
-
-                    <div class="mb-3">
-                      <label class="form-label text-muted">Attached Files</label>
-                      <ul class="fw-semibold">
-                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                            Quotation.pdf
-                          </a></li>
-                    
-                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                            Quotation.pdf
-                          </a></li>
-                    
-                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                            Quotation.pdf
-                          </a></li>
-                    
-                      </ul>
-                    </div>
-          
                   </section>
           
                   <hr />
@@ -3606,6 +3571,11 @@
                           <option value="jane-smith">Jane Smith</option>
                           <option value="mark-lee">Mark Lee</option>
                         </select>
+                      </div>
+
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Detailed Description</label>
+                        <textarea class="form-control" rows="3" placeholder="Add remarks or comments..."></textarea>
                       </div>
           
                       <!-- documentation -->
@@ -4027,30 +3997,9 @@
                       <!-- condition post-service -->
                       <div class="col-md-12 mb-3">
                         <label class="form-label text-muted">Condition Post Service</label>
-                        <div class="description-text fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
-                          necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit
-                          fugit
-                          inventore dolorum. Debitis rerum iste dicta?
+                        <div class="description-text fw-semibold">
+                          Excellent - No issues found
                         </div>
-                      </div>
-          
-                      <!-- documentation -->
-                      <div class="col-md-6 mb-3">
-                        <label class="form-label text-muted">Attached Files</label>
-                        <ul class="fw-semibold">
-                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                              Quotation.pdf
-                            </a></li>
-          
-                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                              Quotation.pdf
-                            </a></li>
-          
-                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                              Quotation.pdf
-                            </a></li>
-          
-                        </ul>
                       </div>
           
                       <!-- technician remarks -->
