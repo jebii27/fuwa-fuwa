@@ -854,23 +854,27 @@ table td {
   transform: scale(1.01);
 }
 
+/* for maintenance and asset request */
 .filter-pill.all {
   background-color: var(--card-bg);
   color: var(--text-black);
   border: 1px solid var(--search-border);
 }
 
-.filter-pill.inspection-findings {
+.filter-pill.for-review {
+  background-color: #92400E;
+}
+
+.filter-pill.inspection-findings, .filter-pill.pending-approval {
   background-color: #6D28D9;
 }
 
-.filter-pill.in-progress {
+.filter-pill.in-progress, .filter-pill.in-procurement {
   background-color: #1E40AF;
 }
 
-.filter-pill.completed {
+.filter-pill.completed, .filter-pill.procured {
   background-color: #166534;
-  
 }
 
 .request-container .request-card {
@@ -887,32 +891,20 @@ table td {
   transform: translateY(-4px);
 }
 
-.request-card.inspection-findings {
+/* for asset request and maintenance */
+.request-card.for-review {
+  border-color: #92400E;
+}
+
+.request-card.inspection-findings, .request-card.pending-approval {
   border-color: #6D28D9;
 }
 
-.request-card.in-progress {
+.request-card.in-progress, .request-card.in-procurement {
   border-color: #1E40AF;
 }
 
-.request-card.medium {
-  border-color: #ff9800;
-}
-
-.request-card.low {
-  border-color: #bbbbbb;
-}
-
-/*  */
-.request-card.inspection-findings {
-  border-color: #6D28D9;
-}
-
-.request-card.in-progress {
-  border-color: #1E40AF;
-}
-
-.request-card.completed {
+.request-card.completed, .request-card.procured {
   border-color: #166534;
 }
 
