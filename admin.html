@@ -2937,31 +2937,33 @@
         
           <!-- filters -->
           <div class="d-flex gap-2 mb-4">
-            <span class="filter-pill active">All</span>
-            <span class="filter-pill">Findings from Inspection</span>
-            <span class="filter-pill">In Progress</span>
-            <span class="filter-pill">Completed</span>
+            <span class="filter-pill all active">All</span>
+            <span class="filter-pill inspection-findings">Findings from Inspection</span>
+            <span class="filter-pill in-progress">In Progress</span>
+            <span class="filter-pill completed">Completed</span>
           </div>
         
           <!-- requests card -->
           <div class="row">
             <!-- asset card -->
+
+            <!-- low -->
             <div class="col-lg-4">
-              <div class="request-card low">
+              <div class="request-card inspection-findings">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
                   <div class="d-flex align-items-center gap-3">
                     <div class="asset-icon">
                       <i class="fa-solid fa-laptop"></i>
                     </div>
+                    <!-- status -->
                     <div>
                       <h6 class="mb-1 fw-semibold">COR-2025-001</h6>
                       <small class="text-muted">Laptop Pro 16</small>
                       <br>
                       <small class="text-muted">IT Department</small>
                       <div class="mt-1">
-                        <span class="request-status for-review">For Review</span>
-                        <span class="priority-badge low">Low Priority</span>
+                        <span class="priority-badge low">Low</span>
                       </div>
                     </div>
                   </div>
@@ -2974,6 +2976,129 @@
                     <div class="d-flex gap-2">
                       <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal"
                         data-bs-target="#viewMaintenance">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn btn-outline-success action-btn">
+                        <i class="fa-regular fa-calendar-check"></i>
+                      </button>
+                      <button class="btn btn-outline-danger action-btn">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- medium -->
+            <div class="col-lg-4">
+              <div class="request-card in-progress">
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- asset-info -->
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="asset-icon">
+                      <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">COR-2025-001</h6>
+                      <small class="text-muted">Laptop Pro 16</small>
+                      <br>
+                      <small class="text-muted">IT Department</small>
+                      <div class="mt-1">
+                        <span class="priority-badge medium">Medium</span>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- time and buttons -->
+                  <div class="d-flex flex-column align-items-end gap-5">
+                    <small class="text-muted">2 hrs ago</small>
+            
+                    <!-- action buttons -->
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewMaintenance">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn btn-outline-success action-btn">
+                        <i class="fa-regular fa-calendar-check"></i>
+                      </button>
+                      <button class="btn btn-outline-danger action-btn">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- high -->
+            <div class="col-lg-4">
+              <div class="request-card completed">
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- asset-info -->
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="asset-icon">
+                      <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">COR-2025-001</h6>
+                      <small class="text-muted">Laptop Pro 16</small>
+                      <br>
+                      <small class="text-muted">IT Department</small>
+                      <div class="mt-1">
+                        <span class="priority-badge high">High</span>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- time and buttons -->
+                  <div class="d-flex flex-column align-items-end gap-5">
+                    <small class="text-muted">2 hrs ago</small>
+            
+                    <!-- action buttons -->
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewMaintenance">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn btn-outline-success action-btn">
+                        <i class="fa-regular fa-calendar-check"></i>
+                      </button>
+                      <button class="btn btn-outline-danger action-btn">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- urgent -->
+            <div class="col-lg-4">
+              <div class="request-card in-progress">
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- asset-info -->
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="asset-icon">
+                      <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">COR-2025-001</h6>
+                      <small class="text-muted">Laptop Pro 16</small>
+                      <br>
+                      <small class="text-muted">IT Department</small>
+                      <div class="mt-1">
+                        <span class="priority-badge urgent">Urgent</span>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- time and buttons -->
+                  <div class="d-flex flex-column align-items-end gap-5">
+                    <small class="text-muted">2 hrs ago</small>
+            
+                    <!-- action buttons -->
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewMaintenance">
                         <i class="fa-solid fa-eye"></i>
                       </button>
                       <button class="btn btn-outline-success action-btn">

@@ -845,15 +845,32 @@ table td {
   font-size: var(--text-14px);
   cursor: pointer;
   background: var(--card-bg);
-  border: 1px solid var(--search-border);
   transition: all 0.3s ease;
+  color: var(--text-white);
 }
 
-.filter-pill.active,
 .filter-pill:hover {
-  background: var(--button);
-  color: var(--text-white);
-  border-color: var(--button);
+  box-shadow: var(--box-shadow);
+  transform: scale(1.01);
+}
+
+.filter-pill.all {
+  background-color: var(--card-bg);
+  color: var(--text-black);
+  border: 1px solid var(--search-border);
+}
+
+.filter-pill.inspection-findings {
+  background-color: #6D28D9;
+}
+
+.filter-pill.in-progress {
+  background-color: #1E40AF;
+}
+
+.filter-pill.completed {
+  background-color: #166534;
+  
 }
 
 .request-container .request-card {
@@ -863,18 +880,19 @@ table td {
   padding: 20px;
   border-left: 6px solid transparent;
   transition: all 0.3s ease;
+  margin-bottom: 20px;
 }
 
 .request-card:hover {
   transform: translateY(-4px);
 }
 
-.request-card.urgent {
-  border-color: #c90003;
+.request-card.inspection-findings {
+  border-color: #6D28D9;
 }
 
-.request-card.high {
-  border-color: #ff4d4f;
+.request-card.in-progress {
+  border-color: #1E40AF;
 }
 
 .request-card.medium {
@@ -885,53 +903,45 @@ table td {
   border-color: #bbbbbb;
 }
 
-.request-status {
-  color: var(--text-black);
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: var(--text-600);
+/*  */
+.request-card.inspection-findings {
+  border-color: #6D28D9;
 }
 
-.request-status.for-review {
-  background: #e7e7e7;
+.request-card.in-progress {
+  border-color: #1E40AF;
 }
 
-.request-status.pending-approval {
-  background: #e0ff55;
-}
-
-.request-status.in-procurement {
-  background: #b0b8ff;
-}
-
-.request-status.procured {
-  background: #00b30f;
+.request-card.completed {
+  border-color: #166534;
 }
 
 .priority-badge {
   color: var(--text-black);
-  font-size: var(--text-12px);
+  font-size: 10px;
   padding: 4px 10px;
   border-radius: 20px;
   font-weight: var(--text-600);
-  margin-left: 8px;
 }
 
 .priority-badge.urgent {
-  background-color: #c90003;
+  color: #DC2626;
+  background-color: #FEE2E2;
 }
 
 .priority-badge.high {
-  background-color: #ff4d4f;
+  color: #EA580C;
+  background-color: #FFEDD5;
 }
 
 .priority-badge.medium {
-  background-color: #ff9800;
+  color: #F59E0B;
+  background-color: #FEF3C7;
 }
 
 .priority-badge.low {
-  background-color: #bbbbbb;
+  color: #16A34A;
+  background-color: #DCFCE7;
 }
 
 .action-btn {
