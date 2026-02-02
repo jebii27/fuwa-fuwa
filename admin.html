@@ -2789,6 +2789,7 @@
 
         <!-- calendar schedule -->
         <div class="maintenance-container mb-4">
+          
           <!-- calendar -->
           <div class="calendar-card">
             <div class="calendar-header">
@@ -2832,17 +2833,40 @@
             </div>
           </div>
           
+          <!-- inspection and preventive card -->
+          <section class="repair-wrapper overflow-auto">
+            <header class="repair-header">
+              <h4>Findings from Inspection <span>(2)</span></h4>
+            </header>
+          
+            <article class="repair-row">
+              <div class="repair-info">
+                <div class="repair-top mb-1">
+                  <span class="repair-id">INS-2025-001</span>
+                </div>
+                <span class="issue-reason">Screen flickering daming sira, boo</span>
+                <div class="repair-meta">
+                  <span>Asset: Laptop Pro 16</span>
+                  <span>Issued by: IT Dept</span>
+          
+                </div>
+              </div>
+              <button class="schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleMaintenance">Schedule
+                Maintenance</button>
+            </article>
+          </section>
+
           <!-- repair card -->
           <section class="repair-wrapper overflow-auto">
             <header class="repair-header">
               <h4>For Repair <span>(2)</span></h4>
             </header>
           
+            <!-- corrective -->
             <article class="repair-row">
               <div class="repair-info">
                 <div class="repair-top mb-1">
                   <span class="repair-id">COR-2025-001</span>
-                  <span class="status-badge warning">Pending</span>
                 </div>
                 <span class="issue-reason">Screen flickering daming sira, boo</span>
                 <div class="repair-meta">
@@ -2855,7 +2879,7 @@
             </article>
           </section>
 
-          <!-- modal -->
+          <!-- corrective repair modal -->
           <div class="modal fade" id="scheduleMaintenance" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content rounded-3">
@@ -2870,31 +2894,6 @@
           
                 <!-- modal body -->
                 <div class="modal-body px-4">
-                  <!-- ===== report information ===== -->
-                  <section class="mb-4">
-                    <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-file-lines me-2"></i>
-                      Report Information
-                    </h6>
-          
-                    <div class="row g-3">
-                      <div class="col-md-6">
-                        <label class="form-label text-muted">Reported By</label>
-                        <div class="fw-semibold">Juan Dela Cruz</div>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="form-label text-muted">Department</label>
-                        <div class="fw-semibold">IT Department</div>
-                      </div>
-                      <div class="col-md-6">
-                        <label class="form-label text-muted">Report Date</label>
-                        <div class="fw-semibold">01/01/2026</div>
-                      </div>
-                    </div>
-                  </section>
-          
-                  <hr />
-          
                   <!-- ===== maintenance information ===== -->
                   <section class="mb-4">
                     <h6 class="fw-semibold mb-3">
@@ -2957,19 +2956,20 @@
           
                     <div class="mb-3">
                       <label class="form-label text-muted">Attached Files</label>
-                      <div class="d-flex flex-column gap-2">
-                        <a href="files/quotation.pdf" target="_blank" class="file-link">
-                          Quotation.pdf
-                        </a>
-          
-                        <a href="files/specs.docx" target="_blank" class="file-link">
-                          Asset_Specifications.docx
-                        </a>
-          
-                        <a href="files/image.png" target="_blank" class="file-link">
-                          Site_Image.png
-                        </a>
-                      </div>
+                      <ul class="fw-semibold">
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                      </ul>
                     </div>
                   </section>
           
@@ -2982,8 +2982,8 @@
                       Priority Level
                     </h6>
           
-                    <span class="badge bg-warning text-dark px-3 py-2">
-                      Medium Priority
+                    <span class="priority-badge low" style="font-size: 14px;">
+                      Low
                     </span>
                   </section>
           
@@ -2991,14 +2991,14 @@
           
                   <!-- ===== maintenance schedule ===== -->
                   <section class="mb-4">
-                    <h6 class="fw-semibold mb-3">
+                    <h6 class="fw-semibold mb-3" style="font-size: 20px;">
                       <i class="fa-solid fa-calendar-days me-2"></i>
                       Maintenance Schedule
                     </h6>
                   
                     <div class="row g-3">
                       <!-- Scheduled Date -->
-                      <div class="col-lg-6">
+                      <div class="col-md-6">
                         <label class="form-label text-muted">
                           Start Date <span class="text-danger">*</span>
                         </label>
@@ -3006,7 +3006,7 @@
                       </div>
                   
                       <!-- Assigned Technician -->
-                      <div class="col-lg-6">
+                      <div class="col-md-6">
                         <label for="assignedTechnician" class="form-label text-muted">
                           Assigned Technician
                         </label>
@@ -3058,59 +3058,14 @@
           <!-- filters -->
           <div class="d-flex gap-2 mb-4">
             <span class="filter-pill all active">All</span>
-            <span class="filter-pill inspection-findings">Findings from Inspection</span>
             <span class="filter-pill in-progress">In Progress</span>
             <span class="filter-pill completed">Completed</span>
           </div>
         
-          <!-- requests card -->
+          <!-- maintenance card -->
           <div class="row">
-            <!-- asset card -->
 
-            <!-- low -->
-            <div class="col-lg-4">
-              <div class="request-card inspection-findings">
-                <div class="d-flex justify-content-between align-items-center">
-                  <!-- asset-info -->
-                  <div class="d-flex align-items-center gap-3">
-                    <div class="asset-icon">
-                      <i class="fa-solid fa-laptop"></i>
-                    </div>
-                    <!-- status -->
-                    <div>
-                      <h6 class="mb-1 fw-semibold">COR-2025-001</h6>
-                      <small class="text-muted">Laptop Pro 16</small>
-                      <br>
-                      <small class="text-muted">IT Department</small>
-                      <div class="mt-1">
-                        <span class="priority-badge low">Low</span>
-                      </div>
-                    </div>
-                  </div>
-        
-                  <!-- time and buttons -->
-                  <div class="d-flex flex-column align-items-end gap-5">
-                    <small class="text-muted">2 hrs ago</small>
-        
-                    <!-- action buttons -->
-                    <div class="d-flex gap-2">
-                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal"
-                        data-bs-target="#viewMaintenance">
-                        <i class="fa-solid fa-eye"></i>
-                      </button>
-                      <button class="btn btn-outline-success action-btn">
-                        <i class="fa-regular fa-calendar-check"></i>
-                      </button>
-                      <button class="btn btn-outline-danger action-btn">
-                        <i class="fa-regular fa-trash-can"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- medium -->
+            <!-- corrective in-progress-->
             <div class="col-lg-4">
               <div class="request-card in-progress">
                 <div class="d-flex justify-content-between align-items-center">
@@ -3136,7 +3091,7 @@
             
                     <!-- action buttons -->
                     <div class="d-flex gap-2">
-                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewMaintenance">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewCorrectiveMaintenance">
                         <i class="fa-solid fa-eye"></i>
                       </button>
                       <button class="btn btn-outline-success action-btn">
@@ -3151,7 +3106,49 @@
               </div>
             </div>
 
-            <!-- high -->
+            <!-- inspection and preventive in-progress-->
+            <div class="col-lg-4">
+              <div class="request-card in-progress">
+                <div class="d-flex justify-content-between align-items-center">
+                  <!-- asset-info -->
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="asset-icon">
+                      <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-semibold">INS-2025-001</h6>
+                      <small class="text-muted">Laptop Pro 16</small>
+                      <br>
+                      <small class="text-muted">IT Department</small>
+                      <div class="mt-1">
+                        <span class="priority-badge medium">Medium</span>
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- time and buttons -->
+                  <div class="d-flex flex-column align-items-end gap-5">
+                    <small class="text-muted">2 hrs ago</small>
+            
+                    <!-- action buttons -->
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal"
+                        data-bs-target="#viewInsPreMaintenance">
+                        <i class="fa-solid fa-eye"></i>
+                      </button>
+                      <button class="btn btn-outline-success action-btn">
+                        <i class="fa-regular fa-calendar-check"></i>
+                      </button>
+                      <button class="btn btn-outline-danger action-btn">
+                        <i class="fa-regular fa-trash-can"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- corrective completed-->
             <div class="col-lg-4">
               <div class="request-card completed">
                 <div class="d-flex justify-content-between align-items-center">
@@ -3166,7 +3163,7 @@
                       <br>
                       <small class="text-muted">IT Department</small>
                       <div class="mt-1">
-                        <span class="priority-badge high">High</span>
+                        <span class="priority-badge medium">Medium</span>
                       </div>
                     </div>
                   </div>
@@ -3177,7 +3174,8 @@
             
                     <!-- action buttons -->
                     <div class="d-flex gap-2">
-                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewMaintenance">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal"
+                        data-bs-target="#viewCorrectiveCompleted">
                         <i class="fa-solid fa-eye"></i>
                       </button>
                       <button class="btn btn-outline-success action-btn">
@@ -3192,9 +3190,9 @@
               </div>
             </div>
 
-            <!-- urgent -->
+            <!-- inspection and preventive completed-->
             <div class="col-lg-4">
-              <div class="request-card in-progress">
+              <div class="request-card completed">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
                   <div class="d-flex align-items-center gap-3">
@@ -3202,12 +3200,12 @@
                       <i class="fa-solid fa-laptop"></i>
                     </div>
                     <div>
-                      <h6 class="mb-1 fw-semibold">COR-2025-001</h6>
+                      <h6 class="mb-1 fw-semibold">PRE-2025-001</h6>
                       <small class="text-muted">Laptop Pro 16</small>
                       <br>
                       <small class="text-muted">IT Department</small>
                       <div class="mt-1">
-                        <span class="priority-badge urgent">Urgent</span>
+                        <span class="priority-badge medium">Medium</span>
                       </div>
                     </div>
                   </div>
@@ -3218,7 +3216,8 @@
             
                     <!-- action buttons -->
                     <div class="d-flex gap-2">
-                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewMaintenance">
+                      <button class="btn btn-outline-primary action-btn" data-bs-toggle="modal"
+                        data-bs-target="#viewInsPreCompleted">
                         <i class="fa-solid fa-eye"></i>
                       </button>
                       <button class="btn btn-outline-success action-btn">
@@ -3232,10 +3231,11 @@
                 </div>
               </div>
             </div>
+
           </div>
         
-          <!-- modal -->
-          <div class="modal fade" id="viewMaintenance" tabindex="-1" aria-hidden="true">
+          <!-- view corrective in-progress modal -->
+          <div class="modal fade" id="viewCorrectiveMaintenance" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content rounded-3">
                 <!-- modal header -->
@@ -3334,19 +3334,20 @@
 
                     <div class="mb-3">
                       <label class="form-label text-muted">Attached Files</label>
-                      <div class="d-flex flex-column gap-2">
-                        <a href="files/quotation.pdf" target="_blank" class="file-link">
-                          Quotation.pdf
-                        </a>
-                        
-                        <a href="files/specs.docx" target="_blank" class="file-link">
-                          Asset_Specifications.docx
-                        </a>
-                        
-                        <a href="files/image.png" target="_blank" class="file-link">
-                          Site_Image.png
-                        </a>
-                      </div>
+                      <ul class="fw-semibold">
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                      </ul>
                     </div>
                   </section>
         
@@ -3380,18 +3381,18 @@
                       Priority Level
                     </h6>
         
-                    <span class="badge bg-warning text-dark px-3 py-2">
-                      Medium Priority
+                    <span class="priority-badge medium" style="font-size: 14px;">
+                      Medium
                     </span>
                   </section>
         
                   <hr />
         
-                  <!-- ===== activity feed ===== -->
+                  <!-- ===== post-service details ===== -->
                   <section>
-                    <h6 class="fw-semibold mb-3">
-                      <i class="fa-solid fa-clock-rotate-left me-2"></i>
-                      Activity feed
+                    <h6 class="fw-semibold mb-3" style="font-size: 20px;">
+                      <i class="fa-solid fa-file-circle-check me-2"></i>
+                      Post-Service Details
                     </h6>
         
                     <div class="row g-3">
@@ -3405,21 +3406,9 @@
                         <textarea class="form-control" rows="3" placeholder="Add remarks or comments..."></textarea>
                       </div>
 
-                      <div class="mb-3">
-                        <label class="form-label text-muted">Attached Documents</label>
-                        <div class="d-flex flex-column gap-2">
-                          <a href="files/quotation.pdf" target="_blank" class="file-link">
-                            Quotation.pdf
-                          </a>
-                      
-                          <a href="files/specs.docx" target="_blank" class="file-link">
-                            Asset_Specifications.docx
-                          </a>
-                      
-                          <a href="files/image.png" target="_blank" class="file-link">
-                            Site_Image.png
-                          </a>
-                        </div>
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Attach Document</label>
+                        <input type="file" class="form-control">
                       </div>
 
                       <div class="col-md-12">
@@ -3445,8 +3434,668 @@
               </div>
             </div>
           </div>
+
+          <!-- view inspection and preventive in-progress modal -->
+          <div class="modal fade" id="viewInsPreMaintenance" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content rounded-3">
+                <!-- modal header -->
+                <div class="modal-header">
+                  <i class="fa-solid fa-spinner me-2"></i>
+                  <h5 class="modal-title fw-semibold">
+                    In Progress
+                  </h5>
+                  <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- modal body -->
+                <div class="modal-body px-4">
+          
+                  <!-- ===== maintenance information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-tools me-2"></i>
+                      Maintenance Information
+                    </h6>
+          
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance ID</label>
+                        <div class="fw-semibold">INS-2025-01</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance Type</label>
+                        <div class="fw-semibold">Inspection Maintenance</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== asset information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-box me-2"></i>
+                      Asset Information
+                    </h6>
+          
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Asset Tag</label>
+                        <div class="fw-semibold">AST-2025-01</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Asset Name</label>
+                        <div class="fw-semibold">Macbook Pro M3</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Last Maintenance Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance Frequency</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== issue/task description ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-clipboard-list me-2"></i>
+                      Issue/Task Description
+                    </h6>
+          
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Detailed Description</label>
+                      <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                        necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
+                        inventore dolorum. Debitis rerum iste dicta?
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Attached Files</label>
+                      <ul class="fw-semibold">
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                      </ul>
+                    </div>
+          
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== priority ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-flag me-2"></i>
+                      Priority Level
+                    </h6>
+          
+                    <span class="priority-badge high" style="font-size: 14px;">
+                      High
+                    </span>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== maintenance schedule ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Maintenance Schedule
+                    </h6>
+          
+                    <div class="row g-3">
+                      <!-- Scheduled Date -->
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Scheduled Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+          
+                      <!-- Assigned Technician -->
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Assigned Technician</label>
+                        <div class="fw-semibold">John Doe</div>
+                      </div>
+                    </div>
+          
+                  </section>
+          
+                  <hr />
+          
+                  <!-- post service details -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3" style="font-size: 20px;">
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Post-Service Details
+                    </h6>
+          
+                    <div class="row">
+                      <!-- condition post-service -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted">Condition Post Service</label>
+                        <select class="form-select">
+                          <option>Excellent - No Issues Found</option>
+                          <option>Good - Minor Issues Found</option>
+                          <option>Fair - Requires Future Repairs</option>
+                        </select>
+                      </div>
+          
+                      <!-- assigned technician -->
+                      <div class="col-md-6">
+                        <label for="assignedTechnician" class="form-label text-muted">
+                          Assigned Technician
+                        </label>
+                        <select id="assignedTechnician" class="form-select">
+                          <option value="" disabled selected>Select Technician</option>
+                          <option value="john-doe">John Doe</option>
+                          <option value="jane-smith">Jane Smith</option>
+                          <option value="mark-lee">Mark Lee</option>
+                        </select>
+                      </div>
+          
+                      <!-- documentation -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Attach Document</label>
+                        <input type="file" class="form-control">
+                      </div>
+                    </div>
+          
+                  </section>
+          
+                </div>
+          
+                <!-- modal footer -->
+                <div class="modal-footer">
+                  <button class="back-btn shadow-none" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                  <button class="btn btn-danger shadow-none">
+                    <i class="fa-solid fa-xmark me-1"></i> Fail
+                  </button>
+                  <button class="btn btn-success shadow-none">
+                    <i class="fa-solid fa-check me-1"></i> Pass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- corrective completed modal -->
+          <div class="modal fade" id="viewCorrectiveCompleted" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content rounded-3">
+                <!-- modal header -->
+                <div class="modal-header">
+                  <i class="fa-solid fa-circle-check me-2"></i>
+                  <h5 class="modal-title fw-semibold">
+                    Completed
+                  </h5>
+                  <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- modal body -->
+                <div class="modal-body px-4">
+
+                  <!-- ===== report information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-file-lines me-2"></i>
+                      Report Information
+                    </h6>
+                  
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Reported By</label>
+                        <div class="fw-semibold">Juan Dela Cruz</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Department</label>
+                        <div class="fw-semibold">IT Department</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Report Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <!-- ===== maintenance information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-tools me-2"></i>
+                      Maintenance Information
+                    </h6>
+          
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance ID</label>
+                        <div class="fw-semibold">INS-2025-01</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance Type</label>
+                        <div class="fw-semibold">Inspection Maintenance</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== asset information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-box me-2"></i>
+                      Asset Information
+                    </h6>
+          
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Asset Tag</label>
+                        <div class="fw-semibold">AST-2025-01</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Asset Name</label>
+                        <div class="fw-semibold">Macbook Pro M3</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Last Maintenance Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== issue/task description ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-clipboard-list me-2"></i>
+                      Issue/Task Description
+                    </h6>
+          
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Detailed Description</label>
+                      <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                        necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
+                        inventore dolorum. Debitis rerum iste dicta?
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Attached Files</label>
+                      <ul class="fw-semibold">
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                      </ul>
+                    </div>
+          
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== priority ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-flag me-2"></i>
+                      Priority Level
+                    </h6>
+          
+                    <span class="priority-badge high" style="font-size: 14px;">
+                      High
+                    </span>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== maintenance schedule ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Maintenance Schedule
+                    </h6>
+          
+                    <div class="row g-3">
+                      <!-- Scheduled Date -->
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Scheduled Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+          
+                      <!-- Assigned Technician -->
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Assigned Technician</label>
+                        <div class="fw-semibold">John Doe</div>
+                      </div>
+                    </div>
+          
+                  </section>
+          
+                  <hr />
+          
+                  <!-- post service details -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3" style="font-size: 20px;">
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Activity Feed
+                    </h6>
+          
+                    <div class="row">
+                      <!-- post-service description -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Condition Post Service</label>
+                        <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                          necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
+                          inventore dolorum. Debitis rerum iste dicta?
+                        </div>
+                      </div>
+          
+                      <!-- part/s replaced -->
+                      <div class="col-md-6 mb-3">
+                        <label for="assignedTechnician" class="form-label text-muted">
+                          Part/s Replaced
+                        </label>
+                        <ul class="fw-semibold">
+                          <li>Hard Drive (1TB SSD)</li>
+                          <li>Power Supply Unit</li>
+                          <li>Cooling Fan</li>
+                        </ul>
+                      </div>
+          
+                      <!-- documentation -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted">Attached Files</label>
+                        <ul class="fw-semibold">
+                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                              Quotation.pdf
+                            </a></li>
+                          
+                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                              Quotation.pdf
+                            </a></li>
+                          
+                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                              Quotation.pdf
+                            </a></li>
+
+                          </ul>
+                      </div>
+
+                      <!-- technician notes -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Technician Notes</label>
+                        <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                          necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
+                          inventore dolorum. Debitis rerum iste dicta?
+                        </div>
+                      </div>
+
+                      <!-- next maintenance schedule -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Start Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                    </div>
+          
+                  </section>
+          
+                </div>
+          
+                <!-- modal footer -->
+                <div class="modal-footer">
+                  <button class="back-btn shadow-none" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- inspection and preventive completed modal -->
+          <div class="modal fade" id="viewInsPreCompleted" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content rounded-3">
+                <!-- modal header -->
+                <div class="modal-header">
+                  <i class="fa-solid fa-circle-check me-2"></i>
+                  <h5 class="modal-title fw-semibold">
+                    Completed
+                  </h5>
+                  <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- modal body -->
+                <div class="modal-body px-4">
+          
+                  <!-- ===== maintenance information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-tools me-2"></i>
+                      Maintenance Information
+                    </h6>
+          
+                    <div class="row g-3">
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance ID</label>
+                        <div class="fw-semibold">INS-2025-01</div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Maintenance Type</label>
+                        <div class="fw-semibold">Inspection Maintenance</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== asset information ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-box me-2"></i>
+                      Asset Information
+                    </h6>
+          
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Asset Tag</label>
+                        <div class="fw-semibold">AST-2025-01</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Asset Name</label>
+                        <div class="fw-semibold">Macbook Pro M3</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Last Maintenance Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label text-muted">Maintenance Frequency</label>
+                        <div class="fw-semibold">Monthly</div>
+                      </div>
+                    </div>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== issue/task description ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-clipboard-list me-2"></i>
+                      Issue/Task Description
+                    </h6>
+          
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Detailed Description</label>
+                      <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                        necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
+                        inventore dolorum. Debitis rerum iste dicta?
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label text-muted">Attached Files</label>
+                      <ul class="fw-semibold">
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                        <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                            Quotation.pdf
+                          </a></li>
+                    
+                      </ul>
+                    </div>
+          
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== priority ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-flag me-2"></i>
+                      Priority Level
+                    </h6>
+          
+                    <span class="priority-badge high" style="font-size: 14px;">
+                      High
+                    </span>
+                  </section>
+          
+                  <hr />
+          
+                  <!-- ===== maintenance schedule ===== -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3">
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Maintenance Schedule
+                    </h6>
+          
+                    <div class="row g-3">
+                      <!-- Scheduled Date -->
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Scheduled Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+          
+                      <!-- Assigned Technician -->
+                      <div class="col-lg-6">
+                        <label class="form-label text-muted">Assigned Technician</label>
+                        <div class="fw-semibold">John Doe</div>
+                      </div>
+                    </div>
+          
+                  </section>
+          
+                  <hr />
+          
+                  <!-- post service details -->
+                  <section class="mb-4">
+                    <h6 class="fw-semibold mb-3" style="font-size: 20px;">
+                      <i class="fa-solid fa-calendar-days me-2"></i>
+                      Activity Feed
+                    </h6>
+          
+                    <div class="row">
+                      <!-- post-service description -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Condition Post Service</label>
+                        <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                          necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit
+                          fugit
+                          inventore dolorum. Debitis rerum iste dicta?
+                        </div>
+                      </div>
+          
+                      <!-- part/s replaced -->
+                      <div class="col-md-6 mb-3">
+                        <label for="assignedTechnician" class="form-label text-muted">
+                          Part/s Replaced
+                        </label>
+                        <ul class="fw-semibold">
+                          <li>Hard Drive (1TB SSD)</li>
+                          <li>Power Supply Unit</li>
+                          <li>Cooling Fan</li>
+                        </ul>
+                      </div>
+          
+                      <!-- documentation -->
+                      <div class="col-md-6 mb-3">
+                        <label class="form-label text-muted">Attached Files</label>
+                        <ul class="fw-semibold">
+                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                              Quotation.pdf
+                            </a></li>
+          
+                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                              Quotation.pdf
+                            </a></li>
+          
+                          <li><a href="files/quotation.pdf" target="_blank" class="file-link">
+                              Quotation.pdf
+                            </a></li>
+          
+                        </ul>
+                      </div>
+          
+                      <!-- technician notes -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Technician Notes</label>
+                        <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
+                          necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit
+                          fugit
+                          inventore dolorum. Debitis rerum iste dicta?
+                        </div>
+                      </div>
+          
+                      <!-- next maintenance schedule -->
+                      <div class="col-md-12 mb-3">
+                        <label class="form-label text-muted">Start Date</label>
+                        <div class="fw-semibold">01/01/2026</div>
+                      </div>
+                    </div>
+          
+                  </section>
+          
+                </div>
+          
+                <!-- modal footer -->
+                <div class="modal-footer">
+                  <button class="back-btn shadow-none" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
       </div>
 
       <!-- Reports -->
