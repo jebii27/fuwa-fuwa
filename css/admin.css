@@ -641,14 +641,15 @@ body {
   align-items: center;
 }
 
-.controls select {
-  cursor: pointer;
-  border-radius: var(--radius);
-}
-
 .filters {
   display: flex;
+  align-items: center;
   gap: 10px;
+}
+
+.filters select {
+  cursor: pointer;
+  border-radius: var(--radius);
 }
 
 table th {
@@ -751,18 +752,9 @@ table td {
   pointer-events: none;
 }
 
-.chart-center-label .asset-breakdown {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 10px;
-}
-
 .chart-footer {
   text-align: center;
 }
-
 
 .asset-breakdown {
   display: flex;
@@ -1580,6 +1572,21 @@ select option {
   padding: 15px 0;
 }
 
+.date-range-filter {
+  font-size: var(--text-14px);
+}
+
+.date-range-filter input {
+  border-radius: 8px;
+  padding: 2px 8px;
+  border: 1px solid var(--search-border);
+}
+
+.date-range-filter input:focus {
+  border-color: var(--button);
+  outline: none;
+}
+
 .create-report-btn {
   padding: 10px 20px;
   background-color: var(--button);
@@ -1599,37 +1606,135 @@ select option {
 }
 
 .report-container {
-  min-height: 40vh;
-  padding: 0 20px 10px 20px;
+  max-height: 73vh;
+  padding: 10px 30px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  overflow-y: auto;
 }
 
 .report-card {
-  background-color: var(--card-bg);
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 40px;
   border-radius: var(--radius);
+  transition: 0.3s ease;
+  padding: 15px 20px;
+}
+
+.report-card:hover {
+  background-color: #f7f7f7;
   box-shadow: var(--box-shadow);
-  margin-bottom: 20px;
 }
 
-.report-card i {
-  font-size: var(--text-20px);
+.report-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.report-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #166534;
+  background: #DCFCE7;
+}
+
+.report-info p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.report-actions button {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #1E40AF;
+  color: #1E40AF;
+  background: none;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: var(--text-16px);
+  margin-left: 6px;
+  transition: 0.3s ease;
 }
 
-.report-card i:hover {
-  transform: scale(1.1);
+.report-actions button:hover {
+  background-color: #1E40AF;
+  color: white;
 }
+
+
+.checklist-wrapper {
+  border-radius: 12px;
+  margin-top: 10px;
+  display: none;
+}
+
+.checklist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 12px 14px;
+  font-weight: var(--text-600);
+  font-size: var(--text-16px);
+  border-bottom: 2px solid var(--search-border);
+}
+
+.checklist-header:hover {
+  background: #f3f4f6;
+}
+
+.checklist-header i {
+  transition: transform 0.3s ease;
+}
+
+.checklist-header.active i {
+  transform: rotate(180deg);
+}
+
+.header-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.header-check input {
+  cursor: pointer;
+}
+
+.checklist-items {
+  display: none;
+  padding-left: 10px;
+  border-top: 1px solid var(--search-border);
+  font-size: 14px;
+}
+
+.checklist-items label {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checklist-items label:hover {
+  background: #f3f4f6;
+}
+
+.checklist-items input {
+  margin-right: 10px;
+}
+
+
+
 
 /* ============================ REPORTS & ANALYTICS ================================ */
-
-
-
-
 
 
 
