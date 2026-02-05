@@ -619,6 +619,22 @@ body {
   box-shadow: var(--box-shadow);
 }
 
+.table-responsive {
+  max-height: 76vh;
+  overflow-x: auto;
+}
+
+#dashboard .table-responsive {
+  max-height: 50vh;
+  overflow-x: auto;
+}
+
+.table-responsive thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 .controls {
   display: flex;
   justify-content: space-between;
@@ -698,27 +714,115 @@ table td {
 .chart-card {
   background: var(--card-bg);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 18px 18px 22px;
+  height: 100%;
   box-shadow: var(--box-shadow);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-header h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.chart-sub {
+  font-size: var(--text-16px);
+  color: var(--text-black);
+  font-weight: var(--text-600);
+}
+
+.chart-body {
+  position: relative;
+  min-height: 260px;
+}
+
+.chart-center-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.chart-center-label .asset-breakdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.chart-footer {
   text-align: center;
 }
 
-.chart-wrapper {
-  position: relative;
-  width: 220px;
-  height: 220px;
-  margin: auto;
+
+.asset-breakdown {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
 }
 
-.chart-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-weight: 600;
+.asset-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.asset-item .icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-14px);
+}
+
+.asset-item.physical .icon {
+  color: #7C2D12;
+  background-color: #FFE4D6;
+}
+
+.asset-item.digital .icon {
+  color: #155E75;
+  background-color: #CFFAFE;
+}
+
+.asset-item.compliant .icon {
+  color: #166534;
+  background-color: #DCFCE7;
+}
+
+.asset-item.non-compliant .icon {
+  color: #92400E;
+  background-color: #FFEDD5;
+}
+
+.total-assets {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-assets span {
+  font-size: var(--text-16px);
   color: var(--text-black);
-  pointer-events: none;
+  font-weight: var(--text-600);
+}
+
+.asset-item small {
+  font-size: 11px;
+  color: var(--text-gray);
 }
 
 /* ============================ DASHBOARD ================================ */
@@ -877,20 +981,24 @@ table td {
   border: 1px solid var(--search-border);
 }
 
-.filter-pill.for-review, .filter-pill.inspection {
+.filter-pill.inspection, .filter-pill.for-review  {
   background-color: #92400E;
 }
 
-.filter-pill.preventive, .filter-pill.pending-approval {
+.filter-pill.preventive, .filter-pill.in-progress {
   background-color: #6D28D9;
 }
 
-.filter-pill.corrective, .filter-pill.in-procurement {
+.filter-pill.corrective, .filter-pill.for-procurement {
   background-color: #1E40AF;
 }
 
-.filter-pill.completed, .filter-pill.procured {
+.filter-pill.completed, .filter-pill.for-release {
   background-color: #166534;
+}
+
+.filter-pill.closed {
+  background-color: #DC2626;
 }
 
 .request-container .request-card {
@@ -1743,6 +1851,7 @@ select option {
 .asset-detail-section {
   padding: 20px 30px;
 }
+
 
 .asset-header {
   background: var(--card-bg);
