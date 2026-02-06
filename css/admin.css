@@ -198,15 +198,16 @@ body {
 /* LAYOUT */
 .layout {
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   background: var(--body-bg);
   transition: all 0.5s ease;
+  overflow-y: auto;
 }
 
 /* SIDEBAR */
 .sidebar {
   width: 60px;
-  height: 100vh;
+  min-height: 100%;
   position: fixed;
   left: 0;
   top: 0;
@@ -345,16 +346,16 @@ body {
 
 /* CONTENT */
 .content {
+  flex: 1;
   padding: 20px 30px;
   margin-left: 260px;
   width: 100%;
   min-height: 100vh;
-  position: relative;
-  transition: margin-left 0.5s ease, padding 0.5s ease;
+  transition: margin-left 0.5s ease;
 }
 
 .sidebar.collapsed~.content {
-  margin-left: 80px;
+  margin-left: 60px;
 }
 
 
@@ -376,30 +377,6 @@ body {
 
   .sidebar.expanded ~ .content {
     margin-left: 210px;
-  }
-
-  /* .sidebar-toggle {
-    font-size: var(--text-12px);
-  } */
-
-  /* .logo {
-    height: 5vh;
-  }
-  
-  .menu-link i {
-    font-size: var(--text-12px);
-  }
-
-  .menu-section {
-    font-size: 10px;
-  } */
-
-  .calendar-card {
-    flex-grow: 1;
-  }
-
-  .repair-wrapper {
-    flex-grow: 1;
   }
 }
 
@@ -1527,15 +1504,8 @@ select option {
 /* ============================ VENDOR MANAGEMENT ================================ */
 
 /* ============================ MAINTENANCE & REPAIR ================================ */
-.maintenance-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 25px;
-}
-
 .repair-wrapper {
-  width: 40%;
+  height: 520px;
   max-height: 520px;
   background: var(--card-bg);
   border-radius: var(--radius);
@@ -2271,7 +2241,6 @@ select option {
 
 /* ============================ CALENDAR ================================ */
 .calendar-card {
-  width: 420px;
   height: 520px;
   background: var(--card-bg);
   border-radius: var(--radius);
