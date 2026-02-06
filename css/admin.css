@@ -16,6 +16,71 @@ body {
   margin-left: 5px;
 }
 
+/* admin sidebar */
+#admin-sidebar {
+  background-color: var(--admin);
+}
+
+#asset-detail-sidebar {
+  background-color: var(--admin);
+}
+
+#admin-sidebar .menu a:hover,
+#asset-detail-sidebar .menu a:hover {
+  background-color: var(--admin-hover);
+  transition: all 0.3s ease;
+}
+
+#admin-sidebar .menu a.active,
+#asset-detail-sidebar .menu a:hover {
+  background-color: var(--admin-hover);
+  font-weight: var(--text-600);
+  transition: all 0.3s ease;
+}
+
+/* encoder-sidebar */
+#encoder-sidebar {
+  background-color: var(--encoder);
+}
+
+#encoder-sidebar .menu a:hover {
+  background-color: var(--encoder-hover);
+  transition: all 0.3s ease;
+}
+
+#encoder-sidebar .menu a.active {
+  background-color: var(--encoder-hover);
+  font-weight: var(--text-600);
+  transition: all 0.3s ease;
+}
+
+/* viewer-sidebar */
+#viewer-sidebar {
+  background-color: var(--viewer);
+}
+
+#viewer-sidebar .menu a:hover {
+  background-color: var(--viewer-hover);
+  transition: all 0.3s ease;
+}
+
+#viewer-sidebar .menu a.active {
+  background-color: var(--viewer-hover);
+  font-weight: var(--text-600);
+  transition: all 0.3s ease;
+}
+
+/* CONTENT VISIBILITY (REQUIRED) */
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+}
+
+
+
 /* ============================ LOGIN ================================ */
 .login {
   width: 100%;
@@ -129,161 +194,213 @@ body {
 
 
 /* ============================ SIDEBAR ================================ */
+
+/* LAYOUT */
 .layout {
   display: flex;
   min-height: 100vh;
+  background: var(--body-bg);
+  transition: all 0.5s ease;
 }
 
+/* SIDEBAR */
 .sidebar {
-  width: 260px;
+  width: 60px;
   height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
-  position: fixed;
+  transition: width 0.5s ease, background 0.5s ease;
+  z-index: 1000;
+}
+
+.sidebar.expanded {
+  width: 260px;
 }
 
 .sidebar-header {
-  padding: 10px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
 }
 
-.sidebar-header h4 {
-  margin: 0;
-  font-weight: 700;
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  position: sticky;
+  z-index: 1100;
+  transition: all 0.5s ease;
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 8vh;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.logo img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.5s ease;
 }
 
 .menu {
   flex: 1;
   padding-top: 10px;
+  transition: all 0.5s ease;
 }
 
-.menu a {
+.menu-link {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
   padding: 12px 20px;
-  color: var(--text-black);
+  color: var(--black);
   text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-/* admin sidebar */
-#admin-sidebar {
-  background-color: var(--admin);
-}
-
-#asset-detail-sidebar {
-  background-color: var(--admin);
-}
-
-#admin-sidebar .menu a:hover,
-#asset-detail-sidebar .menu a:hover {
-  background-color: var(--admin-hover);
-  transition: all 0.3s ease;
-}
-
-#admin-sidebar .menu a.active,
-#asset-detail-sidebar .menu a:hover {
-  background-color: var(--admin-hover);
-  font-weight: var(--text-600);
-  transition: all 0.3s ease;
-}
-
-/* encoder-sidebar */
-#encoder-sidebar {
-  background-color: var(--encoder);
-}
-
-#encoder-sidebar .menu a:hover {
-  background-color: var(--encoder-hover);
-  transition: all 0.3s ease;
-}
-
-#encoder-sidebar .menu a.active {
-  background-color: var(--encoder-hover);
-  font-weight: var(--text-600);
-  transition: all 0.3s ease;
-}
-
-/* viewer-sidebar */
-#viewer-sidebar {
-  background-color: var(--viewer);
-}
-
-#viewer-sidebar .menu a:hover {
-  background-color: var(--viewer-hover);
-  transition: all 0.3s ease;
-}
-
-#viewer-sidebar .menu a.active {
-  background-color: var(--viewer-hover);
-  font-weight: var(--text-600);
-  transition: all 0.3s ease;
+  white-space: nowrap;
+  transition: opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease, gap 0.5s ease;
 }
 
 .menu-link i {
-  font-size: var(--text-16px);
+  font-size: 16px;
+  min-width: 20px;
+  text-align: center;
+  transition: all 0.5s ease;
 }
 
+/* collapsed menu items */
+.sidebar.collapsed .menu-link {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.menu-section {
+  padding: 12px 15px;
+  font-size: 12px;
+  font-weight: var(--text-600);
+  color: var(--text-gray);
+  text-transform: uppercase;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sidebar.collapsed span,
+.sidebar.collapsed .menu-section {
+  display: none;
+}
+
+/* SIDEBAR FOOTER */
 .sidebar-footer {
-  padding: 15px 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 14px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease;
 }
 
 .user-info {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all 0.5s ease;
 }
 
 .user-icon {
   width: 36px;
   height: 36px;
-  background: #fcfcfc;
+  background: #f1f1f1;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.5s ease;
 }
 
-/* CONTENT */
-.content {
-  margin-left: 260px;
-  width: 100%;
-}
-
-.content-section {
+.sidebar.collapsed .user-info {
   display: none;
-  padding: 20px 30px;
 }
 
-.content-section.active {
-  display: block;
+.sidebar.collapsed .sidebar-footer {
+  justify-content: center;
 }
 
 .logout-btn {
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .logout-btn:hover {
   transform: scale(1.1);
 }
 
-.menu-section {
-  padding: 12px 16px 6px;
-  font-size: var(--text-12px);
-  font-weight: var(--text-600);
-  color: var(--text-gray);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+/* CONTENT */
+.content {
+  padding: 20px 30px;
+  margin-left: 260px;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  transition: margin-left 0.5s ease, padding 0.5s ease;
+}
+
+.sidebar.collapsed~.content {
+  margin-left: 80px;
+}
+
+
+/* RESPONSIVE – TABLET */
+@media (max-width: 1024px) {
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .sidebar.expanded {
+    width: 210px;
+  }
+
+  .content {
+    margin-left: 60px;
+  }
+
+  .sidebar.expanded ~ .content {
+    margin-left: 210px;
+  }
+
+  /* .sidebar-toggle {
+    font-size: var(--text-12px);
+  } */
+
+  /* .logo {
+    height: 5vh;
+  }
+  
+  .menu-link i {
+    font-size: var(--text-12px);
+  }
+
+  .menu-section {
+    font-size: 10px;
+  } */
+
+  .calendar-card {
+    flex-grow: 1;
+  }
+
+  .repair-wrapper {
+    flex-grow: 1;
+  }
 }
 
 /* ============================ SIDEBAR ================================ */
@@ -314,7 +431,7 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-.navbar h3 {
+.navbar h2 {
   flex: 1;
 }
 
@@ -1000,7 +1117,6 @@ table td {
   padding: 20px;
   border-left: 6px solid transparent;
   transition: all 0.3s ease;
-  margin-bottom: 20px;
   color: var(--text-black);
 }
 
@@ -1413,11 +1529,13 @@ select option {
 /* ============================ MAINTENANCE & REPAIR ================================ */
 .maintenance-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 25px;
 }
 
 .repair-wrapper {
-  width: 35%;
+  width: 40%;
   max-height: 520px;
   background: var(--card-bg);
   border-radius: var(--radius);
