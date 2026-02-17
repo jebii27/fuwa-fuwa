@@ -1,648 +1,133 @@
-<!-- ===== report information ===== -->
-<section class="mb-4">
-  <h6 class="fw-semibold mb-3">
-    <i class="fa-solid fa-file-lines me-2"></i>
-    Report Information
-  </h6>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="row g-3">
-    <div class="col-md-6">
-      <label class="form-label text-muted">Reported By</label>
-      <div class="fw-semibold">Juan Dela Cruz</div>
-    </div>
-    <div class="col-md-6">
-      <label class="form-label text-muted">Department</label>
-      <div class="fw-semibold">IT Department</div>
-    </div>
-    <div class="col-md-6">
-      <label class="form-label text-muted">Report Date</label>
-      <div class="fw-semibold">01/01/2026</div>
-    </div>
-  </div>
-</section>
+<head>
+  <meta charset="UTF-8" />
+  <title>Fuwa Fuwa Dashboard</title>
 
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
+  <!-- FONT AWESOME -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/admin.css" />
 
-<!-- inspection and preventive modal -->
-<div class="modal fade" id="viewInsPreMaintenance" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content rounded-3">
-      <!-- modal header -->
-      <div class="modal-header">
-        <i class="fa-regular fa-calendar me-2"></i>
-        <h5 class="modal-title fw-semibold">
-          Schedule Maintenance
-        </h5>
-        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
-      </div>
+  <!-- SWEETALERT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-      <!-- modal body -->
-      <div class="modal-body px-4">
+  <!-- CHART JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
 
-        <!-- ===== maintenance information ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-tools me-2"></i>
-            Maintenance Information
-          </h6>
-
-          <div class="row g-3">
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Maintenance ID</label>
-              <div class="fw-semibold">INS-2025-01</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Maintenance Type</label>
-              <div class="fw-semibold">Inspection Maintenance</div>
-            </div>
-          </div>
-        </section>
-
-        <hr />
-
-        <!-- ===== asset information ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-box me-2"></i>
-            Asset Information
-          </h6>
-
-          <div class="row g-3">
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Asset Tag</label>
-              <div class="fw-semibold">AST-2025-01</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Asset Name</label>
-              <div class="fw-semibold">Macbook Pro M3</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Last Maintenance Date</label>
-              <div class="fw-semibold">01/01/2026</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Maintenance Frequency</label>
-              <div class="fw-semibold">01/01/2026</div>
-            </div>
-          </div>
-        </section>
-
-        <hr />
-
-        <!-- ===== issue/task description ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-clipboard-list me-2"></i>
-            Issue/Task Description
-          </h6>
-
-          <div class="mb-3">
-            <label class="form-label text-muted">Detailed Description</label>
-            <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
-              necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
-              inventore dolorum. Debitis rerum iste dicta?
-            </div>
-          </div>
-
-        </section>
-
-        <hr />
-
-        <!-- ===== priority ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-flag me-2"></i>
-            Priority Level
-          </h6>
-
-          <span class="priority-badge high" style="font-size: 14px;">
-            High
-          </span>
-        </section>
-
-        <hr />
-
-        <!-- ===== maintenance schedule ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-calendar-days me-2"></i>
-            Maintenance Schedule
-          </h6>
-
-          <div class="row g-3">
-            <!-- Scheduled Date -->
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Scheduled Date</label>
-              <div class="fw-semibold">01/01/2026</div>
-            </div>
-
-            <!-- Assigned Technician -->
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Assigned Technician</label>
-              <div class="fw-semibold">John Doe</div>
-            </div>
-          </div>
-
-        </section>
-
-        <hr />
-
-        <!-- post service details -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-calendar-days me-2"></i>
-            Post-Service Details
-          </h6>
-
-          <div class="row">
-            <!-- condition post-service -->
-            <div class="col-md-6 mb-3">
-              <label class="form-label text-muted">Condition Post Service</label>
-              <select class="form-select">
-                <option>Excellent - No Issues Found</option>
-                <option>Good - Minor Issues Found</option>
-                <option>Fair - Requires Future Repairs</option>
-              </select>
-            </div>
-
-            <!-- assigned technician -->
-            <div class="col-md-6">
-              <label for="assignedTechnician" class="form-label text-muted">
-                Assigned Technician
-              </label>
-              <select id="assignedTechnician" class="form-select">
-                <option value="" disabled selected>Select Technician</option>
-                <option value="john-doe">John Doe</option>
-                <option value="jane-smith">Jane Smith</option>
-                <option value="mark-lee">Mark Lee</option>
-              </select>
-            </div>
-
-            <!-- documentation -->
-            <div class="col-md-12 mb-3">
-              <label class="form-label text-muted">Attach Document</label>
-              <input type="file" class="form-control">
-            </div>
-          </div>
-
-        </section>
-
-      </div>
-
-      <!-- modal footer -->
-      <div class="modal-footer">
-        <button class="back-btn shadow-none" data-bs-dismiss="modal">
-          Close
+<body>
+  <div class="layout">
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="admin-sidebar">
+      <div class="sidebar-header">
+        <button class="sidebar-toggle" id="sidebarToggle">
+          <i class="fa-solid fa-bars"></i>
         </button>
-        <button class="btn btn-danger shadow-none">
-          <i class="fa-solid fa-xmark me-1"></i> Fail
-        </button>
-        <button class="btn btn-success shadow-none">
-          <i class="fa-solid fa-check me-1"></i> Pass
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<!-- inspection or preventive repair modal -->
-<div class="modal fade" id="inspre-repair" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content rounded-3">
-      <!-- modal header -->
-      <div class="modal-header">
-        <i class="fa-regular fa-calendar me-2"></i>
-        <h5 class="modal-title fw-semibold">
-          Schedule Maintenance
-        </h5>
-        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
-      </div>
-
-      <!-- modal body -->
-      <div class="modal-body px-4">
-        <!-- ===== maintenance information ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-tools me-2"></i>
-            Maintenance Information
-          </h6>
-
-          <div class="row g-3">
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Maintenance ID</label>
-              <div class="fw-semibold">PRE-2025-01</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Maintenance Type</label>
-              <div class="fw-semibold">Preventive Maintenance</div>
-            </div>
-          </div>
-        </section>
-
-        <hr />
-
-        <!-- ===== asset information ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-box me-2"></i>
-            Asset Information
-          </h6>
-
-          <div class="row g-3">
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Asset Tag</label>
-              <div class="fw-semibold">AST-2025-01</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Asset Name</label>
-              <div class="fw-semibold">Macbook Pro M3</div>
-            </div>
-            <div class="col-lg-6">
-              <label class="form-label text-muted">Last Maintenance Date</label>
-              <div class="fw-semibold">01/01/2026</div>
-            </div>
-          </div>
-        </section>
-
-        <hr />
-
-        <!-- ===== issue/task description ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-clipboard-list me-2"></i>
-            Issue/Task Description
-          </h6>
-
-          <div class="mb-3">
-            <label class="form-label text-muted">Detailed Description</label>
-            <div class="fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quibusdam
-              necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit fugit
-              inventore dolorum. Debitis rerum iste dicta?</div>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label text-muted">Attached Files</label>
-            <div class="d-flex flex-column gap-2">
-              <a href="files/quotation.pdf" target="_blank" class="file-link">
-                Quotation.pdf
-              </a>
-
-              <a href="files/specs.docx" target="_blank" class="file-link">
-                Asset_Specifications.docx
-              </a>
-
-              <a href="files/image.png" target="_blank" class="file-link">
-                Site_Image.png
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <hr />
-
-        <!-- ===== priority ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-flag me-2"></i>
-            Priority Level
-          </h6>
-
-          <span class="priority-badge urgent" style="font-size: 14px;">
-            Urgent
-          </span>
-        </section>
-
-        <hr />
-
-        <!-- ===== maintenance schedule ===== -->
-        <section class="mb-4">
-          <h6 class="fw-semibold mb-3">
-            <i class="fa-solid fa-calendar-days me-2"></i>
-            Maintenance Schedule
-          </h6>
-
-          <div class="row g-3">
-            <!-- scheduled date -->
-            <div class="col-md-6">
-              <label class="form-label text-muted">
-                Start Date <span class="text-danger">*</span>
-              </label>
-              <input type="date" class="form-control" />
-            </div>
-
-            <!-- maintenance frequency -->
-            <div class="col-md-6">
-              <label class="form-label text-muted">
-                Maintenance Frequency
-              </label>
-              <select id="assignedTechnician" class="form-select">
-                <option value="semi-annual">Semi-annual</option>
-                <option value="quarterly">Quarterly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </div>
-
-            <!-- assigned technician -->
-            <div class="col-md-12">
-              <label class="form-label text-muted">
-                Assigned Technician
-              </label>
-              <select id="assignedTechnician" class="form-select">
-                <option value="" disabled selected>Select Technician</option>
-                <option value="john-doe">John Doe</option>
-                <option value="jane-smith">Jane Smith</option>
-                <option value="mark-lee">Mark Lee</option>
-              </select>
-            </div>
-          </div>
-
-        </section>
-
-      </div>
-
-      <!-- modal footer -->
-      <div class="modal-footer">
-        <button class="back-btn shadow-none" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button class="btn btn-danger shadow-none">
-          <i class="fa-solid fa-xmark me-1"></i> Cancel
-        </button>
-        <button class="btn btn-success shadow-none">
-          <i class="fa-solid fa-check me-1"></i> Submit
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- calendar schedule -->
-<div class="maintenance-container mb-4">
-
-  <!-- calendar -->
-  <div class="calendar-card">
-    <div class="calendar-header">
-      <h4>Maintenance Calendar</h4>
-
-      <div class="date-controls">
-        <!-- month -->
-        <div class="month-control">
-          <button id="prevMonth" aria-label="Previous month">
-            <i class="fa-solid fa-angle-left"></i>
-          </button>
-
-          <span id="monthLabel"></span>
-
-          <button id="nextMonth" aria-label="Next month">
-            <i class="fa-solid fa-angle-right"></i>
-          </button>
+        <div class="logo">
+          <img src="assets/bwlogo.png" alt="Fuwa Fuwa" />
         </div>
+      </div>
 
-        <!-- Year control -->
-        <select id="yearSelect"></select>
+      <div class="menu">
+        <!-- OPERATIONS -->
+        <div class="menu-section">OPERATIONS</div>
+
+        <a href="#" class="menu-link active" data-target="dashboard">
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="#" class="menu-link" data-target="notifications">
+          <i class="fa-solid fa-bell"></i>
+          <span>Notifications</span>
+        </a>
+
+        <a href="#" class="menu-link" data-target="assets">
+          <i class="fa-solid fa-box"></i>
+          <span>Assets</span>
+        </a>
+
+        <a href="#" class="menu-link" data-target="asset-request">
+          <i class="fa-solid fa-dolly"></i>
+          <span>Asset Request</span>
+        </a>
+
+        <a href="#" class="menu-link" data-target="maintenance">
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <span>Maintenance & Repair</span>
+        </a>
+
+        <!-- ADMINISTRATION -->
+        <div class="menu-section">ADMINISTRATION</div>
+
+        <a href="#" class="menu-link" data-target="users">
+          <i class="fa-solid fa-users"></i>
+          <span>User Management</span>
+        </a>
+
+        <a href="#" class="menu-link" data-target="vendors">
+          <i class="fa-solid fa-shop"></i>
+          <span>Vendor Management</span>
+        </a>
+
+        <!-- INSIGHTS -->
+        <div class="menu-section">INSIGHTS</div>
+
+        <a href="#" class="menu-link" data-target="reports">
+          <i class="fa-solid fa-chart-column"></i>
+          <span>Reports & Analytics</span>
+        </a>
+
+        <!-- SYSTEM -->
+        <div class="menu-section">SYSTEM</div>
+
+        <a href="#" class="menu-link" data-target="settings">
+          <i class="fa-solid fa-gear"></i>
+          <span>System Configuration</span>
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div>
+            <strong>Kiara Aquino</strong><br />
+            <small>Admin</small>
+          </div>
+        </div>
+        <i class="fa-solid fa-right-from-bracket logout-btn" id="logoutBtn"></i>
       </div>
     </div>
 
-    <div class="weekdays">
-      <div>Sun</div>
-      <div>Mon</div>
-      <div>Tue</div>
-      <div>Wed</div>
-      <div>Thu</div>
-      <div>Fri</div>
-      <div>Sat</div>
-    </div>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-    <div class="calendar-grid" id="calendar"></div>
-
-    <div class="legend">
-      <div><span class="dot corrective"></span>Corrective</div>
-      <div><span class="dot preventive"></span>Preventive</div>
-      <div><span class="dot inspection"></span>Inspection</div>
+    <!-- CONTENT -->
+    <div class="content">
     </div>
   </div>
 
-  <!-- inspection and preventive card -->
-  <section class="repair-wrapper overflow-auto">
-    <header class="repair-header">
-      <h4>Findings <span>(2)</span></h4>
-    </header>
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <article class="repair-row">
-      <div class="repair-info">
-        <div class="repair-top mb-1">
-          <span class="repair-id">INS-2025-001</span>
-        </div>
-        <span class="issue-reason">Screen flickering daming sira, boo</span>
-        <div class="repair-meta">
-          <span>Asset: Laptop Pro 16</span>
-          <span>Issued by: IT Dept</span>
+  <script>
+    const sidebar = document.getElementById("admin-sidebar");
+    const toggleBtn = document.getElementById("sidebarToggle");
 
-        </div>
-      </div>
-      <button class="schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleMaintenance">Schedule
-        Maintenance</button>
-    </article>
-  </section>
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+    });
+  </script>
 
-  <!-- repair card -->
-  <section class="repair-wrapper overflow-auto">
-    <header class="repair-header">
-      <h4>For Repair <span>(2)</span></h4>
-    </header>
 
-    <!-- corrective -->
-    <article class="repair-row">
-      <div class="repair-info">
-        <div class="repair-top mb-1">
-          <span class="repair-id">COR-2025-001</span>
-        </div>
-        <span class="issue-reason">Screen flickering daming sira, boo</span>
-        <div class="repair-meta">
-          <span>Asset: Laptop Pro 16</span>
-          <span>Issued by: IT Dept</span>
+</body>
 
-        </div>
-      </div>
-      <button class="schedule-btn" data-bs-toggle="modal" data-bs-target="#scheduleMaintenance">Schedule
-        Maintenance</button>
-    </article>
-  </section>
-
-  <!-- corrective repair modal -->
-  <div class="modal fade" id="scheduleMaintenance" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-l modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content rounded-3">
-        <!-- modal header -->
-        <div class="modal-header">
-          <i class="fa-regular fa-calendar me-2"></i>
-          <h5 class="modal-title fw-semibold">
-            Schedule Maintenance
-          </h5>
-          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"></button>
-        </div>
-
-        <!-- modal body -->
-        <div class="modal-body px-4">
-          <!-- ===== maintenance information ===== -->
-          <section class="mb-4">
-            <h6 class="fw-semibold mb-3">
-              <i class="fa-solid fa-tools me-2"></i>
-              Maintenance Information
-            </h6>
-
-            <div class="row g-3">
-              <div class="col-lg-6">
-                <label class="form-label text-muted">Maintenance ID</label>
-                <div class="description-text fw-semibold">COR-2025-01</div>
-              </div>
-              <div class="col-lg-6">
-                <label class="form-label text-muted">Maintenance Type</label>
-                <div class="description-text fw-semibold">Corrective Maintenance</div>
-              </div>
-            </div>
-          </section>
-
-          <hr />
-
-          <!-- ===== asset information ===== -->
-          <section class="mb-4">
-            <h6 class="fw-semibold mb-3">
-              <i class="fa-solid fa-box me-2"></i>
-              Asset Information
-            </h6>
-
-            <div class="row g-3">
-              <div class="col-lg-6">
-                <label class="form-label text-muted">Asset Tag</label>
-                <div class="description-text fw-semibold">AST-2025-01</div>
-              </div>
-              <div class="col-lg-6">
-                <label class="form-label text-muted">Asset Name</label>
-                <div class="description-text fw-semibold">Macbook Pro M3</div>
-              </div>
-              <div class="col-lg-6">
-                <label class="form-label text-muted">Last Maintenance Date</label>
-                <div class="description-text fw-semibold">01/01/2026</div>
-              </div>
-            </div>
-          </section>
-
-          <hr />
-
-          <!-- ===== issue/task description ===== -->
-          <section class="mb-4">
-            <h6 class="fw-semibold mb-3">
-              <i class="fa-solid fa-clipboard-list me-2"></i>
-              Issue/Task Description
-            </h6>
-
-            <div class="mb-3">
-              <label class="form-label text-muted">Detailed Description</label>
-              <div class="description-text fw-semibold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-                quibusdam
-                necessitatibus dolorem libero nemo temporibus tempora impedit eos omnis? Minima tempore nam suscipit
-                fugit
-                inventore dolorum. Debitis rerum iste dicta?</div>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label text-muted">Attached Files</label>
-              <ul class="fw-semibold">
-                <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                    Quotation.pdf
-                  </a></li>
-
-                <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                    Quotation.pdf
-                  </a></li>
-
-                <li><a href="files/quotation.pdf" target="_blank" class="file-link">
-                    Quotation.pdf
-                  </a></li>
-
-              </ul>
-            </div>
-          </section>
-
-          <hr />
-
-          <!-- ===== priority ===== -->
-          <section class="mb-4">
-            <h6 class="fw-semibold mb-3">
-              <i class="fa-solid fa-flag me-2"></i>
-              Priority Level
-            </h6>
-
-            <span class="priority-badge low" style="font-size: 14px;">
-              Low
-            </span>
-          </section>
-
-          <hr />
-
-          <!-- ===== maintenance schedule ===== -->
-          <section class="mb-4">
-            <h6 class="fw-semibold mb-3" style="font-size: 20px;">
-              <i class="fa-solid fa-calendar-days me-2"></i>
-              Maintenance Schedule
-            </h6>
-
-            <div class="row g-3">
-              <!-- Scheduled Date -->
-              <div class="col-md-6">
-                <label class="form-label text-muted">
-                  Start Date <span class="text-danger">*</span>
-                </label>
-                <input type="date" class="form-control" />
-              </div>
-
-              <!-- Assigned Technician -->
-              <div class="col-md-6">
-                <label for="assignedTechnician" class="form-label text-muted">
-                  Assigned Technician
-                </label>
-                <select id="assignedTechnician" class="form-select">
-                  <option value="" disabled selected>Select Technician</option>
-                  <option value="john-doe">John Doe</option>
-                  <option value="jane-smith">Jane Smith</option>
-                  <option value="mark-lee">Mark Lee</option>
-                </select>
-              </div>
-            </div>
-
-          </section>
-
-        </div>
-
-        <!-- modal footer -->
-        <div class="modal-footer">
-          <button class="back-btn shadow-none" data-bs-dismiss="modal">
-            Close
-          </button>
-          <button class="btn btn-danger shadow-none">
-            <i class="fa-solid fa-xmark me-1"></i> Cancel
-          </button>
-          <button class="btn btn-success shadow-none">
-            <i class="fa-solid fa-check me-1"></i> Submit
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</html>

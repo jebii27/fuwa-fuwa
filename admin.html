@@ -108,6 +108,8 @@
       </div>
     </div>
 
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- CONTENT -->
     <div class="content">
       <!-- Dashboard-->
@@ -163,7 +165,7 @@
 
         <!-- numbers -->
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="col-12 col-md-6 col-xl-3 mb-4">
             <div class="card">
               <!-- upper -->
               <div class="d-flex align-items-center gap-3">
@@ -201,7 +203,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="col-12 col-md-6 col-xl-3 mb-4">
             <div class="card">
               <!-- upper -->
               <div class="d-flex align-items-center gap-3">
@@ -239,7 +241,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="col-12 col-md-6 col-xl-3 mb-4">
             <div class="card">
               <!-- upper -->
               <div class="d-flex align-items-center gap-3">
@@ -277,7 +279,7 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+          <div class="col-12 col-md-6 col-xl-3 mb-4">
             <div class="card">
               <!-- upper -->
               <div class="d-flex align-items-center gap-3">
@@ -320,7 +322,7 @@
             <div class="row g-4 justify-content-center">
           
               <!-- Asset Category -->
-              <div class="col-lg-4 col-md-12">
+              <div class="col-12 col-md-12 col-xl-4">
                 <div class="chart-card">
                   <div class="chart-header">
                     <h6>Asset Category</h6>
@@ -356,7 +358,7 @@
               </div>
           
               <!-- Compliance -->
-              <div class="col-lg-4 col-md-12">
+              <div class="col-12 col-md-6 col-xl-4">
                 <div class="chart-card">
                   <div class="chart-header my-2">
                   </div>
@@ -393,7 +395,7 @@
               </div>
           
               <!-- Users -->
-              <div class="col-lg-4 col-md-12">
+              <div class="col-12 col-md-6 col-xl-4">
                 <div class="chart-card">
                   <div class="chart-header">
                     <h6>User Roles</h6>
@@ -1646,7 +1648,7 @@
         <!-- numbers -->
         <div class="row">
 
-          <div class="col-lg-4 col-md-12 col-sm-12 mb-3">
+          <div class="col-12 col-md-12 col-xl-4 mb-3">
             <div class="card">
               <!-- upper -->
               <div class="d-flex align-items-center gap-3">
@@ -1684,7 +1686,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="col-12 col-md-6 col-xl-4 mb-4">
             <div class="card">
               <div class="d-flex align-items-center gap-3">
                 <div class="number-icon" style="color: #1E40AF; background: #E0E7FF;">
@@ -1698,7 +1700,7 @@
             </div>
           </div>
         
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="col-12 col-md-6 col-xl-4 mb-4">
             <div class="card">
               <div class="d-flex align-items-center gap-3">
                 <div class="number-icon" style="color: #166534; background: #DCFCE7;">
@@ -1743,7 +1745,7 @@
           <div class="row">
 
             <!-- low -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
               <div class="request-card for-review">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
@@ -1783,7 +1785,7 @@
             </div>
 
             <!-- medium -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
               <div class="request-card pending-approval">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
@@ -1823,7 +1825,7 @@
             </div>
 
             <!-- high -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
               <div class="request-card in-procurement">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
@@ -1863,7 +1865,7 @@
             </div>
 
             <!-- urgent -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-12 col-md-6 col-xl-4 mb-4">
               <div class="request-card procured">
                 <div class="d-flex justify-content-between align-items-center">
                   <!-- asset-info -->
@@ -5283,19 +5285,17 @@
   <script>
     const sidebar = document.getElementById("admin-sidebar");
     const toggleBtn = document.getElementById("sidebarToggle");
+    const overlay = document.getElementById("sidebarOverlay");
 
-    sidebar.classList.add("collapsed");
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("expanded");
+      overlay.classList.toggle("active");
+    });
 
-      toggleBtn.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          // Mobile: slide in/out
-          sidebar.classList.toggle("open");
-        } else {
-          // Desktop: expand/collapse
-          sidebar.classList.toggle("collapsed");
-          sidebar.classList.toggle("expanded");
-        }
-      });
+    overlay.addEventListener("click", () => {
+      sidebar.classList.remove("expanded");
+      overlay.classList.remove("active");
+    });
   </script>
 
   <!-- NOTIFICATION PANEL -->
