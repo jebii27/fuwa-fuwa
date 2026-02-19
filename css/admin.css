@@ -623,6 +623,10 @@ body {
 }
 
 .notif-desc {
+  max-width: 80%;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: var(--text-12px);
   color: var(--text-gray);
 }
@@ -993,6 +997,7 @@ table td {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
 
 .request-control i {
@@ -1259,34 +1264,7 @@ select option {
   padding: 12px 0;
 }
 
-.edit-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 6px 15px;
-  background: var(--button);
-  color: var(--text-black);
-  border: none;
-  border-radius: var(--radius);
-  font-size: var(--text-16px);
-  font-weight: var(--text-600);
-
-  cursor: pointer;
-  transition: all 0.3s ease;
-  flex: 1;
-}
-
-.edit-btn:hover {
-  opacity: 0.9;
-  transform: scale(1.01);
-}
-
 .delete-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 10px;
   background: none;
   color: var(--delete-btn);
   border: none;
@@ -1351,13 +1329,17 @@ select option {
 
 .vendor-actions {
   display: flex;
-  gap: 6px;
+  gap: 15px;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 15px;
 }
 
 .icon-btn {
   background: transparent;
   border: none;
-  padding: 6px;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -1501,11 +1483,6 @@ select option {
   padding: 0 10px;
 }
 
-.repair-top {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
 
 .repair-id {
   font-size: 18px;
@@ -1514,7 +1491,7 @@ select option {
 
 .issue-reason {
   font-size: var(--text-14px);
-  color: var(--text-gray);
+  color: red;
 }
 
 .repair-meta {
@@ -1709,8 +1686,10 @@ select option {
   background: none;
   border-radius: 50%;
   cursor: pointer;
-  margin-left: 6px;
   transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .report-actions button:hover {
@@ -2402,7 +2381,7 @@ select option {
   }
 }
 
-/* Large Mobile / Small Tablet */
+/* Large Mobile / Small Tablet  */
 @media (max-width: 768px) {
 
   /* =========== TABLE, SELECTS AND SEARCH ========== */
@@ -2425,6 +2404,11 @@ select option {
   .controls {
     flex-wrap: wrap;
     gap: 10px;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .search-box {
@@ -2514,9 +2498,17 @@ select option {
     font-size: var(--text-16px);
   }
 
+  .navbar .group-box {
+    gap: 12px;
+  }
+
+  .btn-text {
+    display: none;
+  }
+
   .add-btn {
-    gap: 8px;
-    padding: 3px 8px;
+    gap: 0;
+    padding: 5px 8px;
     font-size: var(--text-10px);
   }
 
@@ -2609,36 +2601,6 @@ select option {
     font-size: var(--text-14px);
   }
 
-  /* FOR LATER */
-  /* FOR LATER */
-  /* FOR LATER */
-  /* FOR LATER */
-  /* FOR LATER */
-  .chart-body {
-    position: relative;
-    min-height: 260px;
-  }
-
-  .chart-center-label {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-  }
-
-  .chart-footer {
-    text-align: center;
-  }
-
-  /* FOR LATER */
-  /* FOR LATER */
-  /* FOR LATER */
-  /* FOR LATER */
-  /* FOR LATER */
-
   .asset-item {
     gap: 7px;
   }
@@ -2664,13 +2626,13 @@ select option {
   /* =========== NOTIFICATION ========== */
 
   .notif-container .filter-pill {
-    font-size: var(--text-12px);
+    font-size: var(--text-10px);
     padding: 5px 10px;
   }
 
   .notifs {
     padding: 15px;
-    min-height: 50vh;
+    min-height: 30vh;
   }
 
   .notif-row {
@@ -2679,26 +2641,17 @@ select option {
   }
 
   .notif-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    max-width: 85%;
+    gap: 10px;
+    width: 85%;
   }
 
   .notif-box {
-    width: 36px;
-    height: 36px;
-    background: #f0ab4b;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 31px;
+    height: 31px;
   }
 
   .notif-box i {
-    color: var(--text-white);
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .notif-text {
@@ -2708,53 +2661,454 @@ select option {
   }
 
   .notif-title {
-    font-size: 16px;
-    font-weight: var(--text-600);
-    color: var(--black);
+    font-size: 12px;
   }
 
   .notif-desc {
-    font-size: var(--text-12px);
-    color: var(--text-gray);
+    font-size: 10px;
+    max-width: 120px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .notif-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    gap: 7px;
   }
 
   .notif-time {
-    font-size: var(--text-12px);
-    color: var(--text-gray);
-    white-space: nowrap;
+    font-size: 8px;
   }
 
-  /* unread */
-  .notif-row.unread {
-    border-left-color: #f0ab4b;
-  }
-
-  .notif-row.unread .notif-dot {
-    background: #f0ab4b;
-  }
-
-  /* read */
   .notif-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--search-border);
-    border-radius: 50%;
+    width: 5px;
+    height: 5px;
   }
 
 
 
 
   /* =========== ASSETS ========== */
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .pagination button,
+  .pagination span {
+    font-size: var(--text-10px);
+  }
+
+  /* modal */
+  .modal-header h5,
+  .modal-header .btn-close {
+    font-size: var(--text-14px);
+  }
+
+  .modal h6 {
+    font-size: var(--text-12px);
+  }
+
+  .modal i {
+    font-size: var(--text-14px);
+  }
+
+  .form-label {
+    font-size: var(--text-12px);
+  }
+
+  .form-control {
+    font-size: var(--text-10px);
+  }
+
+  .asset-option {
+    padding: 12px;
+  }
+
+  .asset-option i {
+    font-size: var(--text-16px);
+  }
+
+  .next-btn,
+  .back-btn {
+    padding: 5px 15px;
+    font-size: var(--text-12px);
+  }
+
+  .required-text {
+    font-size: var(--text-10px);
+  }
+
+
+
   /* =========== ASSET REQUESTS ========== */
+  .filter-pill {
+    padding: 6px 12px;
+    font-size: 8px;
+  }
+
+  .request-container .request-card {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .request-card .asset-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .request-card .asset-icon i {
+    font-size: 25px;
+  }
+
+  .request-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .request-card h6 {
+    font-size: var(--text-12px);
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .request-card small {
+    font-size: var(--text-10px);
+  }
+
+  .request-control h3 {
+    font-size: 18px;
+  }
+
+  .priority-badge {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+
+  .action-btn {
+    width: 25px;
+    height: 25px;
+  }
+
+  .action-btn i {
+    font-size: var(--text-12px);
+  }
+
+
+
   /* =========== MAINTENANCE ========== */
+  .calendar-header {
+    gap: 15px;
+  }
+
+  .calendar-header h4 {
+    font-size: var(--text-16px);
+  }
+
+
+  .month-control {
+    padding: 5px 8px;
+  }
+
+  .month-control button {
+    width: 10px;
+    height: 10px;
+  }
+
+  #monthLabel {
+    font-size: var(--text-10px);
+  }
+
+  #yearSelect {
+    font-size: var(--text-10px);
+    padding: 5px 8px;
+  }
+
+  .weekdays {
+    font-size: var(--text-10px);
+  }
+
+  .day {
+    font-size: var(--text-10px);
+  }
+
+  .legend {
+    gap: 18px;
+    font-size: var(--text-10px);
+  }
+
+  .legend .dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .repair-wrapper {
+    padding: 15px;
+  }
+
+  .repair-header {
+    margin-bottom: var(--text-16px);
+  }
+
+  .repair-header span,
+  .repair-header h4 {
+    font-size: var(--text-16px);
+  }
+
+  .repair-row {
+    padding: 10px;
+  }
+
+  .repair-info {
+    padding: 0;
+  }
+
+  .repair-id {
+    font-size: var(--text-14px);
+  }
+
+  .issue-reason {
+    font-size: var(--text-10px);
+  }
+
+  .repair-meta {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    font-size: var(--text-10px);
+  }
+
+  .schedule-btn {
+    padding: 4px 8px;
+    font-size: var(--text-12px);
+  }
+
+  /* modal */
+  .option-card {
+    padding: 12px;
+  }
+
+  #maintenance .request-card .asset-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+
+
   /* =========== USERS ========== */
+
+  .controls h3 {
+    font-size: 18px;
+  }
+
+  /* profiles */
+  .profile-card {
+    padding: 15px;
+  }
+
+  .profile-info img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .profile-name strong {
+    font-size: var(--text-14px);
+  }
+
+  .profile-name small {
+    font-size: var(--text-12px);
+  }
+
+  .profile-name .user-status {
+    font-size: 8px;
+  }
+
+  .user-status.active-user {
+    background-color: #27a857;
+    border-radius: 5px;
+    padding: 1px 5px;
+    color: var(--text-white);
+  }
+
+  .user-status.inactive-user {
+    background-color: #e63131;
+    border-radius: 5px;
+    padding: 1px 5px;
+    color: var(--text-white);
+  }
+
+  .profile-contacts .info-row {
+    font-size: var(--text-10px);
+  }
+
+  .icon-btn i {
+    font-size: var(--text-12px);
+  }
+
+  .delete-btn i {
+    font-size: var(--text-12px);
+  }
+
+
+
+
+
   /* =========== VENDORS ========== */
+  .vendor-card {
+    padding: 15px;
+  }
+
+  .vendor-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: var(--text-16px);
+  }
+
+  .vendor-name {
+    font-size: var(--text-16px);
+  }
+
+  .vendor-status {
+    font-size: var(--text-10px);
+  }
+
+  .info-row {
+    font-size: var(--text-10px);
+  }
+
+
+
+
+
+
   /* =========== REPORTS ========== */
+  .report-control {
+    flex-wrap: wrap;
+    padding: 15px 0;
+  }
+
+  .report-control h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .date-range-filter {
+    font-size: var(--text-10px);
+  }
+
+  .report-container {
+    padding: 0 15px;
+  }
+
+  .report-card {
+    padding: 7px;
+  }
+
+  .report-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .report-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .report-icon i {
+    font-size: var(--text-12px);
+  }
+
+  .report-info p {
+    font-size: 10px;
+  }
+
+  .report-info h5 {
+    font-size: var(--text-12px);
+  }
+
+  .report-actions button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .report-actions i {
+    font-size: var(--text-10px);
+  }
+
+
+
+
+
   /* =========== SETTINGS ========== */
+  .company-info {
+    padding: 20px;
+  }
+
+  .company-info h4 {
+    font-size: var(--text-16px);
+  }
+
+  .subtitle {
+    font-size: var(--text-12px);
+  }
+
+  .company-info label {
+    font-size: var(--text-10px);
+  }
+
+  .save-btn {
+    padding: 5px 10px;
+    font-size: var(--text-12px);
+  }
+
+  .setting-row {
+    padding: 16px 0;
+  }
+
+  .setting-text h4 {
+    font-size: var(--text-12px);
+  }
+
+  .setting-text p {
+    font-size: 9px;
+    max-width: 90%;
+  }
+
+  .switch {
+    width: 44px;
+    height: 24px;
+  }
+
+  .role-header {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .permission-table th {
+    font-size: var(--text-12px);
+  }
+
+  .permission-table td {
+    font-size: var(--text-10px);
+    padding: 5px 10px;
+  }
+
+  .perm-btn {
+    font-size: var(--text-10px);
+    padding: 5px 10px;
+  }
 }
