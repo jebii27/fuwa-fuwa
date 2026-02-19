@@ -1398,7 +1398,7 @@ select option {
   text-align: left;
   font-size: var(--text-14px);
   font-weight: var(--text-600);
-  color: var(--text-gray);
+  color: black;
   padding: 12px;
   border-bottom: 1px solid var(--search-icon);
 }
@@ -1567,6 +1567,10 @@ select option {
 
 .step.active {
   display: block;
+}
+
+#maintenance .priority-badge {
+  font-size: var(--text-12px);
 }
 
 
@@ -2893,9 +2897,29 @@ select option {
     padding: 12px;
   }
 
+  .option-card h6 {
+    font-size: var(--text-12px)
+  }
+
+  .option-card small {
+    font-size: 10px;
+  }
+
   #maintenance .request-card .asset-info {
     display: flex;
     flex-direction: column;
+  }
+
+  .description-text {
+    font-size: var(--text-12px);
+  }
+
+  #maintenance .modal .file-link {
+    font-size: var(--text-12px);
+  }
+
+  #maintenance-priority span {
+    font-size: 12px;
   }
 
 
@@ -2962,6 +2986,15 @@ select option {
     font-size: var(--text-12px);
   }
 
+  .modal .form-check-label {
+    font-size: var(--text-12px);
+  }
+
+  .btn-danger, .btn-success {
+    font-size: var(--text-12px);
+    padding: 5px 15px;
+  }
+
 
 
 
@@ -2988,6 +3021,21 @@ select option {
   .info-row {
     font-size: var(--text-10px);
   }
+
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+  
+    .doc-table th {
+      font-size: var(--text-12px);
+    }
+  
+    .doc-table td {
+      max-width: 100px;
+      font-size: 10px;
+    }
 
 
 
