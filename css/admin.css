@@ -2345,9 +2345,6 @@ select option {
 
 
 
-
-
-
 /* Small Desktop / Large Tablet Landscape */
 @media (max-width: 1200px) {
 
@@ -2605,6 +2602,10 @@ select option {
     font-size: var(--text-14px);
   }
 
+  .chart-body h6 {
+    font-size: var(--text-12px);
+  }
+
   .asset-item {
     gap: 7px;
   }
@@ -2625,6 +2626,10 @@ select option {
 
   .asset-item small {
     font-size: 8px;
+  }
+
+  .chart-footer h5 {
+    font-size: var(--text-12px);
   }
 
   /* =========== NOTIFICATION ========== */
@@ -2716,7 +2721,7 @@ select option {
   }
 
   .modal i {
-    font-size: var(--text-14px);
+    font-size: var(--text-12px);
   }
 
   .form-label {
@@ -2918,9 +2923,7 @@ select option {
     font-size: var(--text-12px);
   }
 
-  #maintenance-priority span {
-    font-size: 12px;
-  }
+
 
 
 
@@ -2961,17 +2964,11 @@ select option {
   }
 
   .user-status.active-user {
-    background-color: #27a857;
-    border-radius: 5px;
     padding: 1px 5px;
-    color: var(--text-white);
   }
 
   .user-status.inactive-user {
-    background-color: #e63131;
-    border-radius: 5px;
     padding: 1px 5px;
-    color: var(--text-white);
   }
 
   .profile-contacts .info-row {
@@ -3097,6 +3094,20 @@ select option {
     font-size: var(--text-10px);
   }
 
+.checklist-header {
+  padding: 10px 12px;
+  font-size: var(--text-12px);
+}
+
+.checklist-items {
+  font-size: var(--text-10px);
+}
+
+.checklist-items label {
+  display: flex;
+}
+
+
 
 
 
@@ -3159,4 +3170,5 @@ select option {
     font-size: var(--text-10px);
     padding: 5px 10px;
   }
+  
 }

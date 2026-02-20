@@ -1800,13 +1800,13 @@
                     </h6>
 
                     <div class="row g-3">
-                      <div class="col-md-6">
+                      <div class="col-12 col-md-6">
                         <label class="form-label text-muted">Requested By</label>
-                        <div class="fw-semibold">Juan Dela Cruz</div>
+                        <div class="description-text fw-semibold">Juan Dela Cruz</div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-12 col-md-6">
                         <label class="form-label text-muted">Department</label>
-                        <div class="fw-semibold">IT Department</div>
+                        <div class="description-text fw-semibold">IT Department</div>
                       </div>
                     </div>
                   </section>
@@ -1821,25 +1821,25 @@
                     </h6>
 
                     <div class="row g-3">
-                      <div class="col-lg-6">
+                      <div class="col-12 col-md-6 col-xl-6">
                         <label class="form-label text-muted">Asset Type</label>
-                        <div class="fw-semibold">Hardware</div>
+                        <div class="description-text fw-semibold">Hardware</div>
                       </div>
-                      <div class="col-lg-6">
+                      <div class="col-12 col-md-6 col-xl-6">
                         <label class="form-label text-muted">Asset Category</label>
-                        <div class="fw-semibold">Laptop</div>
+                        <div class="description-text fw-semibold">Laptop</div>
                       </div>
 
-                      <div class="col-lg-6">
+                      <div class="col-12 col-md-6 col-xl-6">
                         <label class="form-label text-muted">Quantity</label>
-                        <div class="fw-semibold">2 Units</div>
+                        <div class="description-text fw-semibold">2 Units</div>
                       </div>
 
-                      <div class="col-lg-6">
+                      <div class="col-12 col-md-6 col-xl-6">
                         <label class="form-label text-muted">
                           Preferred Model / Specifications
                         </label>
-                        <div class="fw-semibold">
+                        <div class="description-text fw-semibold">
                           Dell Latitude 5440, i7, 16GB RAM, 512GB SSD
                         </div>
                       </div>
@@ -1857,12 +1857,12 @@
 
                     <div class="mb-3">
                       <label class="form-label text-muted">Reason for Request</label>
-                      <div>Replacement of outdated workstations</div>
+                      <div class="description-text fw-semibold">Replacement of outdated workstations</div>
                     </div>
 
                     <div>
                       <label class="form-label text-muted">Detailed Purpose</label>
-                      <p>
+                      <p class="description-text fw-semibold ">
                         The requested laptops will be used by developers
                         assigned to the new internal system upgrade project to
                         ensure optimal performance and productivity.
@@ -1881,7 +1881,7 @@
 
                     <div>
                       <label class="form-label text-muted">Estimated Cost</label>
-                      <div class="fw-semibold">₱180,000</div>
+                      <div class="description-text fw-semibold">₱180,000</div>
                     </div>
                   </section>
 
@@ -1889,13 +1889,13 @@
 
                   <!-- ===== priority ===== -->
                   <section class="mb-4">
-                    <h6 class="fw-semibold mb-3">
+                    <h6 class="fw-semibold mb-2">
                       <i class="fa-solid fa-flag me-2 text-secondary"></i>
                       Priority Level
                     </h6>
 
-                    <span class="badge bg-warning text-dark px-3 py-2">
-                      Medium Priority
+                    <span class="priority-badge medium">
+                      Medium
                     </span>
                   </section>
 
@@ -1930,7 +1930,7 @@
 
                 <!-- modal footer -->
                 <div class="modal-footer">
-                  <button class="btn btn-outline-secondary shadow-none" data-bs-dismiss="modal">
+                  <button class="back-btn btn-outline-secondary shadow-none" data-bs-dismiss="modal">
                     Close
                   </button>
                   <button class="btn btn-danger shadow-none">
@@ -3179,8 +3179,8 @@
                       <h6 class="fw-semibold">COR-2025-001</h6>
                       <small class="text-muted">Laptop Pro 16</small>
                       <small class="text-muted">IT Department</small>
-                      <div>
-                        <span class="priority-badge medium">Medium</span>
+                      <div class="mobile-view">
+                        <span class="priority-badge medium">Urgent</span>
                       </div>
                     </div>
                   </div>
@@ -4595,10 +4595,10 @@
                 </div>
 
                 <div class="d-flex gap-2">
-                  <button type="button" class="btn btn-danger px-4" data-bs-dismiss="modal">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
                     Cancel
                   </button>
-                  <button type="button" class="btn btn-success px-4">
+                  <button type="button" class="btn btn-success">
                     Submit
                   </button>
                 </div>
@@ -5155,8 +5155,46 @@
   <script>
     Chart.register(ChartDataLabels);
 
-    // ASSET CATEGORY — Horizontal Bar
-    new Chart(document.getElementById("assetChart"), {
+    /* =====================================
+       RESPONSIVE BREAKPOINT CONFIG
+    ===================================== */
+
+    function getScreenType() {
+      const w = window.innerWidth;
+      if (w < 576) return "mobile";
+      if (w < 992) return "tablet";
+      if (w < 1400) return "laptop";
+      return "desktop";
+    }
+
+    function getFontSize() {
+      const screen = getScreenType();
+      if (screen === "mobile") return 8;
+      if (screen === "tablet") return 10;
+      if (screen === "laptop") return 11;
+      return 12;
+    }
+
+    function getBarThickness() {
+      const screen = getScreenType();
+      if (screen === "mobile") return 10;
+      if (screen === "tablet") return 14;
+      if (screen === "laptop") return 18;
+      return 22;
+    }
+
+    function getCutout() {
+      const screen = getScreenType();
+      if (screen === "mobile") return "65%";
+      if (screen === "tablet") return "70%";
+      return "72%";
+    }
+
+    /* =====================================
+       ASSET CATEGORY — Horizontal Bar
+    ===================================== */
+
+    const assetChart = new Chart(document.getElementById("assetChart"), {
       type: "bar",
       data: {
         labels: [
@@ -5173,23 +5211,16 @@
           data: [28, 22, 15, 12, 10, 5, 8, 6],
           backgroundColor: "#7C4DFF",
           borderRadius: 10,
-          barThickness: 18
+          barThickness: getBarThickness()
         }]
       },
       options: {
         indexAxis: "y",
-        maintainAspectRatio: false,
         responsive: true,
-
-        layout: {
-          padding: {
-            right: 40
-          }
-        },
-
+        maintainAspectRatio: false,
+        layout: { padding: { right: 40 } },
         plugins: {
           legend: { display: false },
-
           datalabels: {
             anchor: "end",
             align: "right",
@@ -5198,24 +5229,24 @@
             color: "#555",
             font: {
               weight: "600",
-              size: 11
+              size: getFontSize()
             },
             formatter: value => value
           }
         },
-
         scales: {
           x: {
             display: false,
-            suggestedMax: Math.max(...[28, 22, 15, 12, 10, 5, 8, 6]) + 5
+            suggestedMax: 35
           },
           y: {
             grid: { display: false },
             ticks: {
+              font: { size: getFontSize() },
               callback: function (value) {
                 const label = this.getLabelForValue(value);
-                return label.length > 8
-                  ? label.substring(0, 8) + "…"
+                return label.length > 10
+                  ? label.substring(0, 10) + "…"
                   : label;
               }
             }
@@ -5225,8 +5256,11 @@
     });
 
 
-    // COMPLIANCE STATUS — Doughnut
-    new Chart(document.getElementById("complianceChart"), {
+    /* =====================================
+       COMPLIANCE STATUS — Doughnut
+    ===================================== */
+
+    const complianceChart = new Chart(document.getElementById("complianceChart"), {
       type: "doughnut",
       data: {
         labels: ["Compliant", "Non-Compliant", "Expired", "Pending", "N/A"],
@@ -5245,29 +5279,22 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        cutout: "72%",
-
+        cutout: getCutout(),
         plugins: {
           legend: { display: false },
-
-          // ✅ Hover shows ONLY label name
           tooltip: {
             callbacks: {
               label: ctx => ctx.label
             }
           },
-
-          // ✅ Numbers inside slices
           datalabels: {
-            display: true,
             color: "#fff",
             font: {
               weight: "600",
-              size: 12
+              size: getFontSize()
             },
             anchor: "center",
             align: "center",
-            clamp: true,
             formatter: value => value
           }
         }
@@ -5275,51 +5302,72 @@
     });
 
 
-    // USERS — Vertical Bar
-    new Chart(document.getElementById("usersChart"), {
+    /* =====================================
+       USERS — Vertical Bar
+    ===================================== */
+
+    const usersChart = new Chart(document.getElementById("usersChart"), {
       type: "bar",
       data: {
         labels: ["Admin", "Encoder", "Viewer"],
         datasets: [{
           data: [35, 25, 20],
-          backgroundColor: ["#FF5252", "#FF7043", "#FDD835", "#4DD0E1"],
+          backgroundColor: ["#FF5252", "#FF7043", "#FDD835"],
           borderRadius: 12,
-          barThickness: 32
+          barThickness: getBarThickness()
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-
-        layout: {
-          padding: {
-            top: 30
-          }
-        },
-
+        layout: { padding: { top: 30 } },
         plugins: {
           legend: { display: false },
-
           datalabels: {
             anchor: "end",
             align: "top",
             clamp: true,
             clip: false,
-            font: { weight: "600", size: 11 },
+            font: {
+              weight: "600",
+              size: getFontSize()
+            },
             formatter: value => value
           }
         },
-
         scales: {
           x: {
-            grid: { display: false }
+            grid: { display: false },
+            ticks: {
+              font: { size: getFontSize() }
+            }
           },
           y: {
             display: false,
-            suggestedMax: Math.max(...[35, 25, 20, 10]) + 10 // ✅ auto headroom
+            suggestedMax: 45
           }
         }
       }
+    });
+
+
+    /* =====================================
+       AUTO UPDATE ON RESIZE
+    ===================================== */
+
+    window.addEventListener("resize", () => {
+      assetChart.data.datasets[0].barThickness = getBarThickness();
+      usersChart.data.datasets[0].barThickness = getBarThickness();
+
+      assetChart.options.plugins.datalabels.font.size = getFontSize();
+      usersChart.options.plugins.datalabels.font.size = getFontSize();
+      complianceChart.options.plugins.datalabels.font.size = getFontSize();
+
+      complianceChart.options.cutout = getCutout();
+
+      assetChart.update();
+      usersChart.update();
+      complianceChart.update();
     });
 
   </script>
@@ -5663,74 +5711,94 @@
     statusFilter.addEventListener("change", applyFilters);
   </script>
 
-  <!-- DELETE VENDOR -->
+  <!-- DELETE VENDOR & USER -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+
+      function isMobile() {
+        return window.innerWidth < 576;
+      }
+
+      function getFontSizes() {
+        return {
+          title: isMobile() ? "18px" : "22px",
+          text: isMobile() ? "13px" : "16px",
+          button: isMobile() ? "13px" : "16px"
+        };
+      }
+
+      function showDeleteModal(title, text, confirmText, successTitle, successText) {
+        const fonts = getFontSizes();
+
+        Swal.fire({
+          title: title,
+          text: text,
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: confirmText,
+          cancelButtonText: "Cancel",
+          reverseButtons: true,
+          confirmButtonColor: "#d33",
+          didOpen: () => {
+            const popup = Swal.getPopup();
+            popup.querySelector(".swal2-title").style.fontSize = fonts.title;
+            popup.querySelector(".swal2-html-container").style.fontSize = fonts.text;
+            popup.querySelector(".swal2-confirm").style.fontSize = fonts.button;
+            popup.querySelector(".swal2-cancel").style.fontSize = fonts.button;
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+
+            // 👉 DELETE LOGIC HERE
+
+            Swal.fire({
+              title: successTitle,
+              text: successText,
+              icon: "success",
+              timer: 1500,
+              showConfirmButton: false,
+              didOpen: () => {
+                const popup = Swal.getPopup();
+                popup.querySelector(".swal2-title").style.fontSize = fonts.title;
+                popup.querySelector(".swal2-html-container").style.fontSize = fonts.text;
+              }
+            });
+          }
+        });
+      }
+
+      /* ===============================
+         DELETE VENDOR
+      =============================== */
+
       document.querySelectorAll(".delete-vendor").forEach(button => {
         button.addEventListener("click", () => {
-
-          Swal.fire({
-            title: "Delete Vendor?",
-            text: "This action cannot be undone.",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete it",
-            cancelButtonText: "Cancel",
-            reverseButtons: true,
-            confirmButtonColor: "#d33",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              // 👉 place delete logic here (AJAX / fetch / form submit)
-
-              Swal.fire({
-                title: "Deleted!",
-                text: "The vendor has been removed.",
-                icon: "success",
-                timer: 1500,
-                showConfirmButton: false
-              });
-
-            }
-          });
-
+          showDeleteModal(
+            "Delete Vendor?",
+            "This action cannot be undone.",
+            "Yes, delete it",
+            "Vendor Deleted!",
+            "The vendor has been removed."
+          );
         });
       });
-    });
-  </script>
 
-  <!-- DELETE USER -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
+      /* ===============================
+         DELETE USER
+      =============================== */
+
       document.querySelectorAll(".delete-user").forEach(button => {
         button.addEventListener("click", () => {
-
-          Swal.fire({
-            title: "Delete User?",
-            text: "This user account will be permanently removed.",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, delete user",
-            cancelButtonText: "Cancel",
-            reverseButtons: true,
-            confirmButtonColor: "#d33",
-          }).then((result) => {
-            if (result.isConfirmed) {
-
-              // 🔥 Delete logic here (AJAX / fetch / form submit)
-
-              Swal.fire({
-                title: "User Deleted",
-                text: "The user has been successfully removed.",
-                icon: "success",
-                timer: 1500,
-                showConfirmButton: false
-              });
-
-            }
-          });
-
+          showDeleteModal(
+            "Delete User?",
+            "This action cannot be undone.",
+            "Yes, delete it",
+            "User Deleted",
+            "The user has been successfully removed."
+          );
         });
       });
+
     });
   </script>
 
